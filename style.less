@@ -1,0 +1,375 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+
+body {
+	line-height: 1;
+
+
+
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+b {
+	font-weight: bold;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+body,html{
+	width:100%;
+	height:100%;
+}
+
+body {
+	background: #333;
+	color: #fff;
+	font-family: 'Roboto Mono', monospace;
+
+	font-size: 13px;
+	font-weight: 100;
+	line-height: 20px;
+}
+
+p {
+
+	line-height: 16px;
+
+}
+
+ul {
+	padding: 10px;
+
+	li {}
+}
+
+a {
+	color: #fff;
+	font-weight: 100;
+	font-size: 13px;
+	text-decoration: none;
+	border-bottom: 1px solid #777;
+	cursor: pointer;
+
+}
+
+
+
+.space {
+	width: 5px;
+	display: inline-block;
+}
+
+section {
+
+	overflow: hidden;
+	position: relative;
+	max-width: 1200px;
+	margin: 90px auto;
+
+
+	small {
+		color: #ccc;
+		font-size: 10px;
+	}
+
+	.banner {
+		width: 55%;
+		vertical-align: middle;
+		padding: 45px;
+		display: inline-block;
+		box-sizing: border-box;
+
+	}
+
+	.badges {
+		display: inline-block;
+
+		img {
+			height: 16px;
+			width: 16px;
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.text {
+		vertical-align: middle;
+		display: inline-block;
+		width: 44%;
+		box-sizing: border-box;
+		line-height: 24px;
+		padding: 45px;
+
+	}
+
+}
+
+.faded-2 {
+	opacity: .3;
+	filter: blur(1spx);
+}
+
+.faded-1 {
+	opacity: .5;
+}
+
+
+
+
+
+.clear {
+	clear: both;
+	display: block;
+	content: ' ';
+}
+
+@media (max-width:1200px) {
+
+
+	section {
+
+		.banner {
+			width: 55%;
+			vertical-align: middle;
+		}
+
+		.text {
+			width: 44%;
+
+		}
+
+	}
+
+}
+
+
+
+@media (max-width:840px) {
+
+
+	section {
+		font-size: 11px;
+
+		.banner {
+			width: 90%;
+			margin: 0 auto;
+			max-height: 40vh;
+			display: block;
+			padding: 30px 0 0 0;
+			
+		}
+
+		.text {
+			display: block;
+			width: 100%;
+			max-width: 400px;
+			margin: 0 auto;
+			padding: 30px 30px 10px 10px;
+
+		}
+
+	}
+
+}
+
+
+
+.scroller {
+
+	margin: 30px 0;
+	position: relative;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0) scale(.85);
+	transform-origin: bottom center;
+	width: 40px;
+	height: 65px;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	line-height: 20px;
+
+
+}
+
+.scroller::after {
+	position: absolute;
+	top: 12px;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background-color: #fff;
+	-webkit-animation: 1200ms ease 0ms forwards infinite scroll;
+	animation: 1200ms ease 0ms forwards infinite scroll;
+	content: "";
+}
+
+.scroller small {
+	position: absolute;
+	width: 174px;
+	left: -64px;
+	top: -34px;
+	font-size: 11px;
+
+	text-align: center;
+}
+
+@-webkit-keyframes scroll {
+	from {
+		-webkit-transform: translate3d(-50%, 0, 0);
+		transform: translate3d(-50%, 0, 0);
+	}
+
+	to {
+		-webkit-transform: translate3d(-50%, 10px, 0);
+		transform: translate3d(-50%, 10px, 0);
+		opacity: 0;
+	}
+}
+
+@keyframes scroll {
+	from {
+		-webkit-transform: translate3d(-50%, 0, 0);
+		transform: translate3d(-50%, 0, 0);
+	}
+
+	to {
+		-webkit-transform: translate3d(-50%, 10px, 0);
+		transform: translate3d(-50%, 10px, 0);
+		opacity: 0;
+	}
+}
