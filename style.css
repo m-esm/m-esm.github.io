@@ -284,11 +284,11 @@ section .text {
   padding: 15px 10px;
   text-align: center;
   color: #ccc;
-  line-height: 16px;
+  line-height: 22px;
 }
 .copyleft,
 .copyleft a {
-  font-size: 8px;
+  font-size: 11px;
 }
 @media (min-width: 840px) {
   .show-xs {
