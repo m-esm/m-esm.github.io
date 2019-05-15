@@ -228,27 +228,38 @@ section .text {
     width: 44%;
   }
 }
+.copyleft {
+  padding: 15px 10px;
+  text-align: center;
+  color: #ccc;
+  line-height: 16px;
+}
+.copyleft,
+.copyleft a {
+  font-size: 8px;
+}
 @media (min-width: 840px) {
   .show-xs {
-    display: none!important;
+    display: none !important;
   }
 }
 @media (max-width: 840px) {
   .show-md {
-    display: none!important;
+    display: none !important;
   }
   .show-xs {
     display: block;
   }
   section {
     font-size: 11px;
+    margin: 45px auto;
   }
   section .banner {
-    width: 90%;
+    width: calc(100% - 10px);
     margin: 0 auto;
     max-height: 40vh;
     display: block;
-    padding: 30px 0 0 0;
+    padding: 0 0 0 0;
   }
   section .text {
     display: block;
@@ -314,6 +325,12 @@ section .text {
     transform: translate3d(-50%, 10px, 0);
     opacity: 0;
   }
+}
+.github-corner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
 }
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
