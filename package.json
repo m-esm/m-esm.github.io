@@ -1,0 +1,27 @@
+{
+  "name": "m-esm.ir",
+  "version": "1.0.0",
+  "description": "my personal website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/serendip-web/bin/server.js -p 2080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-esm/m-esm.ir.git"
+  },
+  "keywords": [
+    "personal",
+    "m-esm"
+  ],
+  "author": "Mohsen Esmaeili <m-esm@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-esm/m-esm.ir/issues"
+  },
+  "homepage": "https://github.com/m-esm/m-esm.ir#readme",
+  "dependencies": {
+    "serendip-web": "^1.1.5"
+  }
+}
