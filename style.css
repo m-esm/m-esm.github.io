@@ -228,7 +228,18 @@ section .text {
     width: 44%;
   }
 }
+@media (min-width: 840px) {
+  .show-xs {
+    display: none!important;
+  }
+}
 @media (max-width: 840px) {
+  .show-md {
+    display: none!important;
+  }
+  .show-xs {
+    display: block;
+  }
   section {
     font-size: 11px;
   }
@@ -302,5 +313,30 @@ section .text {
     -webkit-transform: translate3d(-50%, 10px, 0);
     transform: translate3d(-50%, 10px, 0);
     opacity: 0;
+  }
+}
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
   }
 }
