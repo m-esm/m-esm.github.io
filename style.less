@@ -159,19 +159,51 @@ body {
 
 	font-size: 13px;
 	font-weight: 100;
-	line-height: 20px;
+	line-height: 18px;
 }
 
-p {
-
-	line-height: 16px;
-
+img {
+	max-width: 100%;
 }
+
+p {}
 
 ul {
 	padding: 10px;
 
-	li {}
+	li {
+
+		img {
+			width: 120px;
+			height: 90px;
+		}
+
+		div.pull-right {
+			width: calc(100% - 120px);
+			padding: 0 10px;
+			box-sizing: border-box;
+		}
+
+	}
+}
+
+ul.websites-list {
+
+	li {
+
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px;
+		box-sizing: border-box;
+
+		img {
+			width: 100%;
+			height: auto;
+			max-width: 180px;
+			box-shadow: 0 0 15px #000;
+		}
+	}
+
 }
 
 a {
@@ -191,6 +223,30 @@ a {
 	display: inline-block;
 }
 
+
+ul.projects-list {
+	li {
+		max-width: 240px;
+		width: 100%;
+		box-shadow: 0 5px 5px #000;
+		padding: 5px;
+		margin:10px;
+		box-sizing: border-box;
+		display: inline-block;
+		vertical-align: top;
+		min-height: 80px;
+		a{
+			margin-bottom: 5px;
+			display: inline-block;
+			font-size: 12px;
+		}
+		small{
+			font-size: 11px;
+			color:#ccc;
+		}
+	}
+}
+
 section {
 
 	overflow: hidden;
@@ -200,21 +256,23 @@ section {
 
 
 	small {
-		color: #ccc;
+		color: #eee;
 		font-size: 10px;
 	}
 
 	.banner {
-		width: 55%;
+		width: 50%;
 		vertical-align: middle;
-		padding: 45px;
+		padding: 15px;
 		display: inline-block;
 		box-sizing: border-box;
+
 
 	}
 
 	.badges {
 		display: inline-block;
+		float: right;
 
 		img {
 			height: 16px;
@@ -228,10 +286,9 @@ section {
 	.text {
 		vertical-align: middle;
 		display: inline-block;
-		width: 44%;
+		width: 49%;
 		box-sizing: border-box;
-		line-height: 24px;
-		padding: 45px;
+		padding: 15px;
 
 	}
 
@@ -273,6 +330,20 @@ section {
 
 }
 
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.clear {
+	clear: both;
+	display: block;
+	content: " ";
+}
+
 .copyleft {
 
 	padding: 15px 10px;
@@ -312,8 +383,7 @@ section {
 	}
 
 	section {
-		font-size: 11px;
-		margin:45px auto;
+		margin: 45px auto;
 
 		.banner {
 			width: calc(100% - 10px);
@@ -321,15 +391,16 @@ section {
 			max-height: 40vh;
 			display: block;
 			padding: 0 0 0 0;
+			max-width: 600px;
 
 		}
 
 		.text {
 			display: block;
 			width: 100%;
-			max-width: 400px;
+			max-width: 600px;
 			margin: 0 auto;
-			padding: 30px 30px 10px 10px;
+			padding: 15px;
 
 		}
 
@@ -414,10 +485,10 @@ section {
 
 
 
-.github-corner{
+.github-corner {
 	position: fixed;
-	top:0;
-	right:0;
+	top: 0;
+	right: 0;
 	z-index: 100;
 }
 

@@ -27,15 +27,14 @@
                 d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
                 fill="currentColor" class="octo-body"></path>
         </svg></a>
-
-    <div id="fullpage">
-        <section data-aos="zoom-in" data-aos-duration="700" data-anchor="hi">
-
+ 
+        <section id="hi">
 
 
-            <img class="banner" src="assets/hi.svg" alt="">
 
-            <div class="text" data-aos="zoom-in" data-aos-delay="500">
+            <img class="banner"  data-aos="fade-in" data-aos-duration="700"   src="assets/hi.svg" alt="">
+
+            <div class="text"   data-aos="fade-in"  data-aos-delay="500">
 
                 <p>
                     <b> Hi There</b>,<br>
@@ -85,11 +84,11 @@
 
         </section>
 
-        <section data-aos="fade-up" data-aos-duration="700" data-aos-delay="500" data-anchor="technologies">
+        <section id="technologies">
 
             <img class="banner show-xs" src="assets/technologies.svg" alt="">
 
-            <div class="text" data-aos="zoom-in" data-aos-delay="500">
+            <div class="text" data-aos="fade-right" data-aos-delay="500">
                 <b>Technologies</b>
                 <small> im using</small>
                 <ul>
@@ -133,21 +132,21 @@
 
 
             </div>
-            <img class="banner show-md" src="assets/technologies.svg" alt="">
+            <img class="banner show-md"  data-aos="fade-left" data-aos-duration="700"   src="assets/technologies.svg" alt="">
 
         </section>
 
 
-        <section data-anchor="projects" data-aos="fade-up" data-aos-duration="700">
+        <section id="projects">
 
-            <img class="banner" src="assets/projects.svg" alt="">
+            <img class="banner" data-aos="fade-right" data-aos-duration="700" src="assets/projects.svg" alt="">
 
-            <div class="text" data-aos="zoom-in" data-aos-delay="500">
+            <div class="text" data-aos="fade-left" data-aos-delay="500">
                 <b>Projects</b>
                 <small>
                     I have worked on
                 </small>
-                <ul>
+                <ul class="projects-list">
                     <li>
                         <a target="_blank"
                             href="https://github.com/serendip-agency/serendip-framework">serendip-framework</a>
@@ -156,7 +155,6 @@
                             <img src="assets/npm.svg" alt="">
                         </div>
                         <br>
-                        <div class="space"></div>
                         <small>
                             A Node.js web service framework written in typescript
                         </small>
@@ -171,7 +169,6 @@
                             <img src="assets/npm.svg" alt="">
                         </div>
                         <br>
-                        <div class="space"></div>
                         <small>
                             Sharding MongoDB through HTTP REST API
                         </small>
@@ -186,7 +183,6 @@
                             <img src="assets/docker.svg" alt="">
                         </div>
                         <br>
-                        <div class="space"></div>
                         <small>
                             API for Serendip business services
                         </small>
@@ -203,7 +199,6 @@
                             <img src="assets/npm.svg" alt="">
                         </div>
                         <br>
-                        <div class="space"></div>
                         <small>
                             Tool box for JavaScript with no dependencies.
                         </small>
@@ -212,16 +207,27 @@
                     <li>
                         <a target="_blank"
                             href="https://github.com/m-esm/phonegap-fcm-push-example">phonegap-fcm-push-example</a>
+
+                        <div class="badges">
+                            <img src="assets/github.svg" alt="">
+                        </div>
+
                         <br>
                         <small>Phonegap push example using FCM(Firebase Cloud Messaging) for android and web </small>
                     </li>
                     <li>
                         <a target="_blank" href="https://github.com/m-esm/arxe">arxe</a>
+                        <div class="badges">
+                            <img src="assets/github.svg" alt="">
+                        </div>
                         <br>
                         <small>It's a Time sheet management system for small teams and offices. </small>
                     </li>
                     <li>
                         <a target="_blank" href="https://github.com/m-esm/syncup">syncup</a>
+                        <div class="badges">
+                            <img src="assets/github.svg" alt="">
+                        </div>
                         <br>
                         <small>Backup service written in nodejs and integrated with telegram api</small>
                     </li>
@@ -229,6 +235,9 @@
 
                     <li>
                         <a target="_blank" href="https://github.com/m-esm/Fund">Fund</a>
+                        <div class="badges">
+                            <img src="assets/github.svg" alt="">
+                        </div>
                         <br>
                         <small>Fund system for small teams</small>
                     </li>
@@ -237,6 +246,9 @@
 
                     <li>
                         <a target="_blank" href="https://github.com/m-esm/HCMS">HCMS</a>
+                        <div class="badges">
+                            <img src="assets/github.svg" alt="">
+                        </div>
                         <br>
                         <small>Modular and multi lingual cms written with asp.net mvc and c#</small>
                     </li>
@@ -244,6 +256,9 @@
 
                     <li>
                         <a target="_blank" href="https://github.com/nodejs/nodejs.org">nodejs.org</a>
+                        <div class="badges">
+                            <img src="assets/github.svg" alt="">
+                        </div>
                         <br>
                         <small>The Node.js website. https://nodejs.org</small>
                     </li>
@@ -255,81 +270,118 @@
 
         </section>
 
-        <section data-anchor="websites" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+        <section id="websites">
             <img class="banner show-xs" src="assets/websites.svg" alt="">
 
 
             <div class="text" data-aos="zoom-in" data-aos-delay="500">
 
                 <b>Websites</b> <small>I Have Built</small>
-                <ul>
+                <ul class="websites-list">
                     <li>
+                        <img src="assets/screenshots/small/serendip.png" alt="">
+                        <br>
                         <a target="_blank" href="https://serendip.agency">serendip.agency</a>
+                        <br>
                         <small>
                             (node.js)
                         </small>
                     </li>
                     <li>
+                        <img src="assets/screenshots/small/breline.png" alt="">
+                        <br>
                         <a target="_blank" href="http://bre-line.com">
                             bre-line.com
                         </a>
+                        <br>
+
                         <small>(wordpress)</small>
                     </li>
                     <li>
+                        <img src="assets/screenshots/small/bestmehr.png" alt="">
+                        <br>
                         <a target="_blank" href="https://bestmehr.ir">
                             bestmehr.ir
                         </a>
+                        <br>
+
                         <small>
                             (asp.net)
                         </small>
                     </li>
 
                     <li>
+                        <img src="assets/screenshots/small/hayatno.png" alt="">
+                        <br>
                         <a target="_blank" href="http://hayat-no.com/">
                             hayat-no.com
                         </a>
+                        <br>
+
                         <small>
                             (asp.net)
                         </small>
+
+
                     </li>
 
 
                     <li>
+                        <img src="assets/screenshots/small/onanzim.png" alt="">
+                        <br>
                         <a target="_blank" href="http://onanzim.ir">
                             onanzim.ir
                         </a>
+                        <br>
+
                         <small> (asp.net + node.js)</small>
                     </li>
 
                     <li>
+                        <img src="assets/screenshots/small/arxecoop.png" alt="">
+                        <br>
                         <a target="_blank" href="http://arxecoop.com">
                             arxecoop.com
                         </a>
+                        <br>
+
                         <small>
                             (asp.net)
                         </small>
                     </li>
 
                     <li>
+                        <img src="assets/screenshots/small/hannan.png" alt="">
+                        <br>
                         <a target="_blank" href="http://hannan-sanat.com">
                             hannan-sanat.com
                         </a>
+                        <br>
+
                         <small>
                             (asp.net)
                         </small>
                     </li>
 
                     <li>
+                        <img src="assets/screenshots/small/typokhat.png" alt="">
+                        <br>
                         <a target="_blank" href="http://typokhat.com">
                             helpia.ir
                         </a>
+                        <br>
+
                         <small> (asp.net + node.js)</small>
                     </li>
 
                     <li>
+                        <img src="assets/screenshots/small/azhand.png" alt="">
+                        <br>
                         <a target="_blank" href="http://azhand22.ir">
                             azhand22.ir
                         </a>
+                        <br>
+
                         <small>
                             (asp.net)
                         </small>
@@ -341,7 +393,7 @@
             <img class="banner show-md" src="assets/websites.svg" alt="">
 
         </section>
-        <section data-anchor="serendip" data-aos="fade-up" data-aos-duration="700">
+        <section id="serendip">
             <img class="banner" src="assets/serendip.svg" alt="">
 
             <div class="text" data-aos="zoom-in" data-aos-delay="500">
@@ -384,8 +436,7 @@
                 </ul>
             </div>
         </section>
-
-    </div>
+ 
 
     <div class="copyleft">
 
