@@ -1,6 +1,7 @@
 FROM node:alpine
 WORKDIR /app
 COPY . .
+RUN mv index.html index.hbs
 RUN npm install serendip-web
 EXPOSE 2080
 USER node
