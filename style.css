@@ -135,11 +135,14 @@ b {
   font-weight: 400;
   src: local('Space Mono'), local('SpaceMono-Regular'), url(https://fonts.gstatic.com/s/spacemono/v4/i7dPIFZifjKcF5UAWdDRYEF8QA.ttf) format('truetype');
 }
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v6/L0x5DF4xlVMF-BfR8bXMIjhLq3o.ttf) format('truetype');
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
 }
 body,
 html {
@@ -149,10 +152,10 @@ html {
 body {
   background: #333;
   color: #fff;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 13px;
   font-weight: 100;
-  line-height: 18px;
+  line-height: 20px;
 }
 img {
   max-width: 100%;

@@ -144,8 +144,20 @@ b {
 
 
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
+
+
+::-webkit-scrollbar-track{
+	background: #000;
+}
+::-webkit-scrollbar{
+	width:20px;
+
+}
+
+::-webkit-scrollbar-thumb{
+	background: #222;
+}
 body,
 html {
 	width: 100%;
@@ -155,11 +167,11 @@ html {
 body {
 	background: #333;
 	color: #fff;
-	font-family: 'Roboto Mono', monospace;
+	font-family: 'Space Mono', monospace;
 
 	font-size: 13px;
 	font-weight: 100;
-	line-height: 18px;
+	line-height: 20px;
 }
 
 img {
@@ -172,7 +184,6 @@ ul {
 	padding: 10px;
 
 	li {
-
 		img {
 			width: 120px;
 			height: 90px;
