@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "commit=$(git log -n 1 --format='%h') && commit_count=$(git rev-list --all --count) && cp index.hbs index.html && sed -i \"s/{{ data.env.commit }}/${commit}/g\" index.html && sed -i \"s/{{json data.env.commit_count }}/${commit_count}/g\" index.html",
     "start": "node_modules/serendip-web/bin/server.js -p 2080"
   },
   "repository": {
