@@ -475,7 +475,7 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        if (location.port == 80 || location.port == 443)
+        if (!location.port)
             if (location.hostname != 'm-esm.github.io') {
                 location.href = 'https://m-esm.github.io'
             }
