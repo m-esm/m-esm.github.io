@@ -43,7 +43,13 @@ Reconciled 26 October 2026. This tracks requested deliverables rather than claim
 - [x] Search each employer separately: Songtradr, Starship, Serendip, TripeMa, Alibaba.aero and BoomFit.
 - [x] Expand verified company logos and relevant official imagery, with local assets, source credits and clear company-context captions.
 - [x] Review Starship partner identities separately from employers.
-- [ ] Build, publish over SSH and confirm the media additions publicly.
+- [x] Build, publish over SSH and confirm the media additions publicly: c564017, Pages run 40399526645 succeeded; public HTML contains the new photos and brand assets.
+
+## Remaining logo assets
+
+- [ ] BoomFit: establish the historical employer’s correct brand asset; separate searches returned unrelated gyms/equipment companies.
+- [ ] foodora: obtain the identified official logo; direct download currently returns HTTP 403.
+- [ ] Bringg: obtain a reliable official logo file; direct site asset retrieval is blocked.
 
 ## Concrete source limitations
 
