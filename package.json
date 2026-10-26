@@ -14,6 +14,7 @@
     "content": "node --import tsx scripts/generate-reading.ts",
     "build": "npm run typecheck && npm run content && vite build",
     "preview": "vite preview --host 127.0.0.1",
+    "deploy:github": "node scripts/deploy-github.mjs",
     "budget": "node scripts/budget.mjs"
   },
   "dependencies": {
