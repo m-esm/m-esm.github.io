@@ -680,40 +680,40 @@ export function WorldDetails({
             />
           )),
         )}
-        {[41.5, 44.5].map((x) => (
+        {[36.5, 39.5].map((x) => (
           <group key={x}>
-            <Cyl at={[x, 14, -46]} size={[1.2, 4, 1.2]} color={p.metal} />
+            <Cyl at={[x, 14, -40]} size={[1.2, 4, 1.2]} color={p.metal} />
             <Cyl
-              at={[x, 16.1, -46]}
+              at={[x, 16.1, -40]}
               size={[1.28, 0.16, 1.28]}
               color={p.slate}
             />
-            <Cyl at={[x, 12, -46]} size={[1.35, 0.3, 1.35]} color={p.slate} />
+            <Cyl at={[x, 12, -40]} size={[1.35, 0.3, 1.35]} color={p.slate} />
             <Beam
-              from={[x, 13, -46]}
-              to={[x, 13, -43]}
+              from={[x, 13, -40]}
+              to={[x, 13, -37]}
               r={0.17}
               color={p.green}
             />
-            <Flange at={[x, 13, -43]} rotation={[Math.PI / 2, 0, 0]} />
+            <Flange at={[x, 13, -37]} rotation={[Math.PI / 2, 0, 0]} />
             <Beam
-              from={[x, 13, -43]}
-              to={[x, 10, -43]}
+              from={[x, 13, -37]}
+              to={[x, 10, -37]}
               r={0.17}
               color={p.green}
             />
             {[-1, 1].map((s) => (
               <Beam
                 key={s}
-                from={[x + s * 0.9, 12, -46]}
-                to={[x + s * 0.9, 16, -46]}
+                from={[x + s * 0.9, 12, -40]}
+                to={[x + s * 0.9, 16, -40]}
                 r={0.035}
                 color="#899b95"
               />
             ))}
           </group>
         ))}
-        <group position={[11, 18.2, -47]} rotation={[0, 0, 0.5]}>
+        <group position={[12.2, 17.6, -48]} rotation={[0, 0, 0.5]}>
           <Cyl at={[0, -0.65, 0]} size={[0.23, 1.3, 0.23]} color={p.slate} />
           <mesh geometry={dish} material={mat(p.chalk)} castShadow />
           {[0, 1, 2].map((i) => (
