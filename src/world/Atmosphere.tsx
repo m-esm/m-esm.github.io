@@ -1,16 +1,25 @@
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { BackSide, CanvasTexture, Group, Mesh, SRGBColorSpace } from "three";
+import {
+  BackSide,
+  CanvasTexture,
+  Group,
+  Mesh,
+  SRGBColorSpace,
+  Vector3,
+} from "three";
 
 function planetMaps() {
+  const width = 1024,
+    height = 512;
   const land = document.createElement("canvas"),
     clouds = document.createElement("canvas");
-  land.width = clouds.width = 1024;
-  land.height = clouds.height = 512;
+  land.width = clouds.width = width;
+  land.height = clouds.height = height;
   const ctx = land.getContext("2d")!,
     cloudCtx = clouds.getContext("2d")!;
-  const pixels = ctx.createImageData(1024, 512),
-    cloudPixels = cloudCtx.createImageData(1024, 512);
+  const pixels = ctx.createImageData(width, height),
+    cloudPixels = cloudCtx.createImageData(width, height);
   const hash = (x: number, y: number, z: number) => {
     const v = Math.sin(x * 127.1 + y * 311.7 + z * 74.7) * 43758.5453;
     return v - Math.floor(v);
@@ -41,10 +50,10 @@ function planetMaps() {
     noise(x * 2.1, y * 2.1, z * 2.1) * 0.27 +
     noise(x * 4.3, y * 4.3, z * 4.3) * 0.11 +
     noise(x * 8.5, y * 8.5, z * 8.5) * 0.05;
-  for (let y = 0; y < 512; y++)
-    for (let x = 0; x < 1024; x++) {
-      const lat = (y / 512) * Math.PI,
-        lng = (x / 1024) * Math.PI * 2;
+  for (let y = 0; y < height; y++)
+    for (let x = 0; x < width; x++) {
+      const lat = (y / height) * Math.PI,
+        lng = (x / width) * Math.PI * 2;
       const sx = Math.sin(lat) * Math.cos(lng),
         sy = Math.cos(lat),
         sz = Math.sin(lat) * Math.sin(lng);
@@ -76,20 +85,24 @@ function planetMaps() {
         b += shelf * 39;
       }
       const ice = Math.min(1, Math.max(0, (Math.abs(sy) - 0.92) * 14));
-      const k = (y * 1024 + x) * 4;
+      const k = (y * width + x) * 4;
       pixels.data[k] = r * (1 - ice) + 213 * ice;
       pixels.data[k + 1] = g * (1 - ice) + 228 * ice;
       pixels.data[k + 2] = b * (1 - ice) + 220 * ice;
-      pixels.data[k + 3] = 255;
+      pixels.data[k + 3] = terrain > 0.525 ? 128 : 255; // Ocean mask for solar glint.
+      // Latitude shear and domain warping form weather fronts instead of round spots.
+      const shear = lng + Math.sin(sy * 9) * 0.28;
+      const cx = Math.sin(lat) * Math.cos(shear),
+        cz = Math.sin(lat) * Math.sin(shear);
+      const curl = noise(cx * 5 + 31, sy * 7 + 9, cz * 5 + 7);
       const cloud = fbm(
-        sx * 7 + 17 + Math.sin(sy * 8) * 0.7,
-        sy * 8 + 13 + Math.sin(sz * 6) * 0.6,
-        sz * 7 + 5 + Math.sin(sx * 6) * 0.8,
+        cx * 10 + curl * 2 + 17,
+        sy * 17 + Math.sin(shear * 3) * 0.9 + 13,
+        cz * 10 + curl * 2 + 5,
       );
-      const wisp = noise(sx * 29 + 11, sy * 29 + 4, sz * 29 + 6);
-      const alpha =
-        Math.max(0, Math.min(0.87, (cloud - 0.485) * 5.2)) *
-        (0.65 + wisp * 0.35);
+      const wisp = noise(cx * 57 + 11, sy * 44 + 4, cz * 57 + 6);
+      const front = Math.max(0, Math.min(1, (cloud - 0.49) * 8));
+      const alpha = front * (0.45 + wisp * 0.5);
       cloudPixels.data[k] = 236;
       cloudPixels.data[k + 1] = 245;
       cloudPixels.data[k + 2] = 239;
@@ -102,47 +115,106 @@ function planetMaps() {
   groundMap.colorSpace = cloudMap.colorSpace = SRGBColorSpace;
   return { groundMap, cloudMap };
 }
+const planetVertex = `
+  varying vec2 vUv;
+  varying vec3 vNormalWorld;
+  varying vec3 vWorld;
+  void main() {
+    vUv = uv;
+    vNormalWorld = normalize(mat3(modelMatrix) * normal);
+    vec4 world = modelMatrix * vec4(position, 1.);
+    vWorld = world.xyz;
+    gl_Position = projectionMatrix * viewMatrix * world;
+  }
+`;
+const sunlight = new Vector3(-0.58, 0.68, 0.44).normalize();
 export function Planet({ reduced }: { reduced: boolean }) {
   const maps = useMemo(planetMaps, []),
     cloud = useRef<Mesh>(null);
+  const surface = useMemo(
+    () => ({
+      ground: { value: maps.groundMap },
+      clouds: { value: maps.cloudMap },
+      sunlight: { value: sunlight },
+    }),
+    [maps],
+  );
+  useEffect(
+    () => () => {
+      maps.groundMap.dispose();
+      maps.cloudMap.dispose();
+    },
+    [maps],
+  );
   useFrame((_, dt) => {
     if (cloud.current && !reduced)
       cloud.current.rotation.y += Math.min(dt, 0.05) * 0.0018;
   });
   return (
-    <group position={[21, 39, -107]} rotation={[0.08, -0.7, 0.22]}>
+    <group position={[40, 44, -116]} rotation={[0.08, -0.7, 0.22]}>
       <mesh>
-        <sphereGeometry args={[18.5, 80, 48]} />
-        <meshStandardMaterial
-          map={maps.groundMap}
-          roughness={0.72}
-          metalness={0.08}
-          emissive="#14364d"
-          emissiveIntensity={0.2}
-          fog={false}
+        <sphereGeometry args={[19.4, 80, 48]} />
+        <shaderMaterial
+          uniforms={surface}
+          vertexShader={planetVertex}
+          fragmentShader={`
+            uniform sampler2D ground; uniform sampler2D clouds; uniform vec3 sunlight;
+            varying vec2 vUv; varying vec3 vNormalWorld; varying vec3 vWorld;
+            void main() {
+              vec3 n = normalize(vNormalWorld), view = normalize(cameraPosition - vWorld);
+              vec4 terrain = texture2D(ground, vUv);
+              float solar = dot(n, sunlight);
+              float day = smoothstep(-.08, .18, solar);
+              float diffuse = max(0., solar);
+              float cloudShadow = texture2D(clouds, vUv + vec2(.002,-.001)).a;
+              vec3 color = terrain.rgb * (.018 + diffuse * 1.22) * (1. - cloudShadow * .17);
+              float glint = pow(max(0., dot(n, normalize(view + sunlight))), 85.);
+              color += vec3(1., .92, .78) * glint * smoothstep(.65,.95,terrain.a) * .26 * day;
+              float rim = pow(1. - max(0., dot(n, view)), 3.);
+              color += vec3(.025,.12,.24) * rim * day;
+              gl_FragColor = vec4(color, 1.);
+              #include <tonemapping_fragment>
+              #include <colorspace_fragment>
+            }`}
         />
       </mesh>
       <mesh ref={cloud}>
-        <sphereGeometry args={[18.57, 64, 40]} />
-        <meshStandardMaterial
-          map={maps.cloudMap}
-          transparent
-          depthWrite={false}
-          roughness={1}
-          opacity={0.9}
-          fog={false}
-        />
-      </mesh>
-      <mesh>
-        <sphereGeometry args={[18.9, 64, 40]} />
+        <sphereGeometry args={[19.48, 80, 48]} />
         <shaderMaterial
           transparent
           depthWrite={false}
-          vertexShader={`varying vec3 n;varying vec3 v;void main(){vec4 p=modelViewMatrix*vec4(position,1.);n=normalize(normalMatrix*normal);v=normalize(-p.xyz);gl_Position=projectionMatrix*p;}`}
-          fragmentShader={`varying vec3 n;varying vec3 v;void main(){float rim=pow(1.-max(0.,dot(normalize(n),normalize(v))),3.5);gl_FragColor=vec4(.32,.62,.76,rim*.65);#include <colorspace_fragment>}`.replace(
-            ";#include",
-            ";\n#include",
-          )}
+          uniforms={surface}
+          vertexShader={planetVertex}
+          fragmentShader={`
+            uniform sampler2D clouds; uniform vec3 sunlight;
+            varying vec2 vUv; varying vec3 vNormalWorld; varying vec3 vWorld;
+            void main() {
+              float opacity = texture2D(clouds,vUv).a;
+              float solar = max(0.,dot(normalize(vNormalWorld),sunlight));
+              vec3 color = vec3(.91,.95,1.) * (.014 + solar * 1.5);
+              gl_FragColor=vec4(color,opacity * .92);
+              #include <tonemapping_fragment>
+              #include <colorspace_fragment>
+            }`}
+        />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[19.7, 80, 48]} />
+        <shaderMaterial
+          transparent
+          depthWrite={false}
+          uniforms={surface}
+          vertexShader={planetVertex}
+          fragmentShader={`
+            uniform vec3 sunlight;
+            varying vec2 vUv; varying vec3 vNormalWorld; varying vec3 vWorld;
+            void main() {
+              vec3 n=normalize(vNormalWorld),v=normalize(cameraPosition-vWorld);
+              float rim=pow(1.-max(0.,dot(n,v)),4.5);
+              float day=smoothstep(-.18,.35,dot(n,sunlight));
+              gl_FragColor=vec4(.18,.46,.85,rim*(.06+day*.55));
+              #include <colorspace_fragment>
+            }`}
         />
       </mesh>
     </group>
