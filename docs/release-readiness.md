@@ -13,8 +13,12 @@
 
 `.github/workflows/pages.yml` runs on pushes to `master` and manual dispatch. It installs locked dependencies, builds, uploads `dist`, and deploys the official Pages artifact with Pages/OIDC permissions. Repository Pages source was changed to GitHub Actions on 26 October.
 
-Publication is blocked by GitHub connector write denial, read-only local Git metadata, and unavailable browser local-file upload access. No source commit or deployment reached GitHub. The source and final build are ready; the new workflow has not run remotely. See the latest entry in `implementation-status.md` for the final observed deployment state.
+The SSH source push reached GitHub as `11ed538`. Its first runner build failed on a missing Linux Rollup native package. The pinned lockfile repair in `7972b9e` completed a successful Pages workflow. The new art pass and readiness fixes have since been published through the signed-in GitHub editor; the complete-art deployment for `21f2229` succeeded, including its Linux build and Pages deployment. The live public scene was inspected and its application entry-point hash matches the local production build. Local Git metadata is still read-only in the agent session. See the latest entry in `implementation-status.md` for the final observed deployment state.
 
 ## Known limitations
 
 The large world/WASM chunk still raises Vite's advisory chunk-size warning. New artwork has not received device, accessibility or performance certification. Earlier passing checks and measurements apply to the earlier build. Fresh CV, exact current-role dates and recent public-safe case studies remain source-content gaps. The workshop and agent-routing models are illustrations.
+
+## SSH release command
+
+Run `npm run deploy:github` in a normal terminal. It builds first, fetches the SSH origin, commits the scoped project files, merges remote history without rewriting it, rebuilds if the merge changed HEAD, and pushes master. It refuses a different branch/remote or pre-existing staged changes. Conflicts and build failures stop publication; it never force-pushes.
