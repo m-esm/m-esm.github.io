@@ -36,12 +36,19 @@ Reconciled 26 October 2026. This tracks requested deliverables rather than claim
 - [x] Keep localhost available on port 5173 and visually review meaningful changes.
 - [x] Keep assets distributable and local, retain font/project licensing and avoid invented accomplishments.
 - [x] Keep README, implementation status and content evidence updated; distinguish historical tests from current build validation.
-- [ ] Confirm publication of the final checklist/story-card follow-up and verify the public document.
+- [x] Publish the story-card/checklist follow-up: 0b6686f, Pages run 40398666943 succeeded.
+
+## Company media pass — new request
+
+- [x] Search each employer separately: Songtradr, Starship, Serendip, TripeMa, Alibaba.aero and BoomFit.
+- [x] Expand verified company logos and relevant official imagery, with local assets, source credits and clear company-context captions.
+- [x] Review Starship partner identities separately from employers.
+- [ ] Build, publish over SSH and confirm the media additions publicly.
 
 ## Concrete source limitations
 
 - Two LinkedIn recommendation texts were publicly readable. Other recommendation entries and full LinkedIn experience were sign-in restricted; no additional quotes were fabricated.
-- Official logos were verified for Songtradr and Starship. A matching historical BoomFit identity was not established; unrelated gym/equipment brands were excluded. The earlier travel companies have text identities rather than guessed logos.
+- Official logos were verified for Songtradr and Starship. A matching historical BoomFit identity was not established; unrelated gym/equipment brands were excluded. TripeMa and Alibaba identities were subsequently recovered from their former designer’s portfolio. Bringg remains text; foodora’s official asset download returned HTTP 403.
 - Current Songtradr title and 2026 role context are owner-confirmed. No precise starting month, confidential project detail or subsidiary-product ownership is inferred.
 
 Suites, accessibility audits and performance benchmarks remain intentionally out of scope at the user's request; they are not unfinished deliverables. Further art iteration is open-ended, not a blocked deployment.

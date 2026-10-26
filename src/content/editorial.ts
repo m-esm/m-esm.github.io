@@ -96,23 +96,23 @@ export const editorial = {
   earlier: [
     {
       id: "serendip-story", years: "February 2018–June 2019",
-      title: "Tools for working with data", company: "Serendip",
+      title: "Tools for working with data", company: "Serendip", logo: "/assets/brands/serendip.png",
       text: "Co-founded Serendip Agency and built data dashboards, NoSQL browsing tools, services and reusable Node.js packages.",
     },
     {
       id: "tripema-story", years: "June–August 2019",
-      title: "Connecting a travel marketplace", company: "TripeMa",
+      title: "Connecting a travel marketplace", company: "TripeMa", logo: "/assets/brands/tripema.webp",
       text: "Worked on integrating TripeMa following its acquisition. The focus was connecting an existing travel product with the systems around it.",
     },
     {
       title: "Hotel inventory and financial integrations",
-      company: "Alibaba.aero",
+      company: "Alibaba.aero", logo: "/assets/brands/alibaba.webp",
       id: "alibaba-story", years: "August 2019–August 2020",
       text: "Integrated more than ten hotel inventory systems, built billing and invoicing integrations, and developed software to detect financial discrepancies.",
     },
     {
       title: "Video platform infrastructure",
-      company: "BoomFit",
+      company: "BoomFit", logo: null,
       id: "boomfit-story", years: "August 2020–February 2021",
       text: "Backend APIs, streaming, data processing and video intelligence on Google Cloud, alongside architecture documentation and a move toward a test-driven codebase.",
     },

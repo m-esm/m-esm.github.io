@@ -1,3 +1,7 @@
+## Company imagery and request reconciliation — 26 October 2026
+
+Added separate dated Serendip/TripeMa stories and reconciled all conversation requests in `request-checklist.md`. Researched each employer separately (`company-media-research.md`). Added historical Serendip/TripeMa/Alibaba identifiers, Wolt/Uber Eats/Deliveroo partner marks, Starship delivery photography and a captioned MassiveMusic performance image as Songtradr group context. Build passed; local imagery and historical logos visually reviewed. BoomFit identity remains unverified; foodora/Bringg asset downloads unavailable. Media deployment pending.
+
 ## Professional hierarchy and travel stories — 26 October 2026
 
 Promoted Songtradr and Starship to the hero with official local logos, current-role context and a separate partner-integration identity strip. Independent projects remain below professional evidence. Split TripeMa (June–August 2019) and Alibaba.aero (August 2019–August 2020) into separate timeline stories; added engineering focus labels, employer identifiers and refined card styling. Production build passed and local landing/timeline screenshots were reviewed. No suites, audits or benchmarks run. Published as 31b1c30; Pages run 40398300202 succeeded. The follow-up adds separate Serendip/TripeMa story cards and a reconciled request checklist.

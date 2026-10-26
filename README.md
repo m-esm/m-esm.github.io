@@ -6,7 +6,7 @@ The original phases 0–3 slice is now extended into a connected five-destinatio
 
 The five-destination station now has a full surface, foliage, machinery and robot art pass. Its dark orbital exterior includes stars, a finite pressure hull, exposed trusses, solar wings and thermal radiators. Daylight remains soft and bright inside the glass dome.
 
-The reading page leads with the current Songtradr role and Starship DaaS case study, with official company identifiers and clearly separated integration partners. A branching timeline includes distinct TripeMa and Alibaba travel-platform stories, CV-based dates, and independent project imagery.
+The reading page leads with the current Songtradr role and Starship DaaS case study, with company identifiers, sourced delivery/music photography and clearly separated integration partners. A branching timeline includes distinct TripeMa and Alibaba travel-platform stories, CV-based dates, and independent project imagery.
 
 ## Run locally
 
@@ -83,3 +83,5 @@ The station now includes a kinetic orbital sculpture west of arrival (click to p
 The generated `reading.html` is a Vite entry with static portfolio prose and progressively enhanced, inline 3D delivery/agent diagrams. `npm run build` regenerates it from the content and CSS sources. The page includes a dated chronology and two attributed LinkedIn recommendation excerpts. Public-project year labels denote repository creation, while the approximate DaaS transition is identified explicitly. The world adds ambient contact shading and antialiasing in standard quality mode; low quality retains direct rendering.
 
 The career chronology now branches between professional and independent work, with dated project cards, source links, original explanatory glyphs and credited Parviz/Mechlib images.
+
+The full conversation checklist is in `docs/request-checklist.md`; company-by-company media provenance and unresolved assets are in `docs/company-media-research.md`.

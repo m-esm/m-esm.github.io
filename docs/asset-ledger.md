@@ -18,3 +18,7 @@ Dependency licenses remain available in installed packages. Keep this ledger and
 ## Employer and partner identifiers — 26 October 2026
 
 Official Starship header SVG extracted from https://www.starship.xyz/ (monochrome colour set to its purple); Songtradr logo from the official MassiveMusic about page, original asset https://a.storyblok.com/f/343438/dae6821a26/songtradr-logo-white.svg. Bolt, Grubhub and S-kaupat identifiers from Starship’s official homepage, under /wp-content/uploads/2026/07/{Bolt,Grubhub,SKaupat}_HomepageLogo-300x203.avif. Locally hosted for editorial identification of employers and integration partners. Trademarks remain with their owners; no endorsement or open-source license is asserted. These are distinct from the licensed personal-project assets.
+
+## Company media expansion
+
+See `company-media-research.md` for individual employer searches and exact source URLs. Local company photos illustrate Starship delivery and the Songtradr group’s musical context. Historical Serendip, TripeMa and Alibaba identities and additional Wolt/Uber Eats/Deliveroo marks are editorial identifiers; rights remain with original owners.
