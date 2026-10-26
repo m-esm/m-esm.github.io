@@ -1,6 +1,6 @@
 ## Editorial upgrade — 26 October 2026
 
-Implemented a redesigned static portfolio with expanded, evidence-grounded delivery case study, original diagrams, historical project context, contact section, and complete board transcripts. Added a dismissible station introduction and a five-destination map. Production build passed; suites/audits/benchmarks were not run. Publishing uses a separate checkout of remote master and SSH because the original checkout metadata remains read-only. Deployment verification is recorded after publication.
+Implemented a redesigned static portfolio with expanded, evidence-grounded delivery case study, original diagrams, historical project context, contact section, and complete board transcripts. Added a dismissible station introduction and a five-destination map. Production build passed; suites/audits/benchmarks were not run. Publishing uses a separate checkout of remote master and SSH because the original checkout metadata remains read-only. Published over SSH as `8307e77`. GitHub Pages workflow [40386050521](https://github.com/m-esm/m-esm.github.io/actions/runs/40386050521) completed successfully. The redesigned page was confirmed live at https://m-esm.github.io/reading.html. The original localhost preview remains available.
 
 # Visual continuation — 26 October 2026
 
