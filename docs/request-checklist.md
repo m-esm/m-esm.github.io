@@ -67,4 +67,4 @@ Suites, accessibility audits and performance benchmarks remain intentionally out
 - [x] Provide pause/reduced-motion behavior.
 - [x] Rethink each presentation component individually: navigation/mobile menu, hero, music and delivery chapters, recommendation selector, project evidence/diagrams, timeline eras, orbital destination selector, contact, loading and favicon.
 - [x] Give delivery and agent work new selectable 3D models and synchronize their automatic animation with the page pause control.
-- [ ] Publish and verify the motion redesign.
+- [x] Publish and verify the motion redesign: 7899c63 plus b88485e, Pages run 40404738120 succeeded; public homepage, matching motion bundle and corrected reading route confirmed.
