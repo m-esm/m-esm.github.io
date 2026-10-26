@@ -79,3 +79,5 @@ The station now includes a kinetic orbital sculpture west of arrival (click to p
 ## Reading page and rendering finish
 
 The generated `reading.html` is a Vite entry with static portfolio prose and progressively enhanced, inline 3D delivery/agent diagrams. `npm run build` regenerates it from the content and CSS sources. The page includes a dated chronology and two attributed LinkedIn recommendation excerpts. Public-project year labels denote repository creation, while the approximate DaaS transition is identified explicitly. The world adds ambient contact shading and antialiasing in standard quality mode; low quality retains direct rendering.
+
+The career chronology now branches between professional and independent work, with dated project cards, source links, original explanatory glyphs and credited Parviz/Mechlib images.

@@ -1,10 +1,14 @@
+## Branching career tree — 26 October 2026
+
+Expanded the chronology into professional and independent branches, with a continuous spine, visible year nodes, teal/amber track colours and a single-column mobile treatment. Added separate public-project entries, original explanatory SVG glyphs, and the existing licensed Parviz/Mechlib imagery with credits. Improved recommendation panel spacing and background colours. Production build passed; local browser screenshot reviewed. Publication pending.
+
 ## Scene finish, chronology and embedded diagrams — 26 October 2026
 
 - Added a composed render pipeline with ambient contact shading, output colour conversion and SMAA; low mode retains direct rendering. Rebalanced daylight/reflections, lightened paving, narrowed the camera lens and moved arrival boards aside to reveal the courtyard.
 - Replaced the reading-page decorative planet with actual Parviz CAD imagery; refined typography, spacing and the smaller station introduction.
 - Added CV-based chronology, dated work sections and public repository creation years. DaaS start is explicitly approximate. Added short attributed Taavi Pungas and Pekka Kosonen recommendation excerpts from the public LinkedIn profile.
 - Added two inline WebGL conceptual diagrams with rotation, selectable stages and pause controls. They mount only near the viewport. Written portfolio content remains static HTML; the delivery SVG is the no-JavaScript fallback. The generated reading document is now a root Vite HTML entry (`reading.html`) so its progressive enhancement is bundled correctly.
-- Production build passed; visually reviewed the scene, hero, delivery diagram and timeline. No suites, accessibility audits or benchmarks run. Deployment verification pending.
+- Production build passed; visually reviewed the scene, hero, delivery diagram and timeline. No suites, accessibility audits or benchmarks run. Published as `e6b723e`; Pages run 40395444516 succeeded and the public reading HTML was confirmed to contain the matching bundle, recommendations, timeline and inline diagrams.
 
 ## Habitat expansion — 26 October 2026
 

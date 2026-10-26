@@ -921,3 +921,65 @@ article[id] {
  .graphic-stages button { padding:12px 5px; font-size:14px; }
  .reading-header nav { gap:14px; }
 }
+
+/* Two branches share one continuous time spine. Track colours carry meaning. */
+.career-timeline { --career:#80d7cc; --personal:#e7b878; background:#163946; color:#f0f5f3; margin:48px -48px; padding:64px 48px; border:0; border-radius:20px; }
+.timeline-heading { display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:54px; }
+.career-timeline .section-context { color:#a7c4cd; }
+.career-timeline h2 { max-width:19ch; margin-bottom:24px; }
+.career-timeline .timeline-intro { color:#b9d0d5; max-width:52ch; font-size:18px; }
+.timeline-legend { display:grid; gap:12px; min-width:180px; font-size:13px; padding-bottom:4px; }
+.timeline-legend span { display:flex; align-items:center; gap:10px; }
+.timeline-legend span:before { content:''; width:10px; height:10px; border-radius:50%; background:var(--career); }
+.timeline-legend .independent:before { background:var(--personal); }
+.career-timeline .time-tree { display:grid; grid-template-columns:1fr 1fr; column-gap:84px; margin:0; position:relative; padding:12px 0 36px; }
+.time-tree:before { content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; transform:translateX(-1px); background:#668f98; }
+.career-timeline .timeline-entry { --branch:var(--career); display:block; position:relative; padding:0; margin:0 0 24px; min-width:0; grid-column:1; }
+.career-timeline .timeline-entry.independent { --branch:var(--personal); grid-column:2; }
+.timeline-entry:before { content:''; position:absolute; width:42px; height:2px; top:46px; right:-42px; background:var(--branch); }
+.timeline-entry.independent:before { right:auto; left:-42px; }
+.timeline-node { position:absolute; right:-48px; top:40px; width:14px; height:14px; border:3px solid #163946; border-radius:50%; background:var(--branch); z-index:1; box-shadow:0 0 0 1px var(--branch); }
+.independent .timeline-node { right:auto; left:-48px; }
+.timeline-card { background:#204652; border:1px solid #42636c; border-radius:12px; padding:24px; }
+.independent .timeline-card { background:#28434b; border-color:#686759; }
+.timeline-card > header { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+.timeline-glyph { width:56px; height:50px; flex-shrink:0; color:var(--branch); }
+.timeline-glyph svg { display:block; width:100%; height:100%; }
+.career-timeline .timeline-card time { display:block; color:var(--branch); font-size:23px; line-height:1.15; padding:0; }
+.timeline-track { display:block; font-size:11px; margin-top:6px; color:#aac4cb; }
+.career-timeline .timeline-card h3 { color:#f0f5f3; font-size:24px; line-height:1.2; margin:0 0 12px; }
+.career-timeline .timeline-card p { font-size:15px; color:#c4d7da; line-height:1.7; }
+.timeline-card > a { display:inline-block; margin-top:20px; font-size:13px; color:var(--branch); }
+.timeline-image { margin:22px -8px 0; overflow:hidden; border-radius:8px; background:#192c36; }
+.timeline-image img { display:block; width:100%; height:230px; object-fit:contain; }
+.timeline-image.robot img { object-fit:cover; object-position:50% 40%; height:300px; }
+.timeline-image.mechanical img { height:auto; aspect-ratio:1200/394; }
+.timeline-image figcaption { font-size:11px; padding:10px 12px; color:#b3cbd1; }
+.career-timeline > .caption { color:#a7c4cd; max-width:92ch; margin-top:36px; font-size:12px; line-height:1.8; }
+.career-timeline > .caption a { color:#d5e4e6; }
+.recommendations .recommendation { border-left:0; padding:28px 24px; border-radius:0 0 12px 12px; background:#e2eae8; }
+.recommendations .recommendation:nth-child(2) { background:#e4e6ee; border-top-color:#7d89a6; }
+.primary-link { background:#236578; }
+.project-year { color:#236578; }
+@media(max-width:900px) {
+ .career-timeline { margin:36px -24px; padding:48px 24px; }
+ .timeline-heading { display:block; }
+ .timeline-legend { display:flex; flex-wrap:wrap; margin-top:24px; gap:20px; }
+ .career-timeline .time-tree { column-gap:52px; }
+ .timeline-entry:before { width:26px; right:-26px; }
+ .timeline-entry.independent:before { left:-26px; }
+ .timeline-node { right:-32px; }
+ .independent .timeline-node { left:-32px; }
+ .timeline-card { padding:18px; }
+}
+@media(max-width:650px) {
+ .career-timeline { margin:32px -12px; padding:36px 22px; border-radius:12px; }
+ .career-timeline .time-tree { display:block; padding-left:25px; }
+ .time-tree:before { left:0; }
+ .career-timeline .timeline-entry { margin-bottom:20px; }
+ .timeline-entry:before, .timeline-entry.independent:before { right:auto; left:-25px; width:25px; }
+ .timeline-node, .independent .timeline-node { right:auto; left:-32px; }
+ .career-timeline .timeline-card time { font-size:21px; }
+ .timeline-heading { margin-bottom:34px; }
+ .timeline-image.robot img { height:240px; }
+}
