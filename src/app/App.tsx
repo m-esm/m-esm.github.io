@@ -118,10 +118,10 @@ export function App() {
       surface.current?.focus({ preventScroll: true });
   }, []);
   useEffect(() => {
-    if (ready || error) return;
+    if (ready || error || hidden) return;
     const timer = setTimeout(fail, 20000);
     return () => clearTimeout(timer);
-  }, [ready, error, fail]);
+  }, [ready, error, hidden, fail]);
   useEffect(() => {
     const resize = () => setPortrait(innerWidth < 700);
     resize();
