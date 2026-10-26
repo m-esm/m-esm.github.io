@@ -59,3 +59,7 @@ For future SSH releases, run `npm run deploy:github`. It builds, fetches the SSH
 
 The interview decisions remain authoritative: **open settlement under glass, soft daylight, wheeled robot, free exploration, physical portfolio text**. A separate static reading view supplies equivalent content without JavaScript or WebGL. Asset provenance is in [the asset ledger](docs/asset-ledger.md).
 
+
+## Editorial portfolio upgrade
+
+The reading document now presents a full delivery-platform case study, a conceptual flow diagram, historical project profiles, and a direct contact section. The playable station has a dismissible introduction and a diagrammatic destination map. All prose derives from the existing approved brief; no new metrics or private project claims were added. Run `npm run build` to regenerate the reading document after editorial changes.

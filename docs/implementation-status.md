@@ -1,3 +1,7 @@
+## Editorial upgrade — 26 October 2026
+
+Implemented a redesigned static portfolio with expanded, evidence-grounded delivery case study, original diagrams, historical project context, contact section, and complete board transcripts. Added a dismissible station introduction and a five-destination map. Production build passed; suites/audits/benchmarks were not run. Publishing uses a separate checkout of remote master and SSH because the original checkout metadata remains read-only. Deployment verification is recorded after publication.
+
 # Visual continuation — 26 October 2026
 
 - Replaced the marble-like planet lighting with a defined solar direction, day/night boundary, ocean-only glint, cloud shadows and an atmosphere lit along the sunward limb. Latitude shear and warped noise create finer weather fronts. The planet moved right of the communications tower to improve the arrival composition.

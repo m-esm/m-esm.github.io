@@ -11,10 +11,12 @@ import type { ReactNode } from "react";
 import { boardRoute, input, parseRoute } from "./state";
 import type { Route } from "./state";
 import { runtime } from "./runtime";
-import { destinations, exhibitForBoard } from "../content/portfolio";
+import { exhibitForBoard } from "../content/portfolio";
 import type { SectorId } from "../content/portfolio";
 import { nearestSector } from "../world/layout";
 import { TouchControls } from "../ui/TouchControls";
+import { StationMap } from "../ui/StationMap";
+import { editorial } from "../content/editorial";
 const World = lazy(() => import("../world/World"));
 class Boundary extends Component<
   { children: ReactNode; onError: () => void },
@@ -47,6 +49,9 @@ export function App() {
     [error, setError] = useState(() => !canRender()),
     [near, setNear] = useState<string | null>(null),
     [menu, setMenu] = useState(false),
+    [welcome, setWelcome] = useState(
+      !location.hash || location.hash === "#/sector/arrival",
+    ),
     [portrait, setPortrait] = useState(innerWidth < 700),
     [low, setLow] = useState(innerWidth < 700),
     [reduced, setReduced] = useState(
@@ -60,7 +65,7 @@ export function App() {
   const applyRoute = useCallback((next: Route, transfer: boolean) => {
     input.clear();
     if (next.kind === "read") {
-      location.assign("/reading.html#delivery-systems");
+      location.assign("/reading.html");
       return;
     }
     if (transfer) {
@@ -87,6 +92,7 @@ export function App() {
       history.pushState(null, "", hash);
       applyRoute(parseRoute(hash), true);
       setMenu(false);
+      setWelcome(false);
       surface.current?.focus();
     },
     [applyRoute],
@@ -99,6 +105,7 @@ export function App() {
         : history.pushState(null, "", hash);
       applyRoute(parseRoute(hash), false);
       setMenu(false);
+      setWelcome(false);
     },
     [applyRoute],
   );
@@ -225,7 +232,7 @@ export function App() {
           The 3D station could not start or its graphics connection was lost.
           All portfolio content is available in the reading view.
         </p>
-        <a href="/reading.html#delivery-systems">Read portfolio</a>
+        <a href="/reading.html">Read portfolio</a>
         <button onClick={() => location.reload()}>Try the station again</button>
       </main>
     );
@@ -294,9 +301,9 @@ export function App() {
           aria-controls="station-menu"
           onClick={() => setMenu((v) => !v)}
         >
-          ☷ <span>Station controls</span>
+          ☷ <span>Map & controls</span>
         </button>
-        <a href="/reading.html#delivery-systems">Read portfolio</a>
+        <a href="/reading.html">Read portfolio</a>
       </div>
       {menu && (
         <aside
@@ -314,83 +321,123 @@ export function App() {
             WASD / arrows to drive. Drag to look.
             <br />E to inspect a nearby sign. Esc to leave.
           </p>
-          <div className="menu-grid">
-            <button onClick={() => go("arrival")}>Return to arrival</button>
-            {destinations.map((d) => (
-              <button key={d.id} onClick={() => go(d.id)}>
-                Go to {d.label}
+          <StationMap
+            current={nearestSector(runtime.position)}
+            onGo={go}
+          />
+          <details className="camera-controls">
+            <summary>Camera & display</summary>
+            <div className="menu-grid">
+              <button
+                onClick={() => {
+                  runtime.recenter++;
+                }}
+              >
+                Recenter camera
               </button>
-            ))}
-            <button
-              onClick={() => {
-                runtime.recenter++;
-              }}
-            >
-              Recenter camera
-            </button>
-            <button onClick={() => inspect("arrival")}>
-              Inspect identity sign
-            </button>
-            <button
-              aria-label="Rotate camera left"
-              onClick={() => {
-                input.yaw += 0.3;
-              }}
-            >
-              Look left
-            </button>
-            <button
-              aria-label="Rotate camera right"
-              onClick={() => {
-                input.yaw -= 0.3;
-              }}
-            >
-              Look right
-            </button>
-            <button
-              onClick={() => {
-                input.pitch = Math.min(0.65, input.pitch + 0.15);
-              }}
-            >
-              Look up
-            </button>
-            <button
-              onClick={() => {
-                input.pitch = Math.max(-0.4, input.pitch - 0.15);
-              }}
-            >
-              Look down
-            </button>
-          </div>
-          <label>
-            Detail{" "}
-            <select
-              value={low ? "low" : "standard"}
-              onChange={(e) => setLow(e.target.value === "low")}
-            >
-              <option value="standard">Standard</option>
-              <option value="low">Low</option>
-            </select>
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={reduced}
-              onChange={(e) => setReduced(e.target.checked)}
-            />{" "}
-            Reduce motion
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={paused}
-              onChange={(e) => setPaused(e.target.checked)}
-            />{" "}
-            Pause exhibit models
-          </label>
+              <button onClick={() => inspect("arrival")}>
+                Inspect identity sign
+              </button>
+              <button
+                aria-label="Rotate camera left"
+                onClick={() => {
+                  input.yaw += 0.3;
+                }}
+              >
+                Look left
+              </button>
+              <button
+                aria-label="Rotate camera right"
+                onClick={() => {
+                  input.yaw -= 0.3;
+                }}
+              >
+                Look right
+              </button>
+              <button
+                onClick={() => {
+                  input.pitch = Math.min(0.65, input.pitch + 0.15);
+                }}
+              >
+                Look up
+              </button>
+              <button
+                onClick={() => {
+                  input.pitch = Math.max(-0.4, input.pitch - 0.15);
+                }}
+              >
+                Look down
+              </button>
+            </div>
+            <label>
+              Detail{" "}
+              <select
+                value={low ? "low" : "standard"}
+                onChange={(e) => setLow(e.target.value === "low")}
+              >
+                <option value="standard">Standard</option>
+                <option value="low">Low</option>
+              </select>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={reduced}
+                onChange={(e) => setReduced(e.target.checked)}
+              />{" "}
+              Reduce motion
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={paused}
+                onChange={(e) => setPaused(e.target.checked)}
+              />{" "}
+              Pause exhibit models
+            </label>
+          </details>
           <p className="menu-foot">
             Sound is off. Free exploration; nothing to unlock.
           </p>
+        </aside>
+      )}
+      {ready && welcome && !selected && !menu && (
+        <aside className="arrival-introduction" aria-label="Welcome">
+          <button
+            className="intro-dismiss"
+            aria-label="Dismiss introduction"
+            onClick={() => setWelcome(false)}
+          >
+            ×
+          </button>
+          <p className="intro-name">
+            Mohsen Esmaeili <span>Helsinki</span>
+          </p>
+          <h1>{editorial.headline}</h1>
+          <p>
+            Platforms, integrations, and developer tools. Take a robot through
+            my work, or read the portfolio.
+          </p>
+          <div className="intro-actions">
+            <button
+              onClick={() => {
+                setWelcome(false);
+                surface.current?.focus();
+              }}
+            >
+              Explore freely
+            </button>
+            <a href="/reading.html">Read my work</a>
+          </div>
+          <button
+            className="intro-feature"
+            onClick={() => {
+              go("systems");
+              inspect("context");
+            }}
+          >
+            Featured work <strong>Delivery-as-a-Service at Starship</strong>
+          </button>
         </aside>
       )}
       {!ready && (
