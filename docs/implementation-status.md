@@ -1,6 +1,6 @@
 ## Professional hierarchy and travel stories — 26 October 2026
 
-Promoted Songtradr and Starship to the hero with official local logos, current-role context and a separate partner-integration identity strip. Independent projects remain below professional evidence. Split TripeMa (June–August 2019) and Alibaba.aero (August 2019–August 2020) into separate timeline stories; added engineering focus labels, employer identifiers and refined card styling. Production build passed and local landing/timeline screenshots were reviewed. No suites, audits or benchmarks run. Publication in progress.
+Promoted Songtradr and Starship to the hero with official local logos, current-role context and a separate partner-integration identity strip. Independent projects remain below professional evidence. Split TripeMa (June–August 2019) and Alibaba.aero (August 2019–August 2020) into separate timeline stories; added engineering focus labels, employer identifiers and refined card styling. Production build passed and local landing/timeline screenshots were reviewed. No suites, audits or benchmarks run. Published as 31b1c30; Pages run 40398300202 succeeded. The follow-up adds separate Serendip/TripeMa story cards and a reconciled request checklist.
 
 ## Branching career tree — 26 October 2026
 
