@@ -18,9 +18,18 @@ import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js
 import { palette as p } from "./layout";
 export type V3 = [number, number, number];
 const cube = new BoxGeometry(1, 1, 1),
-  bevel = new RoundedBoxGeometry(1, 1, 1, 1, 0.07),
   cylinder = new CylinderGeometry(1, 1, 1, 12),
   sphere = new SphereGeometry(1, 10, 7);
+const bevels = new Map<string, BufferGeometry>();
+function beveledBox(size: V3) {
+  const key = size.join(",");
+  if (!bevels.has(key)) {
+    // A metal edge has a physical radius; stretching a unit bevel rounded whole walls.
+    const radius = Math.min(0.065, ...size.map((n) => n * 0.24));
+    bevels.set(key, new RoundedBoxGeometry(...size, 2, radius));
+  }
+  return bevels.get(key)!;
+}
 const materials = new Map<string, MeshStandardMaterial>();
 export function mat(color: string) {
   if (!materials.has(color)) {
@@ -92,9 +101,9 @@ export function Box({
   return (
     <mesh
       position={at}
-      scale={size}
+      scale={round ? 1 : size}
       rotation={rotation}
-      geometry={round ? bevel : cube}
+      geometry={round ? beveledBox(size) : cube}
       material={mat(color)}
       castShadow
       receiveShadow
