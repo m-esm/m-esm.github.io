@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-25T12:24:27.214Z",
+  "durationMs": 3568,
+  "viewport": { "width": 1440, "height": 900 },
+  "network": "20 Mbps down / 5 Mbps up; 80 ms CDP latency; HTTP cache disabled. WASM and shader caches not purged.",
+  "build": "http://127.0.0.1:4173/assets/index-KNAQm-vT.js",
+  "renderer": "ANGLE Metal Renderer: Apple M1 Pro"
+}

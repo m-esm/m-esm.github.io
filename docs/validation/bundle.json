@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "file": "dist/assets/IBM-Plex-LICENSE.txt",
+      "bytes": 4429,
+      "gzip": 1981
+    },
+    {
+      "file": "dist/assets/World-j7Ep66kM.js",
+      "bytes": 2605296,
+      "gzip": 955671
+    },
+    {
+      "file": "dist/assets/index-DOBW_z6V.css",
+      "bytes": 7757,
+      "gzip": 2370
+    },
+    {
+      "file": "dist/assets/index-KNAQm-vT.js",
+      "bytes": 946672,
+      "gzip": 258371
+    },
+    {
+      "file": "dist/assets/plex-mono.woff2",
+      "bytes": 14708,
+      "gzip": 14731
+    },
+    {
+      "file": "dist/assets/plex-sans-medium.woff2",
+      "bytes": 24184,
+      "gzip": 24173
+    },
+    {
+      "file": "dist/assets/plex-sans.woff",
+      "bytes": 22104,
+      "gzip": 21996
+    },
+    {
+      "file": "dist/assets/plex-sans.woff2",
+      "bytes": 22588,
+      "gzip": 22598
+    },
+    {
+      "file": "dist/favicon.svg",
+      "bytes": 324,
+      "gzip": 224
+    },
+    {
+      "file": "dist/index.html",
+      "bytes": 5014,
+      "gzip": 1992
+    },
+    {
+      "file": "dist/reading.html",
+      "bytes": 4844,
+      "gzip": 2025
+    }
+  ],
+  "totalBytes": 3657920,
+  "totalGzipBytes": 1306132
+}

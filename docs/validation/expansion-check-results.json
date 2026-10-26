@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-25",
+  "build": "index-KNAQm-vT.js / World-j7Ep66kM.js",
+  "typecheck": "pass",
+  "build_result": "pass",
+  "logic_tests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "browser": {
+    "passed": 16,
+    "failed": 0,
+    "combined_run": true,
+    "duration_reported": "3.8 minutes",
+    "command": "PW_EXECUTABLE=/Users/moshe/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell PW_RENDERER=metal npm run test:e2e",
+    "renderer": "Isolated Chromium 1243 headless shell, ANGLE Metal, Apple M1 Pro",
+    "log": "expansion-browser-tests.txt"
+  },
+  "webkit": {
+    "board_layout_checks": 16,
+    "page_errors": 0,
+    "widths": [1440, 390],
+    "full_interaction_suite": false,
+    "report": "expansion-webkit-check.json"
+  },
+  "workflow": {
+    "yaml_parse": "Ruby standard-library YAML parser passed",
+    "remote_execution": "not run"
+  },
+  "publication": "No commit, push, deployment or remote settings change"
+}

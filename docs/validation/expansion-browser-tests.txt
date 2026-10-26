@@ -1,0 +1,34 @@
+
+Running 16 tests using 1 worker
+
+  ✓   1 tests/browser/expansion.spec.ts:6:3 › expanded physical boards and directory fit at 1440px (8.6s)
+  ✓   2 tests/browser/expansion.spec.ts:6:3 › expanded physical boards and directory fit at 390px (8.9s)
+  ✓   3 tests/browser/expansion.spec.ts:53:1 › new exhibit deep links and history put the robot on the correct terrace (7.2s)
+Driving a to x=-18
+Driving s to z=18
+Driving a to x=-28
+Driving w to z=-17
+Driving a to x=-34.2
+Driving w to z=-34
+Driving d to x=27
+Driving s to z=12
+Driving s to z=22.5
+Driving a to x=2
+Driving w to z=7
+Driving a to x=0
+Driving d to x=26
+  ✓   4 tests/browser/expansion.spec.ts:99:1 › drive the connected loop over all four new ramps and return to arrival (1.9m)
+  ✓   5 tests/browser/expansion.spec.ts:143:1 › static reading includes all curated exhibits without JavaScript (186ms)
+  ✓   6 tests/browser/expansion.spec.ts:161:1 › garden transfer keeps the follow camera clear of the contact board (3.3s)
+  ✓   7 tests/browser/slice.spec.ts:36:3 › physical story and actual links fit at 1440px (7.3s)
+  ✓   8 tests/browser/slice.spec.ts:36:3 › physical story and actual links fit at 390px (7.3s)
+  ✓   9 tests/browser/slice.spec.ts:84:1 › keyboard drives down and back up the full ramp; rails block shortcuts (34.1s)
+  ✓  10 tests/browser/slice.spec.ts:118:1 › blur clears held movement; orbit persists and recenter is explicit (6.2s)
+  ✓  11 tests/browser/slice.spec.ts:143:1 › direct routes, Back/Forward, unknown IDs and distinct reading mode (4.8s)
+  ✓  12 tests/browser/slice.spec.ts:167:1 › touch joystick drives the ramp and releases cleanly (16.0s)
+  ✓  13 tests/browser/slice.spec.ts:211:1 › reduced motion and context loss preserve usable content (3.2s)
+  ✓  14 tests/browser/slice.spec.ts:233:1 › no WebGL, failed essential assets and no JavaScript have real fallback content (743ms)
+  ✓  15 tests/browser/slice.spec.ts:268:1 › production assets stay local and there are no unexpected console errors (4.7s)
+  ✓  16 tests/browser/slice.spec.ts:292:1 › physical sign face clicks inspect and world dragging stays available (4.2s)
+
+  16 passed (3.8m)

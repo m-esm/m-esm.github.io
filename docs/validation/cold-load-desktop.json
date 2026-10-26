@@ -1,0 +1,42 @@
+{
+  "conditions": {
+    "cache": "HTTP disabled; GPU/shader and compiled WASM caches not purged",
+    "downloadMbps": 20,
+    "latencyMs": 80,
+    "build": "production preview, final physical-text strategy"
+  },
+  "date": "2026-10-24T20:12:43.287Z",
+  "timeToObservedReadyMs": 3569.3000000715256,
+  "viewport": [
+    1440,
+    900
+  ],
+  "dpr": 1,
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "resources": [
+    {
+      "url": "http://127.0.0.1:4173/assets/index-BA8iEyNq.js",
+      "transfer": 256902,
+      "decoded": 942471,
+      "duration": 199.20000004768372
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/index-BdQ1y0qr.css",
+      "transfer": 2594,
+      "decoded": 7376,
+      "duration": 87.60000002384186
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/World-CKuaT8Cn.js",
+      "transfer": 954229,
+      "decoded": 2598616,
+      "duration": 490.8000000715256
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/plex-sans.woff2",
+      "transfer": 22888,
+      "decoded": 22588,
+      "duration": 101.39999997615814
+    }
+  ]
+}

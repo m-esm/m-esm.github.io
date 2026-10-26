@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-24",
+  "build": "production preview, final physical-text strategy",
+  "browser": "Chrome 156, Playwright MCP",
+  "renderer": "ANGLE Metal Renderer: Apple M1 Pro",
+  "viewport": [
+    1440,
+    900
+  ],
+  "dpr": 1,
+  "detail": "standard, 2048 shadow map",
+  "conditions": "Headless browser with actual Metal renderer. Other isolated software-rendered acceptance tests ran concurrently; not an isolated system benchmark.",
+  "route": "Arrival, ramp, systems yard, all three story boards, ramp return, orbit/recenter",
+  "end": "2026-10-24T20:09:42.843Z",
+  "frames": 4283,
+  "durationMs": 71382.2,
+  "meanMs": 16.6664020546,
+  "p50Ms": 16.7,
+  "p95Ms": 17.6,
+  "p99Ms": 17.7,
+  "maxMs": 19.4,
+  "position": {
+    "x": -5.5068693161,
+    "y": 3.6141028404,
+    "z": 21.1637611389
+  },
+  "metrics": {
+    "calls": 113,
+    "triangles": 65818,
+    "textures": 3
+  }
+}

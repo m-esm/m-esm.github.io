@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-24",
+  "build": "production, World-CKuaT8Cn.js",
+  "typecheck": "passed",
+  "buildCheck": "passed; large world-chunk warning retained",
+  "logicTests": { "passed": 7, "failed": 0 },
+  "browserScenarios": {
+    "uniqueValidated": 10,
+    "renderer": "isolated Chromium headless shell 1243, SwiftShader",
+    "combinedFinalRun": {"passed": 8, "failed": 2},
+    "combinedFailures": ["Premature desktop board bounds read before visible pose", "Full ramp return exceeded 40 seconds in software renderer"],
+    "targetedRerun": {"passed": 3, "failed": 0, "scenarios": ["desktop physical reading", "portrait physical reading", "full keyboard ramp down/return and rails"]},
+    "notes": "Reading assertions now await visible physical prose. Same final application build used for targeted rerun. Other eight scenarios passed in combined run."
+  },
+  "webkit": { "version": "27.2", "sceneAndPhysicalReading": "visually inspected and passed", "rampToYard": "passed", "pageErrors": [] },
+  "formatCheck": "passed",
+  "lockfileDryRun": "passed",
+  "gitDiffCheck": "passed",
+  "unverified": ["actual phone GPU and touch ergonomics", "manual Safari", "screen-reader listening", "actual 30/60/120 Hz display comparison", "total GPU memory"]
+}
