@@ -1,6 +1,6 @@
 ## Habitat expansion — 26 October 2026
 
-Added an interactive orbital sculpture in the western courtyard, a framed docking hall beyond arrival, and a two-tier hydroponic nursery along the eastern perimeter. The sculpture has a solid base collider and respects pause/reduced-motion settings. Dock and nursery are scenic wings beyond the existing safety rails, not new playable districts. All geometry is original and local; no professional claims changed. Production build and publication are recorded below after completion. No test suites or audits requested.
+Added an interactive orbital sculpture in the western courtyard, a framed docking hall beyond arrival, and a two-tier hydroponic nursery along the eastern perimeter. The sculpture has a solid base collider and respects pause/reduced-motion settings. Dock and nursery are scenic wings beyond the existing safety rails, not new playable districts. All geometry is original and local; no professional claims changed. Production build passed. Published over SSH as `264bb0e`; Pages run [40393761691](https://github.com/m-esm/m-esm.github.io/actions/runs/40393761691) succeeded. Public HTML serves the matching `index-BJP17T9p.js` build. Local scene screenshots confirmed the docking hall, nursery and orbital sculpture. Localhost remains running. No test suites or audits requested.
 
 ## Featured-work and source-CAD pass — 26 October 2026
 
