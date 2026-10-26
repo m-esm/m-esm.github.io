@@ -1,4 +1,20 @@
-# Visual release — 26 October 2026
+# Visual continuation — 26 October 2026
+
+- Replaced the marble-like planet lighting with a defined solar direction, day/night boundary, ocean-only glint, cloud shadows and an atmosphere lit along the sunward limb. Latitude shear and warped noise create finer weather fronts. The planet moved right of the communications tower to improve the arrival composition.
+- Rebuilt four background buildings as assembled habitat modules: panel joints, deep window reveals, mullions, pressure-door gaskets and levers, threshold plates, rooftop ventilation and service risers. Their new positions keep the footprints within the pressure dome.
+- Beveled hardware now uses an actual physical corner radius, rather than stretching a rounded unit cube. Large structures have restrained edge highlights, while small robot panels keep their rounded profile.
+- Added bolted pergola bases, head collars, knee braces, intermediate roof members and tension ties. Moved roof tanks with their building and lowered the satellite dish onto its support.
+- Fixed two live-preview issues found during the art pass: readiness is now announced per controller mount after hot reloads; the startup timeout pauses while the document is hidden.
+- Production build and strict TypeScript check passed. Inspected actual arrival and garden screenshots. No test suites, accessibility audit or performance benchmark were run.
+- The earlier SSH push is now present locally and remotely as `11ed538`. Its Pages workflow failed because `@rollup/rollup-linux-x64-gnu` was missing from the Mac-generated lockfile. Added the existing Rollup version 4.65.0 with the official registry integrity in `7972b9e`; its workflow completed successfully.
+- Published the new visual source using the signed-in GitHub editor. Two editor replacements initially appended text; those files were corrected. All eight visual/runtime source files were compared against the locally built source through GitHub's rendered file-content control, ignoring only the final newline. Corrected controller revision: `21f2229`.
+- Complete-art Pages build and deployment succeeded for revision `21f2229` (26 s build, 12 s deploy). Confirmed the public URL renders the complete scene with the revised planet, module façades, solar wings and wheeled robot. Its application asset `/assets/index-C2XGGctv.js` matches the locally built production entry point. Successful earlier run: https://github.com/m-esm/m-esm.github.io/actions/runs/40377753986 . Latest complete-art run: https://github.com/m-esm/m-esm.github.io/actions/runs/40379499487 .
+- Local Git metadata remains read-only: the deployment command completed the production build, then stopped when Git could not write `.git/FETCH_HEAD`. Local working files remain intact. `npm run deploy:github` provides the SSH build/commit/merge/push sequence for a normal terminal and never force-pushes.
+- Local preview remains at http://127.0.0.1:5173/ . Public target: https://m-esm.github.io/ .
+
+---
+
+# Initial space pass — 26 October 2026 (historical checkpoint)
 
 - Preserved and completed the previously uncommitted five-destination implementation and extensive local art pass: paving, foliage, courtyard tree, sign housings, service pipes, rooftop equipment, tools, bench details, delivery model, workshop mechanism, routing sculpture and detailed wheeled robot.
 - Replaced the atmospheric blue/gray sky with near-black space and seeded stars of varied brightness and restrained colour. The camera-centred star shell has no translation parallax or animated twinkle. The planet and local geometry occlude it.
