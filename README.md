@@ -36,7 +36,7 @@ No mandatory tasks, sound, account, backend, contact form, or runtime CDN. Publi
 
 ## Current visual release
 
-The 26 October artwork includes differentiated rubber, enamel and metal, local reflection lighting, a layered procedural ocean planet, a corrected ellipsoidal glass dome, detailed planters, workshop equipment, industrial signs and kinetic illustrative exhibits. All assets remain local and distributable.
+The 26 October artwork includes dark orbital space, stars, solar wings, differentiated rubber/enamel/metal, and local reflection lighting. The ocean planet has sheared cloud fronts, a day/night terminator, cloud shading and ocean glint. Habitat modules have recessed glazing, pressure doors, panel joints and roof services. Physical bevels and a bolted, braced garden pergola complete the construction pass. All assets remain local and distributable.
 
 `npm run build` runs the strict TypeScript check, regenerates the static reading document, and creates the production bundle. Test suites, accessibility audits and performance benchmarks were deliberately not rerun for this art pass. Older results in `docs/validation` describe earlier builds.
 
@@ -44,7 +44,9 @@ The 26 October artwork includes differentiated rubber, enamel and metal, local r
 
 `.github/workflows/pages.yml` builds and publishes to **https://m-esm.github.io/** on pushes to `master`, with an optional manual trigger. The repository Pages source is configured to **GitHub Actions**. Deployment uses the official Pages artifact and OIDC workflow, without browser test suites or budget checks.
 
-**Publication is currently blocked by repository-upload permissions.** The workflow and artwork are local; no source commit or new deployment has reached GitHub. See [implementation status](docs/implementation-status.md) and [release notes](docs/release-readiness.md) for exact blockers.
+The first SSH push reached GitHub as `11ed538`. Its Linux build failed because the lockfile omitted Rollup's Linux native package; the pinned package and official integrity were added in `7972b9e`, and that workflow succeeded. Subsequent visual changes are published through the signed-in GitHub editor. The complete visual build at `21f2229` has deployed successfully and was visually confirmed at https://m-esm.github.io/. See [implementation status](docs/implementation-status.md) for the observed deployment.
+
+For future SSH releases, run `npm run deploy:github`. It builds, fetches the SSH origin, commits the project files, merges remote history without rewriting it, rebuilds after a merge, and pushes `master`. Existing staged work or merge conflicts stop the release for review. The current agent session cannot write Git metadata; local source changes are retained for a normal terminal to commit and synchronize.
 
 ## Design documents
 
