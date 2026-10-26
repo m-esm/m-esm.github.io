@@ -1,8 +1,8 @@
 /** Public editorial content verified against the CV, public LinkedIn and public repositories on 26 October 2026. */
 export const editorial = {
-  headline: "Software that reaches beyond the screen.",
+  headline: "From delivery robots to music technology.",
   summary:
-    "I'm Mohsen, a software engineer in Helsinki. My work connects platforms, partner integrations, developer tools, and the physical systems they serve.",
+    "I'm Mohsen, a Staff Engineer at Songtradr in Helsinki. Previously, I architected and built Starship’s Delivery-as-a-Service platform: partner APIs, operational tools, and integrations that connect businesses to autonomous delivery.",
   current: "Staff Engineer at Songtradr",
   delivery: {
     title: "Connecting a partner's software to a robot's delivery.",

@@ -28,3 +28,9 @@ Public LinkedIn search result https://fi.linkedin.com/in/m-esm contains recommen
 ## Second Brain review
 
 Reviewed local application code in pipeline/build.py, pipeline/merge.py, pipeline/corrections.py and web/lib/layout.ts after workspace access returned. Verified schema validation before final data publication, retained source provenance, merge candidate/model decision plumbing, persistent human correction handling, and time-based relationship layout. Added only a generic prototype architecture summary to the public chronology. The repository is private; no private records, source snapshots, personal relationship graph, credentials or internal endpoints are published. Runtime quality and model accuracy were not evaluated.
+
+## Professional hierarchy and company context
+
+Promoted current Songtradr role and Starship DaaS ownership above independent CAD/robotics. Company context researched from https://www.songtradr.com/about, https://massivemusic.com/about and official Starship press/homepage. Songtradr portfolio membership is company context, not a claim of personal work on Bandcamp or MassiveMusic. Current role/title and AI focus are owner-provided; no confidential accomplishments invented. Employer logos and integration partner identifiers are separated. Earlier Alibaba.aero and BoomFit content stays grounded in the CV; search did not establish an unambiguous contemporary BoomFit brand, so no look-alike company logo was used.
+
+Timeline expansion: TripeMa and Alibaba.aero are separate stories using the previously reviewed CV dates and descriptions. No unrelated Alibaba Group branding is used.

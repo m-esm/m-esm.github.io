@@ -13,9 +13,9 @@ export const destinations: { id: SectorId; label: string }[] = [
 ];
 export const profile = {
   name: "Mohsen Esmaeili",
-  role: "Software engineer · Helsinki",
+  role: "Staff Engineer · Helsinki",
   introduction:
-    "I build platforms, integrations, and tools that connect software to the physical world.",
+    "Staff Engineer at Songtradr. Previously, I architected and built Starship’s Delivery-as-a-Service platform.",
   links: [
     { label: "GitHub", href: "https://github.com/m-esm" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/m-esm" },

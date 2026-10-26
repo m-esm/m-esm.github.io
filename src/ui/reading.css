@@ -983,3 +983,44 @@ article[id] {
  .timeline-heading { margin-bottom:34px; }
  .timeline-image.robot img { height:240px; }
 }
+
+/* Professional responsibility leads; independent projects provide supporting depth. */
+.career-hero { display:grid; gap:18px; }
+.career-highlight { display:block; text-decoration:none; padding:28px 30px; border-radius:12px; }
+.career-highlight.songtradr { background:#243248; color:#f5f3f5; }
+.career-highlight.starship { background:#e6e4fa; color:#25264d; }
+.career-highlight img { display:block; max-width:210px; width:100%; object-fit:contain; object-position:left center; margin:20px 0 24px; }
+.career-highlight h2 { font-size:28px; letter-spacing:-.03em; margin:0 0 10px; max-width:none; }
+.career-highlight p { font-size:15px; line-height:1.6; margin:0 0 18px; }
+.role-date { font-size:12px; opacity:.8; }
+.highlight-link { display:block; font-size:13px; text-decoration:underline; text-underline-offset:5px; }
+.reading-hero h1 { font-size:clamp(46px,5.2vw,72px); max-width:13ch; }
+.reading-hero { gap:60px; align-items:center; }
+.current-role { display:grid; grid-template-columns:1fr 1.15fr; gap:70px; padding:80px 0; border-bottom:1px solid #bdc9c6; }
+.current-role h2 { font-size:clamp(36px,4.3vw,56px); }
+.current-role .standfirst { margin-top:25px; font-size:24px; }
+.company-source { font-size:13px; color:#587078; }
+.case-logo { display:block; object-fit:contain; object-position:left center; margin-bottom:30px; }
+.integration-partners { margin:42px 0 58px; padding:30px; background:#e8edf0; border-radius:12px; }
+.integration-partners h3 { margin:0 0 15px; }
+.integration-partners > p { max-width:85ch; }
+.partner-marks { display:flex; gap:24px; align-items:center; flex-wrap:wrap; margin:24px 0; }
+.partner-marks figure { margin:0; text-align:center; }
+.partner-marks img { width:130px; height:88px; object-fit:contain; background:white; border-radius:8px; }
+.partner-marks figcaption { margin-top:6px; font-size:12px; }
+.partner-names { display:flex; flex-wrap:wrap; gap:20px; max-width:310px; padding:12px; font-size:19px; font-weight:500; }
+.earlier-work { padding:70px 0; }
+@media(max-width:800px) { .current-role { grid-template-columns:1fr; gap:0; padding:50px 0; } .career-hero { grid-template-columns:1fr 1fr; } .career-highlight { padding:24px; } .career-highlight h2 { font-size:24px; } }
+@media(max-width:550px) { .career-hero { grid-template-columns:1fr; } .partner-marks { gap:16px; } .partner-marks img { width:100px; height:68px; } .integration-partners { padding:22px; } .reading-header nav { flex-wrap:wrap; } }
+
+.career-highlight.songtradr img { width:240px; height:70px; object-fit:cover; object-position:center; margin:8px 0 18px -12px; }
+
+/* Career stories: domain detail and quiet employer identifiers. */
+.timeline-card { box-shadow:0 12px 32px #071d251a; border-top:3px solid var(--branch); }
+.career-timeline .timeline-card time { font-size:clamp(16px,1.5vw,22px); line-height:1.4; }
+.career-timeline .timeline-focus { display:flex; flex-wrap:wrap; gap:7px; padding:0; margin:20px 0 0; }
+.career-timeline .timeline-focus li { display:block; padding:5px 9px; margin:0; font-size:11px; line-height:1.5; color:#d2eae6; background:#163640; border:1px solid #55777c; border-radius:5px; }
+.timeline-brand { height:44px; margin:0 0 22px; display:flex; align-items:center; }
+.timeline-brand img { width:155px; height:30px; object-fit:contain; object-position:left center; }
+.timeline-brand.starship { background:#e6e4fa; border-radius:6px; padding:10px 14px; width:185px; }
+.timeline-brand.songtradr img { height:44px; width:175px; object-fit:cover; object-position:center; }

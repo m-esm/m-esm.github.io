@@ -2,9 +2,11 @@
 
 A playable third-person portfolio for Mohsen “Moshe” Esmaeili. Drive a wheeled maintenance robot through an open terraced engineering settlement beneath a glass dome, with a blue ocean planet overhead. Portfolio content lives on physical signs.
 
-The original phases 0–3 slice is now extended into a connected five-destination settlement: **Arrival**, **Delivery systems**, **Robotics workshop**, **Agent lab**, and **Career and contact**. Four additional ramps connect the 0 / 3 / 6 m terraces, with a courtyard shortcut. The featured exhibits cover Starship Delivery-as-a-Service, Parviz, Mechlib and smart-subagents, grounded in the CV, public LinkedIn and source repositories. Recent private projects are not published.
+The original phases 0–3 slice is now extended into a connected five-destination settlement: **Arrival**, **Delivery systems**, **Robotics workshop**, **Agent lab**, and **Career and contact**. Four additional ramps connect the 0 / 3 / 6 m terraces, with a courtyard shortcut. The featured exhibits cover Starship Delivery-as-a-Service, Parviz, Mechlib and smart-subagents, grounded in the CV, public LinkedIn and source repositories. Private project records are not published; Second Brain appears only as a reviewed architecture summary.
 
 The five-destination station now has a full surface, foliage, machinery and robot art pass. Its dark orbital exterior includes stars, a finite pressure hull, exposed trusses, solar wings and thermal radiators. Daylight remains soft and bright inside the glass dome.
+
+The reading page leads with the current Songtradr role and Starship DaaS case study, with official company identifiers and clearly separated integration partners. A branching timeline includes distinct TripeMa and Alibaba travel-platform stories, CV-based dates, and independent project imagery.
 
 ## Run locally
 

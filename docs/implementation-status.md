@@ -1,6 +1,10 @@
+## Professional hierarchy and travel stories — 26 October 2026
+
+Promoted Songtradr and Starship to the hero with official local logos, current-role context and a separate partner-integration identity strip. Independent projects remain below professional evidence. Split TripeMa (June–August 2019) and Alibaba.aero (August 2019–August 2020) into separate timeline stories; added engineering focus labels, employer identifiers and refined card styling. Production build passed and local landing/timeline screenshots were reviewed. No suites, audits or benchmarks run. Publication in progress.
+
 ## Branching career tree — 26 October 2026
 
-Expanded the chronology into professional and independent branches, with a continuous spine, visible year nodes, teal/amber track colours and a single-column mobile treatment. Added separate public-project entries, original explanatory SVG glyphs, and the existing licensed Parviz/Mechlib imagery with credits. Improved recommendation panel spacing and background colours. Production build passed; local browser screenshot reviewed. Publication pending.
+Expanded the chronology into professional and independent branches, with a continuous spine, visible year nodes, teal/amber track colours and a single-column mobile treatment. Added separate public-project entries, original explanatory SVG glyphs, and the existing licensed Parviz/Mechlib imagery with credits. Improved recommendation panel spacing and background colours. Production build passed; local browser screenshot reviewed. Published as accc108 (Pages run 40396862649); Second Brain architecture followed in 2ea60fb (40397014638). Both deployments succeeded and were confirmed publicly.
 
 ## Scene finish, chronology and embedded diagrams — 26 October 2026
 

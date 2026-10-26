@@ -408,12 +408,12 @@ export function App() {
             ×
           </button>
           <p className="intro-name">
-            Mohsen Esmaeili <span>Helsinki</span>
+            Mohsen Esmaeili <span>Staff Engineer at Songtradr</span>
           </p>
           <h1>{editorial.headline}</h1>
           <p>
-            Platforms, integrations, and developer tools. Take a robot through
-            my work, or read the portfolio.
+            Previously, I built Starship’s Delivery-as-a-Service platform.
+            Explore the engineering behind my work.
           </p>
           <div className="intro-actions">
             <button
