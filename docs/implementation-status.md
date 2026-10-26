@@ -1,6 +1,6 @@
 ## Partner-logo follow-up — 26 October 2026
 
-Added a verified historical foodora SVG and a consistent text tile for Bringg. Rejected mislabeled Bringg files after browser review. Updated checklist and provenance; BoomFit and Bringg artwork remain unresolved. Production build passed; no suites/audits/benchmarks run. Publication pending.
+Added a verified historical foodora SVG and a consistent text tile for Bringg. Rejected mislabeled Bringg files after browser review. Updated checklist and provenance; BoomFit and Bringg artwork remain unresolved. Production build passed; no suites/audits/benchmarks run. Published over SSH as eae64a0; Pages run 40400427804 succeeded. Public reading HTML confirmed the foodora.svg addition.
 
 ## Company imagery and request reconciliation — 26 October 2026
 
