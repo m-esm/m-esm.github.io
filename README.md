@@ -71,3 +71,7 @@ The workshop now contains the actual Parviz CAD assembly with click-to-explode p
 A new fabrication roof, structural bracing, computing pavilion, regional paving, deck-panel construction, courtyard basin, task lighting and better arrival views give the five districts stronger visual identity. The reading page adds source CAD imagery, named integration work, a short attributed LinkedIn recommendation and earlier platform experience. See [content evidence](docs/content-evidence-2026-10-26.md) and [asset credits](public/assets/licenses/project-credits.html).
 
 The featured-work release was pushed over SSH as `85a183e`. [Pages run 40390948872](https://github.com/m-esm/m-esm.github.io/actions/runs/40390948872) succeeded, and both the public workshop and reading page were visually confirmed. Production build passed; test suites, audits and benchmarks were skipped as requested.
+
+## Habitat expansion
+
+The station now includes a kinetic orbital sculpture west of arrival (click to pause/resume), a service docking hall behind arrival, and a glazed hydroponics wing beside the garden. These original environmental additions extend the settlement around its five portfolio destinations. The dock and nursery are scenery beyond the safety rails.

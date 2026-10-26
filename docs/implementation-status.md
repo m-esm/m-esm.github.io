@@ -1,3 +1,7 @@
+## Habitat expansion — 26 October 2026
+
+Added an interactive orbital sculpture in the western courtyard, a framed docking hall beyond arrival, and a two-tier hydroponic nursery along the eastern perimeter. The sculpture has a solid base collider and respects pause/reduced-motion settings. Dock and nursery are scenic wings beyond the existing safety rails, not new playable districts. All geometry is original and local; no professional claims changed. Production build and publication are recorded below after completion. No test suites or audits requested.
+
 ## Featured-work and source-CAD pass — 26 October 2026
 
 - Read all five CV pages, public GitHub READMEs and repository inventory, and publicly visible LinkedIn profile/recommendations. Full LinkedIn experience remains sign-in restricted.

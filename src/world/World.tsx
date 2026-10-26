@@ -9,6 +9,7 @@ import { DeliveryModel } from "../exhibits/DeliveryModel";
 import { boards } from "./layout";
 import type { SectorId } from "../content/portfolio";
 import { Expansion } from "./Expansion";
+import { OrbitalLife } from "./OrbitalLife";
 import { ArchitecturePass } from "./ArchitecturePass";
 import { WorldDetails } from "./WorldDetails";
 function RenderLifecycle({
@@ -71,6 +72,7 @@ export default function World(props: WorldProps) {
         <Physics timeStep={1 / 60} paused={props.hidden} interpolate>
           <Settlement />
           <ArchitecturePass />
+          <OrbitalLife paused={props.paused} reduced={props.reduced} />
           <WorldDetails paused={props.paused} reduced={props.reduced} />
           <Expansion paused={props.paused} reduced={props.reduced} />
           <DeliveryModel paused={props.paused} reduced={props.reduced} />
