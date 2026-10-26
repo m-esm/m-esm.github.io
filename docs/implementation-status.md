@@ -5,7 +5,7 @@
 - Added locally hosted source Parviz CAD with a proximity-loaded, grouped, interactive exploded assembly and graceful lightweight fallback. Actual CAD and rendering credits retained.
 - Rebuilt workshop roof/frames and computing-pavilion details; replaced overlapping old paving with textured regional surfaces. Added courtyard water basin/seating and pressure-deck panel details, brighter sign lettering and targeted task lights.
 - Preserved existing routes, movement, physical reading boards and static document. Updated sector spawn composition to show the exhibits.
-- Production build passed. No test suites, accessibility audits or performance benchmarks run. Visual review included the workshop and clicked exploded CAD assembly. Deployment verification follows publication.
+- Production build passed. No test suites, accessibility audits or performance benchmarks run. Visual review included the workshop and clicked exploded CAD assembly. Published over SSH as `85a183e`. GitHub Pages workflow [40390948872](https://github.com/m-esm/m-esm.github.io/actions/runs/40390948872) completed successfully. Confirmed the public workshop renders the source CAD and rebuilt architecture, and the public reading page displays the new selected-work presentation. Localhost remains running at http://127.0.0.1:5173/.
 
 ## Editorial upgrade — 26 October 2026
 
