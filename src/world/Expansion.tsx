@@ -580,12 +580,49 @@ export function Expansion({
         {/* Contact garden: pergola, planted edges, quiet bench and a jacket. */}
         {[25, 37].map((x) =>
           [0, 16].map((z) => (
-            <Box
-              key={`${x}${z}`}
-              at={[x, 5.6, z]}
-              size={[0.16, 5.2, 0.16]}
-              color={p.slate}
-            />
+            <group key={`${x}${z}`}>
+              <Box at={[x, 5.6, z]} size={[0.16, 5.2, 0.16]} color={p.slate} />
+              <Box
+                at={[x, 3.15, z]}
+                size={[0.55, 0.16, 0.55]}
+                color={p.slate}
+                round
+              />
+              <Box
+                at={[x, 3.38, z]}
+                size={[0.27, 0.45, 0.27]}
+                color="#8d9e9c"
+                round
+              />
+              <Box
+                at={[x, 8.08, z]}
+                size={[0.44, 0.3, 0.44]}
+                color="#8d9e9c"
+                round
+              />
+              {[-0.18, 0.18].flatMap((dx) =>
+                [-0.18, 0.18].map((dz) => (
+                  <Cyl
+                    key={`${dx}${dz}`}
+                    at={[x + dx, 3.25, z + dz]}
+                    size={[0.035, 0.07, 0.035]}
+                    color={p.metal}
+                  />
+                )),
+              )}
+              <Beam
+                from={[x, 7.2, z]}
+                to={[x + (x === 25 ? 1 : -1), 8.06, z]}
+                r={0.06}
+                color="#7e9390"
+              />
+              <Beam
+                from={[x, 7.2, z]}
+                to={[x, 8.06, z + (z === 0 ? 1.1 : -1.1)]}
+                r={0.06}
+                color="#7e9390"
+              />
+            </group>
           )),
         )}
         {Array.from({ length: 7 }, (_, i) => (
@@ -600,10 +637,38 @@ export function Expansion({
           <Box
             key={z}
             at={[31, 8.15, z]}
-            size={[12.5, 0.22, 0.18]}
+            size={[12.5, 0.34, 0.18]}
             color={p.slate}
           />
         ))}
+        {[4, 8, 12].map((z) => (
+          <Box
+            key={`cross-member-${z}`}
+            at={[31, 8.08, z]}
+            size={[12.2, 0.26, 0.13]}
+            color={p.slate}
+          />
+        ))}
+        {[25, 37].map((x) => (
+          <Box
+            key={`longitudinal-${x}`}
+            at={[x, 8.12, 8]}
+            size={[0.2, 0.28, 16.4]}
+            color={p.slate}
+          />
+        ))}
+        <Beam
+          from={[25, 8.28, 0]}
+          to={[37, 8.28, 16]}
+          r={0.013}
+          color="#8d9e9c"
+        />
+        <Beam
+          from={[37, 8.28, 0]}
+          to={[25, 8.28, 16]}
+          r={0.013}
+          color="#8d9e9c"
+        />
         <Planter at={[34, 3, -2]} long={5} />
         <Planter at={[31, 3, 24.5]} long={9} />
         <Planter at={[36.5, 3, 11]} long={2} />
