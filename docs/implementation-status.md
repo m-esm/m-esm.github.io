@@ -1,3 +1,7 @@
+## Motion portfolio redesign — 26 October 2026
+
+Rebuilt the default homepage as individually designed React components: custom ribbon/pearl WebGL sculpture, persistent responsive navigation, Songtradr record-sleeve composition, Starship scope model, reader-controlled recommendations, project-specific 3D diagrams and source imagery, a three-era/two-track timeline, destination-selecting orbital entrance and a contact composition. Redesigned loading, favicon, reading typography/diagrams and station interface. Existing habitat/gameplay remains at #/ routes. Verified content, provenance and local assets are retained; no new dependencies. Production build and section-by-section browser review passed; suites, audits and benchmarks were not run. Publication pending.
+
 ## Partner-logo follow-up — 26 October 2026
 
 Added a verified historical foodora SVG and a consistent text tile for Bringg. Rejected mislabeled Bringg files after browser review. Updated checklist and provenance; BoomFit and Bringg artwork remain unresolved. Production build passed; no suites/audits/benchmarks run. Published over SSH as eae64a0; Pages run 40400427804 succeeded. Public reading HTML confirmed the foodora.svg addition.

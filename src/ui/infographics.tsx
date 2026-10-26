@@ -19,7 +19,7 @@ const stories = {
 };
 type Kind = keyof typeof stories;
 function Block({ position, scale, color }: { position: [number,number,number]; scale: [number,number,number]; color: string }) {
-  return <RoundedBox position={position} args={scale} radius={.06} smoothness={3} castShadow receiveShadow><meshStandardMaterial color={color} roughness={.43} metalness={.2}/></RoundedBox>;
+  return <RoundedBox position={position} args={scale} radius={.06} smoothness={3} castShadow receiveShadow><meshStandardMaterial color={color} roughness={.3} metalness={.45}/></RoundedBox>;
 }
 function Diagram({ kind, selected, setSelected, moving }: { kind: Kind; selected:number; setSelected:(n:number)=>void; moving:boolean }) {
   const { camera, size } = useThree();
@@ -31,31 +31,31 @@ function Diagram({ kind, selected, setSelected, moving }: { kind: Kind; selected
     <ambientLight intensity={1.25}/><hemisphereLight args={["#ecf7ff","#80958c",1.2]}/>
     <directionalLight position={[-4,8,5]} intensity={3} castShadow shadow-mapSize={[1024,1024]} shadow-normalBias={.04}/>
     <group position={[0,-.6,0]}>
-      <Block position={[0,-.2,0]} scale={[11,.25,4.4]} color="#ccdbd5"/>
-      <Block position={[0,.02,1.3]} scale={[7.6,.08,.12]} color="#92aaa8"/>
+      <Block position={[0,-.2,0]} scale={[11,.25,4.4]} color="#17243e"/>
+      <Block position={[0,.02,1.3]} scale={[7.6,.08,.12]} color="#697aaf"/>
       {[0,1,2].map(i=><group key={i} position={[(i-1)*3.5,0,0]} onClick={e=>{e.stopPropagation();setSelected(i);}}>
-        <Block position={[0,.13,0]} scale={[2.65,.2,2.7]} color={selected===i?"#5d8f9c":"#b4c8c3"}/>
+        <Block position={[0,.13,0]} scale={[2.65,.2,2.7]} color={selected===i?"#8b9ddb":"#2d3d64"}/>
         {i===0 ? <>
-          <Block position={[0,1.05,0]} scale={[1.8,1.3,.18]} color="#344b58"/>
-          <Block position={[0,1.08,.11]} scale={[1.55,1.05,.04]} color="#c8e7e9"/>
-          {[0,1,2].map(j=><Block key={j} position={[-.2,1.38-j*.24,.15]} scale={[.85-j*.15,.055,.02]} color="#5d8f9c"/>)}
-          <Block position={[0,.43,0]} scale={[.16,.4,.2]} color="#344b58"/>
+          <Block position={[0,1.05,0]} scale={[1.8,1.3,.18]} color="#34466b"/>
+          <Block position={[0,1.08,.11]} scale={[1.55,1.05,.04]} color="#9dc8e7"/>
+          {[0,1,2].map(j=><Block key={j} position={[-.2,1.38-j*.24,.15]} scale={[.85-j*.15,.055,.02]} color="#8b9ddb"/>)}
+          <Block position={[0,.43,0]} scale={[.16,.4,.2]} color="#34466b"/>
         </>:i===1 ? <>
           {[0,1,2].map(j=><group key={j}>
-            <Block position={[0,.5+j*.48,0]} scale={[1.8,.34,1.35]} color={j===1?"#6f98a4":"#f1f1e7"}/>
-            <Block position={[-.55,.5+j*.48,.7]} scale={[.12,.08,.03]} color="#4c8073"/>
+            <Block position={[0,.5+j*.48,0]} scale={[1.8,.34,1.35]} color={j===1?"#9d8bc7":"#c0c5e8"}/>
+            <Block position={[-.55,.5+j*.48,.7]} scale={[.12,.08,.03]} color="#83e8ef"/>
           </group>)}
         </>:kind==='delivery'?<>
-          <Block position={[0,.8,0]} scale={[1.6,.85,1.2]} color="#f1f1e7"/>
-          <Block position={[0,1.26,0]} scale={[1.5,.1,1.1]} color="#344b58"/>
-          {[-.7,.7].flatMap(x=>[-.5,.5].map(z=><mesh key={`${x}${z}`} position={[x,.43,z]} rotation={[Math.PI/2,0,0]} castShadow><cylinderGeometry args={[.3,.3,.19,32]}/><meshStandardMaterial color="#344b58" roughness={.85}/></mesh>))}
-          <Block position={[.4,1.55,0]} scale={[.06,.6,.06]} color="#344b58"/>
+          <Block position={[0,.8,0]} scale={[1.6,.85,1.2]} color="#c0c5e8"/>
+          <Block position={[0,1.26,0]} scale={[1.5,.1,1.1]} color="#34466b"/>
+          {[-.7,.7].flatMap(x=>[-.5,.5].map(z=><mesh key={`${x}${z}`} position={[x,.43,z]} rotation={[Math.PI/2,0,0]} castShadow><cylinderGeometry args={[.3,.3,.19,32]}/><meshStandardMaterial color="#34466b" roughness={.85}/></mesh>))}
+          <Block position={[.4,1.55,0]} scale={[.06,.6,.06]} color="#34466b"/>
         </>:<>
-          <Block position={[0,1,0]} scale={[1.6,1.5,.2]} color="#f1f1e7"/>
-          {[0,1,2].map(j=><Block key={j} position={[0,1.45-j*.36,.15]} scale={[1.1,.1,.04]} color={j===2?"#5d8f9c":"#77a38a"}/>)}
+          <Block position={[0,1,0]} scale={[1.6,1.5,.2]} color="#c0c5e8"/>
+          {[0,1,2].map(j=><Block key={j} position={[0,1.45-j*.36,.15]} scale={[1.1,.1,.04]} color={j===2?"#8b9ddb":"#9dbeed"}/>)}
         </>}
       </group>)}
-      <group ref={packet}><mesh><sphereGeometry args={[.12,20,16]}/><meshStandardMaterial color="#c18d4e" metalness={.3} roughness={.25}/></mesh></group>
+      <group ref={packet}><mesh><sphereGeometry args={[.12,20,16]}/><meshStandardMaterial color="#ffc6a0" metalness={.3} roughness={.25}/></mesh></group>
     </group>
     <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={.55} maxPolarAngle={1.35} minAzimuthAngle={-.65} maxAzimuthAngle={.65}/>
   </>;

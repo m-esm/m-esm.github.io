@@ -58,3 +58,13 @@ Reconciled 26 October 2026. This tracks requested deliverables rather than claim
 - Current Songtradr title and 2026 role context are owner-confirmed. No precise starting month, confidential project detail or subsidiary-product ownership is inferred.
 
 Suites, accessibility audits and performance benchmarks remain intentionally out of scope at the user's request; they are not unfinished deliverables. Further art iteration is open-ended, not a blocked deployment.
+
+## Motion redesign
+
+- [x] Rebuild the homepage presentation with a custom 3D sculpture, scroll-responsive composition, new navigation, professional chapters, experimental visuals, timeline and contact footer.
+- [x] Rewrite reading-page styles and align station interface with the new palette.
+- [x] Preserve the playable world as a separate entrance, verified content, local assets and reading fallback.
+- [x] Provide pause/reduced-motion behavior.
+- [x] Rethink each presentation component individually: navigation/mobile menu, hero, music and delivery chapters, recommendation selector, project evidence/diagrams, timeline eras, orbital destination selector, contact, loading and favicon.
+- [x] Give delivery and agent work new selectable 3D models and synchronize their automatic animation with the page pause control.
+- [ ] Publish and verify the motion redesign.

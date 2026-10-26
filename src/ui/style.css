@@ -777,3 +777,14 @@ kbd {
 .intro-projects { display: none; }
 @media(max-width:700px) { .arrival-introduction { width: auto; padding: 20px; } .arrival-introduction h1 { font-size: 27px; } }
 @media(max-height:650px) and (min-width:701px) { .arrival-introduction { top: 80px; padding: 20px; } .arrival-introduction h1 { font-size: 27px; } .intro-feature { display:none; } }
+/* Station interface shares the motion portfolio's glass and indigo palette. */
+.station .arrival-introduction,.station .utility-menu{background:linear-gradient(135deg,#151d38ed,#10172bdc);color:#edf0ff;border:1px solid #b4baff4d;backdrop-filter:blur(24px);box-shadow:0 20px 80px #050a2540}
+.station .arrival-introduction p,.station .intro-name span,.station .menu-foot{color:#b8c5de}
+.station .arrival-introduction .intro-name,.station .intro-feature strong{color:#eef1ff}
+.station .intro-actions a,.station .intro-feature,.station .utility-menu a{color:#bdceff}
+.station .intro-feature{border-top-color:#b0b8e333}
+.station .utility-bar button,.station .utility-bar>a,.station .explore-hint,.station .inspection-utility button{background:#151e36e8;color:#e0eaff;border:1px solid #b2bfe54d;backdrop-filter:blur(16px);border-radius:24px}
+.station .utility-menu button,.station .intro-actions button{background:#324668;color:#f1f5ff;border:1px solid #8299c477}
+.station .intro-dismiss{color:#d7e1ff;background:transparent}
+.station .atlas-destinations small{color:#b4c7de}
+.experience-loading{min-height:100svh;background:#080c20;color:#eff0ff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px;font-family:Plex,sans-serif}.experience-loading svg{width:110px;height:110px;fill:none;stroke:#a8c5ed;stroke-width:.8;margin-bottom:30px;animation:loading-orbit 12s linear infinite}.experience-loading svg circle{fill:#bfb5ea;stroke:none}.experience-loading p{font-size:22px;letter-spacing:-.04em;margin:0 0 10px}.experience-loading>span{font-size:13px;color:#8e9fbe}.experience-loading a{font-size:12px;color:#b3d1ed;margin-top:40px}.station-portfolio-link{position:fixed;right:18px;bottom:18px;z-index:90;color:#e5edff;background:#10172de8;border:1px solid #ffffff40;border-radius:24px;padding:10px 16px;font-size:12px;text-decoration:none}@keyframes loading-orbit{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.experience-loading svg{animation:none}}

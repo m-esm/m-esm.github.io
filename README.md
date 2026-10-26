@@ -1,4 +1,6 @@
-# Moshe's orbital research station
+# Mohsen Esmaeili — Motion portfolio
+
+The homepage is now a cinematic motion portfolio: a custom iridescent WebGL sculpture, scroll/pointer-responsive composition, a music-inspired Songtradr composition, an explorable Starship scope model, project-specific diagrams, selectable colleague quotations and a three-era career timeline. Every homepage section is a separate, purpose-designed component. The playable orbital habitat remains at `/#/sector/arrival`; `/reading.html` is the static reading alternative. Both use the new indigo, pearl and glacial-blue visual language.
 
 A playable third-person portfolio for Mohsen “Moshe” Esmaeili. Drive a wheeled maintenance robot through an open terraced engineering settlement beneath a glass dome, with a blue ocean planet overhead. Portfolio content lives on physical signs.
 
