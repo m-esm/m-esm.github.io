@@ -321,10 +321,7 @@ export function App() {
             WASD / arrows to drive. Drag to look.
             <br />E to inspect a nearby sign. Esc to leave.
           </p>
-          <StationMap
-            current={nearestSector(runtime.position)}
-            onGo={go}
-          />
+          <StationMap current={nearestSector(runtime.position)} onGo={go} />
           <details className="camera-controls">
             <summary>Camera & display</summary>
             <div className="menu-grid">
@@ -438,6 +435,14 @@ export function App() {
           >
             Featured work <strong>Delivery-as-a-Service at Starship</strong>
           </button>
+          <div className="intro-projects">
+            <button onClick={() => go("workshop")}>
+              Parviz <span>Robotics</span>
+            </button>
+            <button onClick={() => go("agents")}>
+              Smart subagents <span>AI engineering</span>
+            </button>
+          </div>
         </aside>
       )}
       {!ready && (

@@ -1,3 +1,12 @@
+## Featured-work and source-CAD pass — 26 October 2026
+
+- Read all five CV pages, public GitHub READMEs and repository inventory, and publicly visible LinkedIn profile/recommendations. Full LinkedIn experience remains sign-in restricted.
+- Promoted Starship DaaS, Parviz, Mechlib and smart-subagents. Linked WebSocket clustering and earlier backend work; omitted unsupported metrics.
+- Added locally hosted source Parviz CAD with a proximity-loaded, grouped, interactive exploded assembly and graceful lightweight fallback. Actual CAD and rendering credits retained.
+- Rebuilt workshop roof/frames and computing-pavilion details; replaced overlapping old paving with textured regional surfaces. Added courtyard water basin/seating and pressure-deck panel details, brighter sign lettering and targeted task lights.
+- Preserved existing routes, movement, physical reading boards and static document. Updated sector spawn composition to show the exhibits.
+- Production build passed. No test suites, accessibility audits or performance benchmarks run. Visual review included the workshop and clicked exploded CAD assembly. Deployment verification follows publication.
+
 ## Editorial upgrade — 26 October 2026
 
 Implemented a redesigned static portfolio with expanded, evidence-grounded delivery case study, original diagrams, historical project context, contact section, and complete board transcripts. Added a dismissible station introduction and a five-destination map. Production build passed; suites/audits/benchmarks were not run. Publishing uses a separate checkout of remote master and SSH because the original checkout metadata remains read-only. Published over SSH as `8307e77`. GitHub Pages workflow [40386050521](https://github.com/m-esm/m-esm.github.io/actions/runs/40386050521) completed successfully. The redesigned page was confirmed live at https://m-esm.github.io/reading.html. The original localhost preview remains available.

@@ -18,8 +18,8 @@ import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js
 import { palette as p } from "./layout";
 export type V3 = [number, number, number];
 const cube = new BoxGeometry(1, 1, 1),
-  cylinder = new CylinderGeometry(1, 1, 1, 12),
-  sphere = new SphereGeometry(1, 10, 7);
+  cylinder = new CylinderGeometry(1, 1, 1, 24),
+  sphere = new SphereGeometry(1, 16, 12);
 const bevels = new Map<string, BufferGeometry>();
 function beveledBox(size: V3) {
   const key = size.join(",");

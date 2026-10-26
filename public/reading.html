@@ -647,12 +647,221 @@ article[id] {
     scroll-behavior: auto;
   }
 }
+.recommendation {
+  margin: 72px 0 0;
+  padding: 38px 0 38px 38px;
+  border-left: 4px solid #698a88;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+}
+.recommendation blockquote {
+  font-size: clamp(25px, 3vw, 38px);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  margin: 0;
+  max-width: 30ch;
+}
+.recommendation figcaption {
+  align-self: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.recommendation figcaption span {
+  display: block;
+  color: #526b67;
+  margin: 8px 0 16px;
+}
+.project-list {
+  gap: 60px;
+}
+.project-detail {
+  color: #526b67;
+  font-size: 15px !important;
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 22px;
+}
+.project-links a {
+  font-size: 14px;
+}
+.project-symbol.parviz {
+  position: relative;
+  padding-left: 40px;
+}
+.project-symbol.parviz i:first-child {
+  width: 120px;
+  height: 73px;
+  background: #294c5d;
+  border: 7px solid #c58b50;
+  border-radius: 12px;
+  box-shadow: none;
+  transform: none;
+  position: absolute;
+  top: 0;
+  left: 35px;
+}
+.project-symbol.parviz i:nth-child(2),
+.project-symbol.parviz i:nth-child(3) {
+  width: 90px;
+  height: 37px;
+  background: #394b56;
+  border: 7px dashed #85949c;
+  border-radius: 20px;
+  transform: none;
+  box-shadow: none;
+  margin-top: 50px;
+}
+.project-symbol.smart-subagents {
+  gap: 18px;
+}
+.project-symbol.smart-subagents i {
+  width: 60px;
+  height: 73px;
+  background: #8ea69d;
+  border-top: 12px solid #294c5d;
+  box-shadow: 8px 8px 0 #bdcaca;
+}
+.project-symbol.smart-subagents i:nth-child(2) {
+  height: 105px;
+  border-color: #b87943;
+}
+.project-symbol.mechlib i {
+  height: 70px;
+  width: 70px;
+  border: 12px dashed #537581;
+  border-radius: 50%;
+  transform: none;
+  box-shadow: none;
+}
+.project-symbol.mechlib i:nth-child(2) {
+  height: 100px;
+  width: 100px;
+  border-color: #b87943;
+}
+.project-symbol.socket-cluster i {
+  height: 80px;
+  width: 50px;
+  border: 0;
+  border-radius: 3px;
+  background: repeating-linear-gradient(#739096 0 13px, #c9d5d1 13px 18px);
+}
+.earlier-work {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 45px;
+  padding: 70px 0 0;
+}
+.earlier-work h2 {
+  font-size: 38px;
+  margin: 0;
+}
+.earlier-work .caption {
+  grid-column: 1/-1;
+  margin: 0;
+}
+.earlier-work h3 {
+  font-size: 24px;
+}
+.earlier-work p {
+  font-size: 16px;
+}
+@media (max-width: 700px) {
+  .recommendation {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+    padding: 24px;
+  }
+  .earlier-work {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .earlier-work h2 {
+    font-size: 34px;
+  }
+}
+.project-image {
+  margin: 0 0 28px;
+  background: #1c2830;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+}
+.project-image figcaption {
+  padding: 10px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #cbd8da;
+}
+.project-image.wide img {
+  height: 210px;
+}
+.project-list article:first-child {
+  grid-row: span 2;
+}
+@media (max-width: 600px) {
+  .project-list article:first-child {
+    grid-row: auto;
+  }
+  .project-image img {
+    height: 340px;
+  }
+  .project-image.wide img {
+    height: 160px;
+  }
+}
+.project-list article:first-child {
+  grid-column: 1/-1;
+  grid-row: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+}
+.project-list article:first-child .project-image {
+  margin-bottom: 0;
+}
+.project-list article:first-child h3 {
+  font-size: 42px;
+}
+.project-list article:last-child {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  gap: 44px;
+}
+.project-list article:last-child .project-symbol {
+  justify-content: center;
+  align-self: center;
+}
+@media (max-width: 700px) {
+  .project-list article:first-child,
+  .project-list article:last-child {
+    display: block;
+    grid-column: auto;
+  }
+  .project-list article:first-child .project-image {
+    margin-bottom: 24px;
+  }
+  .project-list article:last-child .project-symbol {
+    justify-content: flex-start;
+  }
+}
 </style></head><body><header class="reading-header"><a class="wordmark" href="/">Moshe's Lab <span>Engineering portfolio</span></a><nav aria-label="Main navigation"><a href="#delivery-systems">Selected work</a><a href="#career">About & contact</a><a class="station-link" href="/">Enter the station ↗</a></nav></header>
 <main><section class="reading-hero"><div><p class="identity">Mohsen Esmaeili <span>Helsinki, Finland</span></p><h1>Software that reaches beyond the screen.</h1><p class="hero-summary">I&#39;m Mohsen, a software engineer in Helsinki. My work connects platforms, partner integrations, developer tools, and the physical systems they serve.</p><a class="primary-link" href="#delivery-systems">Explore selected work <span>↓</span></a></div><aside class="orbit-art" aria-label="An orbital habitat, the setting for the playable portfolio"><div class="orbital-path"></div><div class="ocean-world"></div><div class="habitat-mark"><i></i><i></i><i></i></div><p>A portfolio you can inhabit.<a href="/">Drive through the orbital station ↗</a></p></aside></section>
 <div class="practice-strip"><span>Staff Engineer at Songtradr</span><span>Platforms</span><span>Integrations</span><span>Developer tools</span></div>
 <section class="case-study" id="delivery-systems"><div class="section-intro"><p class="section-context">Selected professional work / Starship Technologies</p><h2>Connecting a partner&#39;s software to a robot&#39;s delivery.</h2><p class="standfirst">At Starship Technologies, I architected and built the Delivery-as-a-Service platform. The work spanned the partner-facing API, the operational console, integrations with partner engineering teams, and the tools used to integrate and test.</p></div><figure class="delivery-diagram"><svg viewBox="0 0 680 250" role="img" aria-labelledby="flow-title flow-desc"><title id="flow-title">From partner software to physical delivery</title><desc id="flow-desc">A conceptual connection between partner software, a delivery platform, and a delivery robot. Status information travels back to the partner.</desc><defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#a9bdc4" opacity=".4"/></pattern></defs><rect width="680" height="250" fill="url(#grid)"/><path d="M157 104H520M520 152V190H157V152" stroke="#6690a2" stroke-width="2" fill="none"/><path d="m510 99 10 5-10 5M167 185l-10 5 10 5" fill="none" stroke="#6690a2" stroke-width="2"/>
-<g fill="#e4e9e3" stroke="#78909b" stroke-width="2"><rect x="46" y="65" width="140" height="87" rx="8"/><rect x="267" y="48" width="150" height="121" rx="8"/><rect x="507" y="88" width="112" height="52" rx="12"/></g><g fill="#294c5d"><circle cx="530" cy="142" r="12"/><circle cx="597" cy="142" r="12"/><rect x="558" y="65" width="6" height="24"/><rect x="549" y="61" width="25" height="12" rx="4"/></g><g fill="#263b43" font-family="Plex, sans-serif" text-anchor="middle"><text x="116" y="101" font-size="17">Partner</text><text x="116" y="124" font-size="17">software</text><text x="342" y="99" font-size="18">Delivery</text><text x="342" y="124" font-size="18">platform</text><text x="564" y="176" font-size="14">Delivery robot</text><text x="337" y="215" font-size="13">Status information</text></g></svg><figcaption>Conceptual flow, drawn for this portfolio. Not a production architecture diagram.</figcaption></figure><div class="case-body"><aside><h3>Delivery-as-a-Service</h3><p>Platform architecture<br>Partner integrations<br>Developer experience</p><a href="/#/exhibit/delivery-systems">Visit the delivery model ↗</a></aside><div><h3>Where software meets the last mile</h3><p>Autonomous delivery sits at the meeting point of two worlds: a partner&#39;s digital service and robots moving through the physical world. The platform connects those worlds; the surrounding tools make that connection usable by engineers and operators.</p><h3>What I built</h3><dl class="scope-list"><div><dt>Partner API</dt><dd>The software interface connecting external partners with autonomous last-mile delivery robots.</dd></div><div><dt>Operational console</dt><dd>An operational interface alongside the partner-facing platform.</dd></div><div><dt>Integration tooling</dt><dd>An integration playground and developer tools for partner engineering teams.</dd></div><div><dt>Testing and monitoring</dt><dd>End-to-end testing systems and watchdog services supporting the partner ecosystem.</dd></div></dl><h3>The connecting thread</h3><p>The project brings together the areas represented throughout this portfolio: platform architecture, integration work, operational software, and tools that help other engineers build.</p></div></div></section>
-<section class="projects" id="projects"><div class="section-intro"><p class="section-context">Independent work</p><h2>Tools for building<br>other things.</h2><p>Two historical projects explore reusable infrastructure and separate development environments.</p></div><div class="project-list"><article id="framework"><div class="project-symbol framework" aria-hidden="true"><i></i><i></i><i></i></div><div><p class="project-kind">Historical personal project</p><h3>Serendip Framework</h3><p>A reusable backend framework and tooling effort. An exploration of software infrastructure that other software can build on.</p><a href="/#/sector/workshop">Explore the workshop ↗</a></div></article><article id="branches"><div class="project-symbol branches" aria-hidden="true"><i></i><i></i><i></i></div><div><p class="project-kind">Historical personal project</p><h3>Multi Branch</h3><p>An instance-per-branch project. The station&#39;s branch rack gives this idea a physical form: separate branches represented as separate environments.</p><a href="/#/sector/agents">Explore the agent lab ↗</a></div></article></div><p class="caption">Historical project context does not imply current maintenance. The workshop mechanism and routing sculpture are original illustrations.</p></section>
-<section class="station-story" id="station"><div><p class="section-context">The playable portfolio</p><h2>Take the long way around.</h2><p>A small maintenance robot. Five connected destinations. A blue planet beyond the glass. The station turns the portfolio into a place to explore at your own pace.</p><p>Read the physical boards, watch the illustrative models, or stop in the garden. No tasks, accounts, or progression.</p><a class="primary-link" href="/">Enter the station <span>↗</span></a></div><div class="station-index"><a href="/#/sector/systems"><strong>Delivery systems</strong><span>Platforms and partner integrations</span></a><a href="/#/sector/workshop"><strong>Robotics workshop</strong><span>Tools and mechanisms</span></a><a href="/#/sector/agents"><strong>Agent lab</strong><span>Branch environments and handoffs</span></a><a href="/#/sector/career"><strong>Career garden</strong><span>A place to continue the conversation</span></a></div></section>
-<section class="about" id="career"><p class="section-context">About & contact</p><h2>Across systems.<br>Grounded in engineering.</h2><div><p>I am a Staff Engineer at Songtradr, based in Helsinki. My background spans backend platforms, integrations, and developer tools.</p><p>At Starship Technologies, I architected and built the Delivery-as-a-Service platform. My historical personal projects include Serendip Framework and Multi Branch.</p><p>For professional background and a way to get in touch, find me on LinkedIn. My public repositories are on GitHub.</p><nav aria-label="Public profiles"><a href="https://github.com/m-esm" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/m-esm" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav></div></section>
-<details class="board-transcripts"><summary>Read every exhibit board</summary><p>The complete text from the station, including captions for its illustrative models.</p><section id="transcript-delivery-systems"><h2>Delivery systems</h2><section id="context"><h3>Connecting the last mile</h3><p>At Starship Technologies, I architected and built the Delivery-as-a-Service platform, connecting external partners with autonomous last-mile delivery robots.</p></section><section id="responsibility"><h3>From API to operations</h3><p>My work included the partner API, an operational console, integrations with partner engineering teams, and developer tooling for integration and testing.</p></section><section id="tooling"><h3>Tools for the ecosystem</h3><p>I built end-to-end testing systems, watchdog services, and an integration playground to support the partner ecosystem.</p></section><p class="caption">Illustrative delivery flow. This model is not a production architecture diagram or a live system.</p></section><section id="workshop"><h2>Robotics workshop</h2><section id="mechanisms"><h3>From software to mechanisms</h3><p>A repair bench explores the boundary between code and moving parts. The articulated mechanism is an original station illustration, not a named personal robot or a shipped product.</p></section><section id="board-framework"><h3>Reusable backend tools</h3><p>Serendip Framework is one of my historical personal projects: a reusable backend framework and tooling effort. It belongs here as an example of building tools for other software, alongside the physical workshop&#39;s tools and fixtures.</p></section><p class="caption">Illustrative mechanism. Historical project context does not imply current maintenance.</p></section><section id="agent-lab"><h2>Agent lab</h2><section id="routing"><h3>Work moving through a system</h3><p>A token travels between request, worker and review stations. This deterministic sculpture illustrates handoffs and feedback. It does not run AI agents or access live infrastructure.</p></section><section id="board-branches"><h3>One instance per branch</h3><p>Multi Branch is a historical personal project built around an instance for each branch. The small branch rack beside this board illustrates that idea. The model is conceptual; it is not connected to repositories or running deployments.</p></section><p class="caption">Illustrative experiment. No live agents, repository access or production topology.</p></section><section id="transcript-career"><h2>Career and contact</h2><section id="career-now"><h3>Engineering across systems</h3><p>I am a Staff Engineer at Songtradr, based in Helsinki. My engineering background spans backend platforms, integrations and developer tools. At Starship Technologies, I architected and built the Delivery-as-a-Service platform explored in the systems yard.</p></section><section id="contact"><h3>Continue the conversation</h3><p>For professional background and a way to get in touch, visit my LinkedIn profile. You can also explore my public repositories on GitHub. The station is an invitation to look around; there is no task to finish before reaching out.</p></section></section></details></main><footer><a class="wordmark" href="/">Moshe's Lab</a><span>Built as a place to explore.</span><a href="#">Back to top ↑</a></footer></body></html>
+<g fill="#e4e9e3" stroke="#78909b" stroke-width="2"><rect x="46" y="65" width="140" height="87" rx="8"/><rect x="267" y="48" width="150" height="121" rx="8"/><rect x="507" y="88" width="112" height="52" rx="12"/></g><g fill="#294c5d"><circle cx="530" cy="142" r="12"/><circle cx="597" cy="142" r="12"/><rect x="558" y="65" width="6" height="24"/><rect x="549" y="61" width="25" height="12" rx="4"/></g><g fill="#263b43" font-family="Plex, sans-serif" text-anchor="middle"><text x="116" y="101" font-size="17">Partner</text><text x="116" y="124" font-size="17">software</text><text x="342" y="99" font-size="18">Delivery</text><text x="342" y="124" font-size="18">platform</text><text x="564" y="176" font-size="14">Delivery robot</text><text x="337" y="215" font-size="13">Status information</text></g></svg><figcaption>Conceptual flow, drawn for this portfolio. Not a production architecture diagram.</figcaption></figure><div class="case-body"><aside><h3>Delivery-as-a-Service</h3><p>Platform architecture<br>Partner integrations<br>Developer experience</p><a href="/#/exhibit/delivery-systems">Visit the delivery model ↗</a></aside><div><h3>Where software meets the last mile</h3><p>Autonomous delivery sits at the meeting point of two worlds: a partner&#39;s digital service and robots moving through the physical world. The platform connects those worlds; the surrounding tools make that connection usable by engineers and operators.</p><h3>What I built</h3><dl class="scope-list"><div><dt>Partner API</dt><dd>The software interface connecting external partners with autonomous last-mile delivery robots.</dd></div><div><dt>Operational console</dt><dd>A Next.js console for operational teams to track orders, manage workflows and access insights.</dd></div><div><dt>Integration tooling</dt><dd>Technical integrations with partner teams including Uber, Bolt, Wolt, S-Group, Foodora, Grubhub, Deliveroo and Bringg, supported by an integration playground.</dd></div><div><dt>Testing and monitoring</dt><dd>End-to-end testing systems and watchdog services supporting the partner ecosystem.</dd></div></dl><h3>The connecting thread</h3><p>Alongside DaaS, I contributed to rewriting and centralizing cart, tax and fee calculations in Go. Earlier marketplace work covered billing flows and the order lifecycle. This is the thread through my work: making complex systems easier to integrate, operate and evolve.</p></div></div></section>
+<figure class="recommendation"><blockquote>“The most time sensitive and complex projects in the DaaS team landed on his table.”</blockquote><figcaption><strong>Taavi Pungas</strong><span>Public LinkedIn recommendation, reflecting on our work at Starship</span><a href="https://www.linkedin.com/in/m-esm">Read the recommendation on LinkedIn</a></figcaption></figure>
+<section class="projects" id="projects"><div class="section-intro"><p class="section-context">Independent work</p><h2>Tools for building<br>other things.</h2><p>Selected public work across robotics, AI engineering, mechanical design and distributed systems.</p></div><div class="project-list"><article id="parviz"><figure class="project-image"><img src="/assets/projects/parviz-cad.jpg" width="920" height="1030" loading="lazy" alt="Parviz source CAD render: tracked chassis and touchscreen head"><figcaption>Source CAD render · not a photograph of an assembled robot</figcaption></figure><div><p class="project-kind">Robotics / CAD prototype</p><h3>Parviz</h3><p>A desk robot designed from software to mechanics: tracked drive, a Raspberry Pi touchscreen face, a camera eye, and a pan/tilt neck. Parametric Python generates the assembly; the software spike includes face rendering, motion and camera integration.</p><p class="project-detail">The design explores a self-locking worm-drive tilt mechanism, a captured-ball pan race, and positive-drive tracks. The repository documents interference checks, assembly order and cable routing. The mechanical design is not yet printed or assembled.</p><div class="project-links"><a href="https://github.com/m-esm/Parviz">Source on GitHub</a><a href="https://m-esm.github.io/Parviz/viewer_glb.html">Inspect the actual CAD assembly</a><a href="/#/sector/workshop">Visit the robotics workshop ↗</a></div></div></article><article id="smart-subagents"><div class="project-symbol smart-subagents" aria-hidden="true"><i></i><i></i><i></i></div><div><p class="project-kind">AI engineering / Developer tools</p><h3>Smart subagents</h3><p>A quota-aware task router for coding CLIs. It considers available headroom, task size and reasoning difficulty, dispatches work in an isolated Git worktree, and verifies the resulting diff before reporting back.</p><p class="project-detail">Size and difficulty are separate decisions: a broad rename and a small concurrency fix demand different kinds of work. The public implementation includes worker eligibility, fallback selection, cooldowns and outcome-based routing feedback.</p><div class="project-links"><a href="https://github.com/m-esm/smart-subagents">Source on GitHub</a><a href="/#/sector/agents">Visit the agent lab ↗</a></div></div></article><article id="mechlib"><figure class="project-image wide"><img src="/assets/projects/mechlib-gallery.png" width="1200" height="394" loading="lazy" alt="Mechlib gallery renders of Geneva, herringbone and cycloidal mechanisms"><figcaption>Renders from the public Mechlib gallery</figcaption></figure><div><p class="project-kind">Mechanical design / Python</p><h3>Mechlib</h3><p>Reusable parametric parts for FDM printing: gears, cams, linkages, ratchets, couplings and flexures. Built with trimesh, Shapely and manifold3d.</p><p class="project-detail">An interactive browser gallery combines mechanism animations with editable parameters, running the Python library through Pyodide. Bought-part envelopes are kept separate from printed geometry.</p><div class="project-links"><a href="https://github.com/m-esm/mechlib">Source on GitHub</a><a href="https://m-esm.github.io/mechlib/">Open the interactive gallery</a><a href="/#/sector/workshop">Visit the fabrication bench ↗</a></div></div></article><article id="socket-cluster"><div class="project-symbol socket-cluster" aria-hidden="true"><i></i><i></i><i></i></div><div><p class="project-kind">Distributed systems / Technical writing</p><h3>WebSocket clustering</h3><p>A public NestJS and Redis example accompanying my article on WebSocket clustering: handling users with several clients connected to different instances.</p><p class="project-detail">The repository gives the article a concrete implementation readers can explore. It sits alongside earlier open-source work on end-to-end encryption, backend frameworks and per-branch environments.</p><div class="project-links"><a href="https://github.com/m-esm/socket-cluster-app">Source on GitHub</a><a href="https://medium.com/@mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed">Read the article</a><a href="/#/sector/systems">Visit the systems yard ↗</a></div></div></article></div><p class="caption">Project descriptions are grounded in the public repositories. The Parviz exhibit loads the actual source CAD, enlarged for display; its temporary lightweight model and the other station models are interpretations. <a href="/assets/licenses/project-credits.html">Project imagery and CAD credits</a>.</p></section>
+<section class="earlier-work"><h2>More systems,<br>the same engineering thread.</h2><article><p class="section-context">Alibaba.aero</p><h3>Hotel inventory and financial integrations</h3><p>Integrated more than ten hotel inventory systems, built billing and invoicing integrations, and developed software to detect financial discrepancies.</p></article><article><p class="section-context">BoomFit</p><h3>Video platform infrastructure</h3><p>Backend APIs, streaming, data processing and video intelligence on Google Cloud, alongside architecture documentation and a move toward a test-driven codebase.</p></article><p class="caption">Earlier open-source work includes <a href="https://github.com/m-esm/e2db">E2DB</a>, an end-to-end encryption demonstration, and <a href="https://github.com/m-esm/node-multi-branch">Multi Branch</a>, a per-branch Node.js environment tool.</p></section>
+<section class="station-story" id="station"><div><p class="section-context">The playable portfolio</p><h2>Take the long way around.</h2><p>A small maintenance robot. Five connected destinations. A blue planet beyond the glass. The station turns the portfolio into a place to explore at your own pace.</p><p>Read the physical boards, watch the illustrative models, or stop in the garden. No tasks, accounts, or progression.</p><a class="primary-link" href="/">Enter the station <span>↗</span></a></div><div class="station-index"><a href="/#/sector/systems"><strong>Delivery systems</strong><span>Platforms and partner integrations</span></a><a href="/#/sector/workshop"><strong>Robotics workshop</strong><span>Parviz and parametric mechanisms</span></a><a href="/#/sector/agents"><strong>Agent lab</strong><span>Quota-aware coding-agent routing</span></a><a href="/#/sector/career"><strong>Career garden</strong><span>A place to continue the conversation</span></a></div></section>
+<section class="about" id="career"><p class="section-context">About & contact</p><h2>Across systems.<br>Grounded in engineering.</h2><div><p>I am a Staff Engineer at Songtradr, based in Helsinki. My background spans backend platforms, integrations, and developer tools.</p><p>At Starship Technologies, I architected and built the Delivery-as-a-Service platform. My public work now spans agent orchestration, parametric mechanical design and the Parviz desk robot project.</p><p>For professional background and a way to get in touch, find me on LinkedIn. My public repositories are on GitHub.</p><nav aria-label="Public profiles"><a href="https://github.com/m-esm" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/m-esm" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav></div></section>
+<details class="board-transcripts"><summary>Read every exhibit board</summary><p>The complete text from the station, including captions for its illustrative models.</p><section id="transcript-delivery-systems"><h2>Delivery systems</h2><section id="context"><h3>Connecting the last mile</h3><p>At Starship Technologies, I architected and built the Delivery-as-a-Service platform, connecting external partners with autonomous last-mile delivery robots.</p></section><section id="responsibility"><h3>From API to operations</h3><p>I designed the unified partner API and built the Next.js operational console. I led technical integrations with partner teams including Uber, Bolt, Wolt, S-Group, Foodora, Grubhub, Deliveroo and Bringg.</p></section><section id="tooling"><h3>Tools for the ecosystem</h3><p>I built end-to-end testing systems, watchdog services and an integration playground. I also contributed to centralizing marketplace cart, tax and fee calculations in Go.</p></section><p class="caption">Illustrative delivery flow. This model is not a production architecture diagram or a live system.</p></section><section id="workshop"><h2>Parviz / Robotics</h2><section id="mechanisms"><h3>Parviz: a desk robot</h3><p>A tracked robot designed around a Raspberry Pi 5, a touchscreen face and a camera eye. Parametric Python CAD connects printed parts, a pan/tilt neck and drive tracks. The mechanical assembly is a CAD prototype; the repository also contains a working software spike.</p></section><section id="board-framework"><h3>Mechlib: code into parts</h3><p>A Python library of parametric mechanical components: gears, cams, linkages, ratchets, couplings and flexures. The interactive gallery lets you inspect mechanisms and retune parameters in the browser with Pyodide.</p></section><p class="caption">Enlarged source CAD, with a lightweight loading model. Not yet printed or assembled. Click the robot to separate its assemblies.</p></section><section id="agent-lab"><h2>Smart subagents / AI tools</h2><section id="routing"><h3>The right agent for the work</h3><p>Smart subagents routes coding tasks using CLI quota headroom and task difficulty. Work runs in an isolated Git worktree, with diff verification before reporting back. Task size and reasoning difficulty are treated separately.</p></section><section id="board-branches"><h3>One instance per branch</h3><p>Multi Branch runs an instance for each branch of a Node.js repository and selects between them using an HTTP header. It is an earlier exploration of isolated development environments, a theme that also appears in my agent tooling.</p></section><p class="caption">The routing exhibit is a deterministic illustration of the public project. No live agents or account access.</p></section><section id="transcript-career"><h2>Career and contact</h2><section id="career-now"><h3>Engineering across systems</h3><p>I am a Staff Engineer at Songtradr, based in Helsinki. My engineering background spans backend platforms, integrations and developer tools. At Starship Technologies, I architected and built the Delivery-as-a-Service platform explored in the systems yard.</p></section><section id="contact"><h3>Continue the conversation</h3><p>For professional background and a way to get in touch, visit my LinkedIn profile. You can also explore my public repositories on GitHub. The station is an invitation to look around; there is no task to finish before reaching out.</p></section></section></details></main><footer><a class="wordmark" href="/">Moshe's Lab</a><span>Built as a place to explore.</span><a href="#">Back to top ↑</a></footer></body></html>

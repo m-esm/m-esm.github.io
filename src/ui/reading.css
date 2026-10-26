@@ -647,3 +647,210 @@ article[id] {
     scroll-behavior: auto;
   }
 }
+.recommendation {
+  margin: 72px 0 0;
+  padding: 38px 0 38px 38px;
+  border-left: 4px solid #698a88;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+}
+.recommendation blockquote {
+  font-size: clamp(25px, 3vw, 38px);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  margin: 0;
+  max-width: 30ch;
+}
+.recommendation figcaption {
+  align-self: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.recommendation figcaption span {
+  display: block;
+  color: #526b67;
+  margin: 8px 0 16px;
+}
+.project-list {
+  gap: 60px;
+}
+.project-detail {
+  color: #526b67;
+  font-size: 15px !important;
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 22px;
+}
+.project-links a {
+  font-size: 14px;
+}
+.project-symbol.parviz {
+  position: relative;
+  padding-left: 40px;
+}
+.project-symbol.parviz i:first-child {
+  width: 120px;
+  height: 73px;
+  background: #294c5d;
+  border: 7px solid #c58b50;
+  border-radius: 12px;
+  box-shadow: none;
+  transform: none;
+  position: absolute;
+  top: 0;
+  left: 35px;
+}
+.project-symbol.parviz i:nth-child(2),
+.project-symbol.parviz i:nth-child(3) {
+  width: 90px;
+  height: 37px;
+  background: #394b56;
+  border: 7px dashed #85949c;
+  border-radius: 20px;
+  transform: none;
+  box-shadow: none;
+  margin-top: 50px;
+}
+.project-symbol.smart-subagents {
+  gap: 18px;
+}
+.project-symbol.smart-subagents i {
+  width: 60px;
+  height: 73px;
+  background: #8ea69d;
+  border-top: 12px solid #294c5d;
+  box-shadow: 8px 8px 0 #bdcaca;
+}
+.project-symbol.smart-subagents i:nth-child(2) {
+  height: 105px;
+  border-color: #b87943;
+}
+.project-symbol.mechlib i {
+  height: 70px;
+  width: 70px;
+  border: 12px dashed #537581;
+  border-radius: 50%;
+  transform: none;
+  box-shadow: none;
+}
+.project-symbol.mechlib i:nth-child(2) {
+  height: 100px;
+  width: 100px;
+  border-color: #b87943;
+}
+.project-symbol.socket-cluster i {
+  height: 80px;
+  width: 50px;
+  border: 0;
+  border-radius: 3px;
+  background: repeating-linear-gradient(#739096 0 13px, #c9d5d1 13px 18px);
+}
+.earlier-work {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 45px;
+  padding: 70px 0 0;
+}
+.earlier-work h2 {
+  font-size: 38px;
+  margin: 0;
+}
+.earlier-work .caption {
+  grid-column: 1/-1;
+  margin: 0;
+}
+.earlier-work h3 {
+  font-size: 24px;
+}
+.earlier-work p {
+  font-size: 16px;
+}
+@media (max-width: 700px) {
+  .recommendation {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+    padding: 24px;
+  }
+  .earlier-work {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .earlier-work h2 {
+    font-size: 34px;
+  }
+}
+.project-image {
+  margin: 0 0 28px;
+  background: #1c2830;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+}
+.project-image figcaption {
+  padding: 10px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #cbd8da;
+}
+.project-image.wide img {
+  height: 210px;
+}
+.project-list article:first-child {
+  grid-row: span 2;
+}
+@media (max-width: 600px) {
+  .project-list article:first-child {
+    grid-row: auto;
+  }
+  .project-image img {
+    height: 340px;
+  }
+  .project-image.wide img {
+    height: 160px;
+  }
+}
+.project-list article:first-child {
+  grid-column: 1/-1;
+  grid-row: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+}
+.project-list article:first-child .project-image {
+  margin-bottom: 0;
+}
+.project-list article:first-child h3 {
+  font-size: 42px;
+}
+.project-list article:last-child {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  gap: 44px;
+}
+.project-list article:last-child .project-symbol {
+  justify-content: center;
+  align-self: center;
+}
+@media (max-width: 700px) {
+  .project-list article:first-child,
+  .project-list article:last-child {
+    display: block;
+    grid-column: auto;
+  }
+  .project-list article:first-child .project-image {
+    margin-bottom: 24px;
+  }
+  .project-list article:last-child .project-symbol {
+    justify-content: flex-start;
+  }
+}

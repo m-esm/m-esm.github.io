@@ -107,6 +107,27 @@ export function Environment({
           }),
         )}
       </Bake>
+      <pointLight
+        position={[-32, 7.4, -12]}
+        intensity={14}
+        distance={9}
+        decay={2}
+        color="#ffddb3"
+      />
+      <pointLight
+        position={[21, 9.3, -29]}
+        intensity={10}
+        distance={8}
+        decay={2}
+        color="#d1e7f1"
+      />
+      <pointLight
+        position={[35, 6, 17]}
+        intensity={7}
+        distance={7}
+        decay={2}
+        color="#ffddb3"
+      />
       <HabitatBuildings />
       <Bake>
         {/* Communications mast anchored beyond the main terrace. */}

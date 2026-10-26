@@ -1,4 +1,4 @@
-/** Public editorial content derived from the approved portfolio brief. */
+/** Public editorial content verified against the CV, public LinkedIn and public repositories on 26 October 2026. */
 export const editorial = {
   headline: "Software that reaches beyond the screen.",
   summary:
@@ -17,11 +17,11 @@ export const editorial = {
       },
       {
         title: "Operational console",
-        body: "An operational interface alongside the partner-facing platform.",
+        body: "A Next.js console for operational teams to track orders, manage workflows and access insights.",
       },
       {
         title: "Integration tooling",
-        body: "An integration playground and developer tools for partner engineering teams.",
+        body: "Technical integrations with partner teams including Uber, Bolt, Wolt, S-Group, Foodora, Grubhub, Deliveroo and Bringg, supported by an integration playground.",
       },
       {
         title: "Testing and monitoring",
@@ -29,24 +29,80 @@ export const editorial = {
       },
     ],
     perspective:
-      "The project brings together the areas represented throughout this portfolio: platform architecture, integration work, operational software, and tools that help other engineers build.",
+      "Alongside DaaS, I contributed to rewriting and centralizing cart, tax and fee calculations in Go. Earlier marketplace work covered billing flows and the order lifecycle. This is the thread through my work: making complex systems easier to integrate, operate and evolve.",
   },
   projects: [
     {
-      id: "framework",
-      title: "Serendip Framework",
-      kind: "Historical personal project",
-      body: "A reusable backend framework and tooling effort. An exploration of software infrastructure that other software can build on.",
+      id: "parviz",
+      title: "Parviz",
+      kind: "Robotics / CAD prototype",
+      body: "A desk robot designed from software to mechanics: tracked drive, a Raspberry Pi touchscreen face, a camera eye, and a pan/tilt neck. Parametric Python generates the assembly; the software spike includes face rendering, motion and camera integration.",
+      detail:
+        "The design explores a self-locking worm-drive tilt mechanism, a captured-ball pan race, and positive-drive tracks. The repository documents interference checks, assembly order and cable routing. The mechanical design is not yet printed or assembled.",
       sector: "workshop",
-      link: "Explore the workshop",
+      link: "Visit the robotics workshop",
+      source: "https://github.com/m-esm/Parviz",
+      demo: "https://m-esm.github.io/Parviz/viewer_glb.html",
+      demoLabel: "Inspect the actual CAD assembly",
     },
     {
-      id: "branches",
-      title: "Multi Branch",
-      kind: "Historical personal project",
-      body: "An instance-per-branch project. The station's branch rack gives this idea a physical form: separate branches represented as separate environments.",
+      id: "smart-subagents",
+      title: "Smart subagents",
+      kind: "AI engineering / Developer tools",
+      body: "A quota-aware task router for coding CLIs. It considers available headroom, task size and reasoning difficulty, dispatches work in an isolated Git worktree, and verifies the resulting diff before reporting back.",
+      detail:
+        "Size and difficulty are separate decisions: a broad rename and a small concurrency fix demand different kinds of work. The public implementation includes worker eligibility, fallback selection, cooldowns and outcome-based routing feedback.",
       sector: "agents",
-      link: "Explore the agent lab",
+      link: "Visit the agent lab",
+      source: "https://github.com/m-esm/smart-subagents",
+      demo: "",
+      demoLabel: "",
+    },
+    {
+      id: "mechlib",
+      title: "Mechlib",
+      kind: "Mechanical design / Python",
+      body: "Reusable parametric parts for FDM printing: gears, cams, linkages, ratchets, couplings and flexures. Built with trimesh, Shapely and manifold3d.",
+      detail:
+        "An interactive browser gallery combines mechanism animations with editable parameters, running the Python library through Pyodide. Bought-part envelopes are kept separate from printed geometry.",
+      sector: "workshop",
+      link: "Visit the fabrication bench",
+      source: "https://github.com/m-esm/mechlib",
+      demo: "https://m-esm.github.io/mechlib/",
+      demoLabel: "Open the interactive gallery",
+    },
+    {
+      id: "socket-cluster",
+      title: "WebSocket clustering",
+      kind: "Distributed systems / Technical writing",
+      body: "A public NestJS and Redis example accompanying my article on WebSocket clustering: handling users with several clients connected to different instances.",
+      detail:
+        "The repository gives the article a concrete implementation readers can explore. It sits alongside earlier open-source work on end-to-end encryption, backend frameworks and per-branch environments.",
+      sector: "systems",
+      link: "Visit the systems yard",
+      source: "https://github.com/m-esm/socket-cluster-app",
+      demo: "https://medium.com/@mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed",
+      demoLabel: "Read the article",
+    },
+  ],
+  recommendation: {
+    quote:
+      "The most time sensitive and complex projects in the DaaS team landed on his table",
+    author: "Taavi Pungas",
+    context:
+      "Public LinkedIn recommendation, reflecting on our work at Starship",
+    href: "https://www.linkedin.com/in/m-esm",
+  },
+  earlier: [
+    {
+      title: "Hotel inventory and financial integrations",
+      company: "Alibaba.aero",
+      text: "Integrated more than ten hotel inventory systems, built billing and invoicing integrations, and developed software to detect financial discrepancies.",
+    },
+    {
+      title: "Video platform infrastructure",
+      company: "BoomFit",
+      text: "Backend APIs, streaming, data processing and video intelligence on Google Cloud, alongside architecture documentation and a move toward a test-driven codebase.",
     },
   ],
 };
@@ -69,14 +125,14 @@ export const sectorStories = [
   {
     id: "workshop",
     title: "Robotics workshop",
-    description: "Reusable backend tools and an illustrative repair bench",
+    description: "Parviz desk robot and Mechlib parametric mechanisms",
     x: 62,
     y: 58,
   },
   {
     id: "agents",
     title: "Agent lab",
-    description: "Branch environments and a kinetic routing illustration",
+    description: "Smart subagents: quota-aware coding-agent routing",
     x: 230,
     y: 47,
   },

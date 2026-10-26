@@ -1,8 +1,10 @@
-import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
+import { ParvizCad } from "../exhibits/ParvizCad";
+import {
+  MechanicalGallery,
+  AgentRoutingExhibit,
+} from "../exhibits/SignatureExhibits";
 import { CuboidCollider, RigidBody } from "@react-three/rapier";
-import { Group } from "three";
-import { Bake, Beam, Box, Cyl, Orb, Planter, Rail } from "./kit";
+import { Bake, Beam, Box, Cyl, Planter, Rail } from "./kit";
 import type { V3 } from "./kit";
 import { palette as p } from "./layout";
 import { Label } from "./Settlement";
@@ -176,245 +178,6 @@ function RailCollider({ a, b }: { a: V3; b: V3 }) {
     />
   );
 }
-function Mechanism({ paused, reduced }: { paused: boolean; reduced: boolean }) {
-  const arm = useRef<Group>(null),
-    time = useRef(0);
-  useFrame((_, dt) => {
-    if (paused || reduced || !arm.current) return;
-    time.current += Math.min(dt, 0.1);
-    arm.current.rotation.z = Math.sin(time.current * 0.6) * 0.25;
-  });
-  return (
-    <group position={[-32, 4.35, -13]}>
-      <Bake>
-        <Box
-          at={[0, -0.04, 0]}
-          size={[1.2, 0.14, 1.05]}
-          color={p.slate}
-          round
-        />
-        <Cyl size={[0.43, 0.18, 0.43]} color={p.green} />
-        <Cyl at={[0, 0.12, 0]} size={[0.34, 0.08, 0.34]} color="#8d9e9c" />
-        {Array.from({ length: 6 }, (_, i) => (
-          <Cyl
-            key={i}
-            at={[
-              Math.cos((i * Math.PI) / 3) * 0.35,
-              0.14,
-              Math.sin((i * Math.PI) / 3) * 0.35,
-            ]}
-            size={[0.035, 0.035, 0.035]}
-            color={p.slate}
-          />
-        ))}
-      </Bake>
-      <group ref={arm}>
-        <Bake>
-          <Cyl at={[0, 0.27, 0]} size={[0.23, 0.32, 0.23]} color={p.orange} />
-          <Box
-            at={[0.28, 0.76, 0]}
-            size={[0.28, 1.03, 0.25]}
-            rotation={[0, 0, -0.53]}
-            color={p.chalk}
-            round
-          />
-          <Beam
-            from={[-0.1, 0.39, 0.18]}
-            to={[0.47, 1.33, 0.18]}
-            r={0.052}
-            color={p.slate}
-          />
-          <Cyl
-            at={[0.6, 1.35, 0]}
-            size={[0.22, 0.4, 0.22]}
-            rotation={[Math.PI / 2, 0, 0]}
-            color={p.slate}
-          />
-          <Cyl
-            at={[0.6, 1.35, 0.22]}
-            size={[0.13, 0.06, 0.13]}
-            rotation={[Math.PI / 2, 0, 0]}
-            color={p.orange}
-          />
-          <Box
-            at={[0.97, 1.28, 0]}
-            size={[0.76, 0.2, 0.24]}
-            rotation={[0, 0, -0.2]}
-            color={p.green}
-            round
-          />
-          <Beam
-            from={[0.64, 1.47, 0.17]}
-            to={[1.33, 1.33, 0.17]}
-            r={0.025}
-            color="#8d9e9c"
-          />
-          <Cyl
-            at={[1.36, 1.2, 0]}
-            size={[0.13, 0.2, 0.13]}
-            rotation={[0, 0, Math.PI / 2]}
-            color="#8d9e9c"
-          />
-          <Box
-            at={[1.46, 1.14, 0]}
-            size={[0.24, 0.2, 0.32]}
-            color={p.slate}
-            round
-          />
-          {[-0.16, 0.16].map((z) => (
-            <group key={z}>
-              <Box
-                at={[1.52, 0.91, z]}
-                size={[0.1, 0.35, 0.08]}
-                color={p.orange}
-                round
-              />
-              <Box
-                at={[1.47, 0.74, z]}
-                size={[0.18, 0.06, 0.09]}
-                color="#8d9e9c"
-              />
-            </group>
-          ))}
-          {Array.from({ length: 5 }, (_, i) => (
-            <Cyl
-              key={i}
-              at={[
-                0.6 + Math.cos((i * Math.PI * 2) / 5) * 0.17,
-                1.35 + Math.sin((i * Math.PI * 2) / 5) * 0.17,
-                0.23,
-              ]}
-              size={[0.022, 0.025, 0.022]}
-              rotation={[Math.PI / 2, 0, 0]}
-              color={p.metal}
-            />
-          ))}
-          <Beam
-            from={[0.1, 0.28, -0.19]}
-            to={[-0.1, 0.65, -0.19]}
-            r={0.022}
-            color={p.orange}
-          />
-          <Beam
-            from={[-0.1, 0.65, -0.19]}
-            to={[0.5, 1.55, -0.19]}
-            r={0.022}
-            color={p.orange}
-          />
-          <Beam
-            from={[0.5, 1.55, -0.19]}
-            to={[1.35, 1.4, -0.19]}
-            r={0.022}
-            color={p.orange}
-          />
-        </Bake>
-      </group>
-    </group>
-  );
-}
-function RoutingModel({
-  paused,
-  reduced,
-}: {
-  paused: boolean;
-  reduced: boolean;
-}) {
-  const token = useRef<Group>(null),
-    time = useRef(0);
-  useFrame((_, dt) => {
-    if (paused || reduced || !token.current) return;
-    time.current += Math.min(dt, 0.1);
-    const t = (time.current * 0.16) % 4;
-    token.current.position.set(
-      t < 2 ? -3 + t * 3 : 3 - (t - 2) * 3,
-      0.7,
-      t < 2 ? -0.55 : 0.55,
-    );
-  });
-  return (
-    <group position={[21, 7.4, -29]}>
-      <Bake>
-        <Box size={[8, 0.18, 2.4]} color={p.slate} round />
-        {[-3, 0, 3].map((x, i) => (
-          <group key={x} position={[x, 0, 0]}>
-            <Box
-              at={[0, 0.27, 0]}
-              size={[1.4, 0.45, 1.2]}
-              color={[p.metal, p.green, p.orange][i]}
-              round
-            />
-            <Cyl at={[0, 0.6, 0]} size={[0.22, 0.22, 0.22]} color={p.chalk} />
-          </group>
-        ))}
-        <Beam
-          from={[-3, 0.3, -0.55]}
-          to={[3, 0.3, -0.55]}
-          r={0.035}
-          color={p.chalk}
-        />
-        <Beam
-          from={[-3, 0.3, 0.55]}
-          to={[3, 0.3, 0.55]}
-          r={0.035}
-          color={p.chalk}
-        />
-        {[-3, 0, 3].map((x, i) => (
-          <group key={`hardware${x}`} position={[x, 0, 0]}>
-            <Box
-              at={[0, 0.52, 0]}
-              size={[1.08, 0.05, 0.65]}
-              color="#8d9e9c"
-              round
-            />
-            {i === 0 ? (
-              [-0.22, 0, 0.22].map((dx) => (
-                <Box
-                  key={dx}
-                  at={[dx, 0.73, 0]}
-                  size={[0.14, 0.35, 0.24]}
-                  rotation={[0, 0, -0.18]}
-                  color={p.chalk}
-                  round
-                />
-              ))
-            ) : i === 1 ? (
-              Array.from({ length: 7 }, (_, j) => (
-                <Box
-                  key={j}
-                  at={[-0.42 + j * 0.14, 0.71, 0]}
-                  size={[0.055, 0.32, 0.53]}
-                  color={p.slate}
-                />
-              ))
-            ) : (
-              <>
-                <Box
-                  at={[0, 0.64, 0]}
-                  size={[0.7, 0.16, 0.45]}
-                  color={p.chalk}
-                  round
-                />
-                <Box
-                  at={[0, 0.73, 0]}
-                  size={[0.42, 0.025, 0.3]}
-                  color={p.green}
-                />
-              </>
-            )}
-            <Box
-              at={[0, 0.29, 0.62]}
-              size={[0.7, 0.09, 0.035]}
-              color="#b6e4df"
-            />
-          </group>
-        ))}
-      </Bake>
-      <group ref={token} position={[-3, 0.7, -0.55]}>
-        <Orb at={[0, 0, 0]} size={[0.15, 0.15, 0.15]} color={p.blue} />
-      </group>
-    </group>
-  );
-}
 export function Expansion({
   paused,
   reduced,
@@ -489,27 +252,6 @@ export function Expansion({
           <Rail key={i} a={a} b={b} />
         ))}
         {/* Open repair bay: a high sawtooth canopy and a tool wall behind the bench. */}
-        {[-36, -22].map((x) => (
-          <group key={x}>
-            <Box at={[x, 6.3, -26]} size={[0.18, 6.6, 0.18]} color={p.slate} />
-            <Box at={[x, 6.3, -10]} size={[0.18, 6.6, 0.18]} color={p.slate} />
-          </group>
-        ))}
-        {[-22, -18].map((z) => (
-          <group key={z}>
-            <Box
-              at={[-29, 9.55, z]}
-              size={[14.5, 0.18, 3.7]}
-              color={p.metal}
-              rotation={[0.12, 0, 0]}
-            />
-            <Beam
-              from={[-36, 9.5, z + 1.8]}
-              to={[-22, 9.5, z + 1.8]}
-              r={0.09}
-            />
-          </group>
-        ))}
         <Box at={[-32, 4.2, -13]} size={[4, 0.18, 2]} color="#9b8e6c" round />
         {[-33.5, -30.5].map((x) => (
           <Box
@@ -692,14 +434,9 @@ export function Expansion({
         <Cyl at={[32, 3.95, 18]} size={[0.12, 0.3, 0.12]} color={p.chalk} />
         <Planter at={[5, 0, -2]} long={4} />
       </Bake>
-      <Mechanism paused={paused} reduced={reduced} />
-      <RoutingModel paused={paused} reduced={reduced} />
-      <Label at={[-29, 8.8, -19.9]} size={0.42}>
-        Robotics / Workshop
-      </Label>
-      <Label at={[25, 11.5, -34.9]} size={0.44}>
-        Agent lab / Experiments
-      </Label>
+      <ParvizCad paused={paused} reduced={reduced} />
+      <MechanicalGallery paused={paused} reduced={reduced} />
+      <AgentRoutingExhibit paused={paused} reduced={reduced} />
       <Label at={[31, 7.6, 16.12]} size={0.38}>
         Career / Contact garden
       </Label>
@@ -710,10 +447,7 @@ export function Expansion({
         Garden via courtyard ramp
       </Label>
       <Label at={[-32, 3.04, -10]} rotation={[-Math.PI / 2, 0, 0]} size={0.2}>
-        Illustrative mechanism
-      </Label>
-      <Label at={[21, 7.42, -27.78]} size={0.2}>
-        Request / Worker / Review
+        Parviz / CAD prototype
       </Label>
     </>
   );

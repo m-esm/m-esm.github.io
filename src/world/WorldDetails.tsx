@@ -18,42 +18,6 @@ const dish = new LatheGeometry(
   ],
   32,
 );
-function Paving({
-  at,
-  size,
-  tile = 3,
-  warm = false,
-}: {
-  at: V3;
-  size: [number, number];
-  tile?: number;
-  warm?: boolean;
-}) {
-  const nx = Math.ceil(size[0] / tile),
-    nz = Math.ceil(size[1] / tile),
-    w = size[0] / nx,
-    d = size[1] / nz;
-  const colors = warm
-    ? ["#c0c7b9", "#c6cbbf", "#bfc7bb"]
-    : ["#c1c9c4", "#c8cdc5", "#c0c8c2"];
-  return (
-    <group position={at}>
-      {Array.from({ length: nx * nz }, (_, i) => {
-        const x = i % nx,
-          z = Math.floor(i / nx),
-          color = colors[(x * 7 + z * 11) % 3];
-        return (
-          <Box
-            key={i}
-            at={[-size[0] / 2 + (x + 0.5) * w, 0, -size[1] / 2 + (z + 0.5) * d]}
-            size={[w - 0.035, 0.014, d - 0.035]}
-            color={color}
-          />
-        );
-      })}
-    </group>
-  );
-}
 function Flange({ at, rotation = [0, 0, 0] }: { at: V3; rotation?: V3 }) {
   return (
     <group position={at} rotation={rotation}>
@@ -246,14 +210,6 @@ export function WorldDetails({
   return (
     <>
       <Bake castShadow={false}>
-        <Paving at={[0, 0.035, -5.5]} size={[76, 69]} tile={4} />
-        <Paving at={[0, 3.05, 20]} size={[29.7, 11.7]} />
-        <Paving at={[-29, 3.055, -17]} size={[13.75, 21.75]} />
-        <Paving at={[-29, 3.055, -33]} size={[13.75, 9.8]} />
-        <Paving at={[-15, 3.055, -34]} size={[13.8, 7.8]} />
-        <Paving at={[25, 6.055, -32]} size={[21.8, 11.8]} />
-        <Paving at={[31, 3.055, 11]} size={[13.8, 29.8]} warm />
-        <Paving at={[19.5, 3.055, 23]} size={[8.9, 5.8]} warm />
         {[-12, -8, 2, 6, 10].map((x) => (
           <Box
             key={x}

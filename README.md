@@ -2,7 +2,7 @@
 
 A playable third-person portfolio for Mohsen “Moshe” Esmaeili. Drive a wheeled maintenance robot through an open terraced engineering settlement beneath a glass dome, with a blue ocean planet overhead. Portfolio content lives on physical signs.
 
-The original phases 0–3 slice is now extended into a connected five-destination settlement: **Arrival**, **Delivery systems**, **Robotics workshop**, **Agent lab**, and **Career and contact**. Four additional ramps connect the 0 / 3 / 6 m terraces, with a courtyard shortcut. Historical Serendip Framework and Multi Branch context accompanies explicitly illustrative mechanisms; recent private projects are not published.
+The original phases 0–3 slice is now extended into a connected five-destination settlement: **Arrival**, **Delivery systems**, **Robotics workshop**, **Agent lab**, and **Career and contact**. Four additional ramps connect the 0 / 3 / 6 m terraces, with a courtyard shortcut. The featured exhibits cover Starship Delivery-as-a-Service, Parviz, Mechlib and smart-subagents, grounded in the CV, public LinkedIn and source repositories. Recent private projects are not published.
 
 The five-destination station now has a full surface, foliage, machinery and robot art pass. Its dark orbital exterior includes stars, a finite pressure hull, exposed trusses, solar wings and thermal radiators. Daylight remains soft and bright inside the glass dome.
 
@@ -63,3 +63,9 @@ The interview decisions remain authoritative: **open settlement under glass, sof
 ## Editorial portfolio upgrade
 
 The reading document now presents a full delivery-platform case study, a conceptual flow diagram, historical project profiles, and a direct contact section. The playable station has a dismissible introduction and a diagrammatic destination map. All prose derives from the existing approved brief; no new metrics or private project claims were added. Run `npm run build` to regenerate the reading document after editorial changes. This upgrade was pushed over SSH as `8307e77`; its Pages build and deployment succeeded, and the public reading page was verified.
+
+## Featured-work and 3D release
+
+The workshop now contains the actual Parviz CAD assembly with click-to-explode presentation, streamed from a local asset when approached. Its lighter loading/error model is original; the full model retains source geometry and credits. A working software spike and an unassembled mechanical CAD design are described separately. Mechlib has a mechanical demonstration and a direct gallery link. Smart subagents replaces the generic agent story with a concrete quota/worktree/verification exhibit.
+
+A new fabrication roof, structural bracing, computing pavilion, regional paving, deck-panel construction, courtyard basin, task lighting and better arrival views give the five districts stronger visual identity. The reading page adds source CAD imagery, named integration work, a short attributed LinkedIn recommendation and earlier platform experience. See [content evidence](docs/content-evidence-2026-10-26.md) and [asset credits](public/assets/licenses/project-credits.html).

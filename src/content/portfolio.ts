@@ -2,6 +2,7 @@ export interface Panel {
   id: string;
   heading: string;
   body: string;
+  link?: { label: string; href: string };
 }
 export type SectorId = "arrival" | "systems" | "workshop" | "agents" | "career";
 export const destinations: { id: SectorId; label: string }[] = [
@@ -35,12 +36,12 @@ export const delivery = {
     {
       id: "responsibility",
       heading: "From API to operations",
-      body: "My work included the partner API, an operational console, integrations with partner engineering teams, and developer tooling for integration and testing.",
+      body: "I designed the unified partner API and built the Next.js operational console. I led technical integrations with partner teams including Uber, Bolt, Wolt, S-Group, Foodora, Grubhub, Deliveroo and Bringg.",
     },
     {
       id: "tooling",
       heading: "Tools for the ecosystem",
-      body: "I built end-to-end testing systems, watchdog services, and an integration playground to support the partner ecosystem.",
+      body: "I built end-to-end testing systems, watchdog services and an integration playground. I also contributed to centralizing marketplace cart, tax and fee calculations in Go.",
     },
   ] satisfies Panel[],
   caption:
@@ -60,59 +61,75 @@ export const exhibits: Exhibit[] = [
   { ...delivery, sector: "systems" },
   {
     id: "workshop",
-    title: "Robotics workshop",
+    title: "Parviz / Robotics",
     sector: "workshop",
     publication: "public",
-    category: "illustration",
+    category: "personal",
     evidence: [
       {
         kind: "design",
         reference:
-          "Original station illustration; historical framework from supplied CV and old portfolio",
+          "Public m-esm/Parviz and m-esm/mechlib READMEs, reviewed 26 October 2026",
       },
     ],
     panels: [
       {
         id: "mechanisms",
-        heading: "From software to mechanisms",
-        body: "A repair bench explores the boundary between code and moving parts. The articulated mechanism is an original station illustration, not a named personal robot or a shipped product.",
+        heading: "Parviz: a desk robot",
+        body: "A tracked robot designed around a Raspberry Pi 5, a touchscreen face and a camera eye. Parametric Python CAD connects printed parts, a pan/tilt neck and drive tracks. The mechanical assembly is a CAD prototype; the repository also contains a working software spike.",
+        link: {
+          label: "Explore Parviz",
+          href: "https://github.com/m-esm/Parviz",
+        },
       },
       {
         id: "framework",
-        heading: "Reusable backend tools",
-        body: "Serendip Framework is one of my historical personal projects: a reusable backend framework and tooling effort. It belongs here as an example of building tools for other software, alongside the physical workshop's tools and fixtures.",
+        heading: "Mechlib: code into parts",
+        body: "A Python library of parametric mechanical components: gears, cams, linkages, ratchets, couplings and flexures. The interactive gallery lets you inspect mechanisms and retune parameters in the browser with Pyodide.",
+        link: {
+          label: "Open mechanical gallery",
+          href: "https://m-esm.github.io/mechlib/",
+        },
       },
     ],
     caption:
-      "Illustrative mechanism. Historical project context does not imply current maintenance.",
+      "Enlarged source CAD, with a lightweight loading model. Not yet printed or assembled. Click the robot to separate its assemblies.",
   },
   {
     id: "agent-lab",
-    title: "Agent lab",
+    title: "Smart subagents / AI tools",
     sector: "agents",
     publication: "public",
-    category: "illustration",
+    category: "personal",
     evidence: [
       {
         kind: "design",
         reference:
-          "Original routing illustration; Multi Branch from supplied CV and old portfolio",
+          "Public m-esm/smart-subagents and m-esm/node-multi-branch READMEs, reviewed 26 October 2026",
       },
     ],
     panels: [
       {
         id: "routing",
-        heading: "Work moving through a system",
-        body: "A token travels between request, worker and review stations. This deterministic sculpture illustrates handoffs and feedback. It does not run AI agents or access live infrastructure.",
+        heading: "The right agent for the work",
+        body: "Smart subagents routes coding tasks using CLI quota headroom and task difficulty. Work runs in an isolated Git worktree, with diff verification before reporting back. Task size and reasoning difficulty are treated separately.",
+        link: {
+          label: "View smart-subagents",
+          href: "https://github.com/m-esm/smart-subagents",
+        },
       },
       {
         id: "branches",
         heading: "One instance per branch",
-        body: "Multi Branch is a historical personal project built around an instance for each branch. The small branch rack beside this board illustrates that idea. The model is conceptual; it is not connected to repositories or running deployments.",
+        body: "Multi Branch runs an instance for each branch of a Node.js repository and selects between them using an HTTP header. It is an earlier exploration of isolated development environments, a theme that also appears in my agent tooling.",
+        link: {
+          label: "View Multi Branch",
+          href: "https://github.com/m-esm/node-multi-branch",
+        },
       },
     ],
     caption:
-      "Illustrative experiment. No live agents, repository access or production topology.",
+      "The routing exhibit is a deterministic illustration of the public project. No live agents or account access.",
   },
   {
     id: "career",

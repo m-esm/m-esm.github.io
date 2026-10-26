@@ -256,7 +256,7 @@ export function PhysicalBoard({
         <Text
           position={[-width / 2 + 0.25, height / 2 - 2, 0.12]}
           font="/assets/plex-sans.woff"
-          fontSize={0.23}
+          fontSize={0.24}
           maxWidth={width - 0.5}
           anchorX="left"
           anchorY="top"
@@ -266,7 +266,7 @@ export function PhysicalBoard({
             ? "Software engineer / Helsinki\n\nInspect to read"
             : board.id === "directory"
               ? "Systems / Workshop / Agent lab / Garden\n\nInspect to choose a destination"
-              : `${exhibit?.title}\n\nInspect to read`}
+              : `${exhibit?.title}\n\n${item?.body.split(". ")[0] ?? ""}.`}
         </Text>
       </group>
       {visible && (
@@ -376,6 +376,16 @@ export function PhysicalBoard({
                   </div>
                 )}
                 <div className="story-actions">
+                  {item?.link && (
+                    <a
+                      className="board-source"
+                      href={item.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.link.label}
+                    </a>
+                  )}
                   {index > 0 && (
                     <button
                       onClick={() => onInspect(panels[index - 1].id, true)}

@@ -3,8 +3,8 @@ import type { SectorId } from "../content/portfolio";
 export const anchors = {
   arrival: [2, 3.65, 22],
   systems: [-5, 0.65, -10],
-  workshop: [-28, 3.65, -17],
-  agents: [31, 6.65, -29],
+  workshop: [-28, 3.65, -8],
+  agents: [27, 6.65, -27.5],
   career: [26.5, 3.65, 12],
 } as const;
 export interface BoardPlacement {
