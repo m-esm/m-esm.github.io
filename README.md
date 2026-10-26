@@ -75,3 +75,7 @@ The featured-work release was pushed over SSH as `85a183e`. [Pages run 403909488
 ## Habitat expansion
 
 The station now includes a kinetic orbital sculpture west of arrival (click to pause/resume), a service docking hall behind arrival, and a glazed hydroponics wing beside the garden. These original environmental additions extend the settlement around its five portfolio destinations. The dock and nursery are scenery beyond the safety rails.
+
+## Reading page and rendering finish
+
+The generated `reading.html` is a Vite entry with static portfolio prose and progressively enhanced, inline 3D delivery/agent diagrams. `npm run build` regenerates it from the content and CSS sources. The page includes a dated chronology and two attributed LinkedIn recommendation excerpts. Public-project year labels denote repository creation, while the approximate DaaS transition is identified explicitly. The world adds ambient contact shading and antialiasing in standard quality mode; low quality retains direct rendering.

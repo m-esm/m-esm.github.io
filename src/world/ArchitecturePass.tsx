@@ -381,12 +381,12 @@ function CourtyardBasin() {
 export function ArchitecturePass() {
   return (
     <>
-      <Paving at={[0, 0.038, -5.5]} size={[75.8, 68.8]} color="#b7c0b9" />
+      <Paving at={[0, 0.038, -5.5]} size={[75.8, 68.8]} color="#d3d7cc" />
       <Paving at={[0, 3.05, 20]} size={[29.8, 11.8]} color="#e1ded0" />
-      <Paving at={[-29, 3.05, -17]} size={[13.8, 21.8]} color="#b5bcb2" />
-      <Paving at={[-29, 3.05, -33]} size={[13.8, 9.8]} color="#b5bcb2" />
+      <Paving at={[-29, 3.05, -17]} size={[13.8, 21.8]} color="#c8ccbd" />
+      <Paving at={[-29, 3.05, -33]} size={[13.8, 9.8]} color="#c8ccbd" />
       <Paving at={[-15, 3.05, -34]} size={[13.8, 7.8]} color="#c3cbc2" />
-      <Paving at={[25, 6.05, -32]} size={[21.8, 11.8]} color="#bdcbd0" />
+      <Paving at={[25, 6.05, -32]} size={[21.8, 11.8]} color="#c4d6da" />
       <Paving at={[31, 3.05, 11]} size={[13.8, 29.8]} color="#d2d0b9" />
       <Paving at={[19.5, 3.05, 23]} size={[8.8, 5.8]} color="#d2d0b9" />
       <WorkshopShell />

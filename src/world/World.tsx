@@ -1,6 +1,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
+import { SceneFinish } from "./SceneFinish";
 import { Environment } from "./Environment";
 import { Settlement } from "./Settlement";
 import { Controller } from "../player/Controller";
@@ -55,7 +56,7 @@ export default function World(props: WorldProps) {
     <Canvas
       shadows={!props.low}
       dpr={props.low ? 1 : [1, 1.5]}
-      camera={{ fov: 70, near: 0.1, far: 250, position: [2, 7.5, 29.5] }}
+      camera={{ fov: 60, near: 0.1, far: 250, position: [2, 7.5, 29.5] }}
       gl={{ antialias: !props.low, powerPreference: "high-performance" }}
       fallback={
         <div>
@@ -66,6 +67,7 @@ export default function World(props: WorldProps) {
         gl.setClearColor("#030509");
       }}
     >
+      <SceneFinish low={props.low} />
       <RenderLifecycle onFailure={props.onFailure} hidden={props.hidden} />
       <Suspense fallback={null}>
         <Environment low={props.low} reduced={props.reduced} />

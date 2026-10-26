@@ -854,3 +854,70 @@ article[id] {
     justify-content: flex-start;
   }
 }
+
+/* The opening presents actual work, with the orbital experience as a second entrance. */
+:root { background: #f0f3ef; color: #243d48; }
+.reading-header { padding: 24px 0; }
+.reading-hero { grid-template-columns: 1.05fr 1fr; gap: 64px; padding: 54px 0 56px; }
+.reading-hero h1 { font-size: clamp(48px, 5.7vw, 80px); max-width: 12ch; margin: 25px 0; }
+.hero-summary { color: #53666b; font-size: 19px; line-height: 1.7; }
+.hero-secondary { display: block; width: fit-content; margin-top: 22px; font-size: 15px; }
+.hero-work { position: relative; align-self: stretch; min-height: 560px; background: #232c32; border-radius: 12px; overflow: hidden; color: #f0f3ef; }
+.hero-work > a { display: block; height: 100%; }
+.hero-work img { width: 100%; height: 100%; position: absolute; object-fit: cover; object-position: center 42%; }
+.hero-work-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 64px 28px 28px; background: linear-gradient(transparent, #17242a 65%); display: flex; gap: 20px; justify-content: space-between; align-items: end; }
+.hero-work-caption strong { display: block; font-size: 19px; font-weight: 500; max-width: 22ch; }
+.hero-work-caption span { display: block; color: #b7c8cb; font-size: 13px; margin-top: 9px; }
+.hero-work-caption a { font-size: 13px; white-space: nowrap; }
+.cad-note { position: absolute; top: 20px; left: 24px; font-size: 11px; color: #c5cfd2; }
+.practice-strip { background: #e2eae6; border: 0; padding: 22px 26px; border-radius: 8px; }
+.case-study, .projects { padding-top: 90px; }
+.primary-link { border-radius: 6px; background: #254f60; }
+@media(max-width: 800px) {
+ .reading-hero { grid-template-columns: 1fr; gap: 34px; padding-top: 36px; }
+ .reading-hero h1 { max-width: 14ch; }
+ .hero-work { min-height: 520px; }
+}
+@media(max-width: 480px) {
+ .hero-work { min-height: 440px; }
+ .hero-work-caption { padding: 60px 20px 24px; flex-direction: column; align-items: start; gap: 16px; }
+}
+
+.project-year { font-size: 13px; color: #446b77; margin: 0 0 14px; }
+.recommendations { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; padding: 68px 0; }
+.recommendations .recommendation { margin: 0; padding: 32px 0; border-top: 2px solid #769b9c; display: block; }
+.recommendations blockquote { font-size: clamp(26px, 3vw, 39px); line-height: 1.2; letter-spacing: -.025em; margin: 0 0 28px; }
+.recommendations figcaption { max-width: 44ch; }
+.recommendations figcaption span { line-height: 1.6; }
+.career-timeline, .agent-explainer { padding: 80px 0; border-top: 1px solid #c1ceca; }
+.career-timeline ol { list-style: none; padding: 0; margin: 44px 0; }
+.career-timeline li { display: grid; grid-template-columns: 180px 1fr; gap: 40px; position: relative; padding: 0 0 36px; }
+.career-timeline time { font-size: 20px; color: #446b77; padding-top: 3px; }
+.career-timeline li > div { border-left: 1px solid #9db8b5; padding-left: 40px; position: relative; }
+.career-timeline li > div:before { content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #527e87; left: -5px; top: 10px; }
+.career-timeline h3 { margin: 0 0 10px; }
+.career-timeline p { margin: 0; color: #53666b; }
+.inline-graphic { margin: 36px 0; background: #e1eae6; border-radius: 16px; overflow: hidden; }
+.graphic-top { display: flex; justify-content: space-between; align-items: center; padding: 22px 26px 0; gap: 20px; }
+.graphic-top span { font-size: 17px; }
+.graphic-top button { border: 1px solid #a7bbb6; border-radius: 6px; background: transparent; color: #355861; padding: 8px 12px; cursor: pointer; }
+.graphic-canvas { height: 380px; position: relative; touch-action: pan-y; }
+.graphic-hint { position: absolute; bottom: 8px; right: 26px; font-size: 12px; color: #5d7679; pointer-events:none; }
+.graphic-stages { display: grid; grid-template-columns: repeat(3,1fr); padding: 12px 26px 0; gap: 12px; }
+.graphic-stages button { padding: 14px; font: inherit; border: 1px solid #afc4bd; border-radius: 6px; background: transparent; color: #365761; cursor: pointer; }
+.graphic-stages button[aria-pressed=true] { background: #315c69; color: #fff; border-color:#315c69; }
+.graphic-description { padding: 0 26px; min-height: 58px; max-width: 80ch; }
+.graphic-note { padding: 0 26px 22px; font-size: 12px; color: #5d7679; }
+.graphic-error { padding: 60px 26px; }
+@media(max-width:700px) {
+ .recommendations { grid-template-columns:1fr; gap:0; }
+ .career-timeline li { grid-template-columns: 100px 1fr; gap:16px; }
+ .career-timeline li > div { padding-left:22px; }
+ .career-timeline time { font-size:16px; }
+ .graphic-canvas { height:280px; }
+ .graphic-top { padding:18px 18px 0; }
+ .graphic-top span { font-size:14px; }
+ .graphic-stages { padding:12px 18px 0; gap:6px; }
+ .graphic-stages button { padding:12px 5px; font-size:14px; }
+ .reading-header nav { gap:14px; }
+}

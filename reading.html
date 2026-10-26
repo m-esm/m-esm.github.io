@@ -1,0 +1,936 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Mohsen Esmaeili: software engineer in Helsinki. Delivery platforms, partner integrations and developer tools."><meta name="theme-color" content="#e4e9e3"><link rel="icon" href="/favicon.svg"><title>Mohsen Esmaeili · Selected work</title><style>@font-face {
+  font-family: Plex;
+  src: url("/assets/plex-sans.woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Plex;
+  src: url("/assets/plex-sans-medium.woff2");
+  font-weight: 500 700;
+  font-display: swap;
+}
+:root {
+  font-family: Plex, system-ui, sans-serif;
+  color: #263b43;
+  background: #e4e9e3;
+  font-synthesis: none;
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #397ca5;
+  outline-offset: 6px;
+}
+p {
+  line-height: 1.65;
+  max-width: 66ch;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+h1,
+h2 {
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+}
+h1 {
+  font-size: clamp(52px, 6.5vw, 94px);
+  max-width: 12ch;
+  margin: 30px 0;
+}
+h2 {
+  font-size: clamp(36px, 4.7vw, 62px);
+  max-width: 18ch;
+  margin: 20px 0 30px;
+}
+h3 {
+  font-size: 23px;
+  line-height: 1.25;
+}
+main,
+.reading-header,
+footer {
+  width: min(1220px, calc(100% - 96px));
+  margin: auto;
+}
+.reading-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+  border-bottom: 1px solid #bdc9c6;
+  gap: 30px;
+}
+.wordmark {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 22px;
+  white-space: nowrap;
+}
+.wordmark span {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #587078;
+  margin-top: 5px;
+}
+.reading-header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+}
+.reading-header nav a {
+  text-decoration: none;
+  padding: 12px 0;
+}
+.reading-header .station-link {
+  border: 1px solid #8da5ad;
+  border-radius: 5px;
+  padding: 12px 18px;
+}
+.reading-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  padding: 80px 0 68px;
+  align-items: center;
+}
+.identity {
+  font-size: 16px;
+  margin: 0;
+}
+.identity span {
+  display: block;
+  color: #587078;
+  font-size: 14px;
+  margin-top: 4px;
+}
+.hero-summary {
+  font-size: 20px;
+  max-width: 42ch;
+}
+.primary-link {
+  display: inline-flex;
+  gap: 48px;
+  align-items: center;
+  text-decoration: none;
+  background: #294c5d;
+  color: #f5f8f5;
+  border-radius: 5px;
+  padding: 16px 22px;
+  margin-top: 18px;
+  font-size: 16px;
+}
+.primary-link span {
+  font-size: 24px;
+}
+.orbit-art {
+  aspect-ratio: 1/1.17;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50% 50% 8px 8px;
+  background: radial-gradient(
+    ellipse at 60% 35%,
+    #284859 0,
+    #122b3a 45%,
+    #091821 85%
+  );
+  isolation: isolate;
+}
+.orbit-art:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, #f4f9f2 0 1px, transparent 1.6px),
+    radial-gradient(circle, #8bafc8 0 0.6px, transparent 1.3px);
+  background-size:
+    83px 97px,
+    47px 69px;
+  background-position:
+    15px 31px,
+    8px 4px;
+  opacity: 0.45;
+}
+.ocean-world {
+  width: 67%;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 24%;
+  top: 12%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 65% 23%, #e7f1eb99, transparent 27%),
+    repeating-conic-gradient(
+      from 35deg at 80% 20%,
+      #c3e2e335 0deg 5deg,
+      transparent 10deg 33deg
+    ),
+    radial-gradient(ellipse at 30% 28%, #7caaa3 0, transparent 36%),
+    radial-gradient(
+      circle at 32% 28%,
+      #70a7b3,
+      #36779a 40%,
+      #133a57 69%,
+      #081a28 86%
+    );
+  box-shadow:
+    inset -14px -12px 25px #06121f,
+    0 0 0 2px #8fbdca88,
+    0 0 25px #68aec836;
+  transform: rotate(-20deg);
+}
+.orbital-path {
+  position: absolute;
+  left: -28%;
+  top: 17%;
+  width: 150%;
+  height: 70%;
+  border: 1px solid #b2d2da66;
+  border-radius: 50%;
+  transform: rotate(-32deg);
+  z-index: 2;
+}
+.habitat-mark {
+  position: absolute;
+  left: 17%;
+  top: 63%;
+  width: 64px;
+  height: 29px;
+  border-radius: 60% 60% 12% 12%;
+  border: 2px solid #d9e5df;
+  background: linear-gradient(#8caab666, #a1b7bd99);
+  transform: rotate(-32deg);
+  z-index: 3;
+}
+.habitat-mark:before,
+.habitat-mark:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 47px;
+  height: 19px;
+  background: repeating-linear-gradient(90deg, #496f8e 0 9px, #b8cbd3 9px 10px);
+  border: 1px solid #a8bac5;
+}
+.habitat-mark:before {
+  right: 75px;
+}
+.habitat-mark:after {
+  left: 75px;
+}
+.habitat-mark i {
+  position: absolute;
+  top: 19px;
+  left: -16px;
+  width: 92px;
+  height: 2px;
+  background: #c2d4dc;
+}
+.orbit-art p {
+  position: absolute;
+  bottom: 20px;
+  left: 26px;
+  right: 20px;
+  color: #e4e9e3;
+  font-size: 15px;
+}
+.orbit-art p a {
+  display: block;
+  font-size: 13px;
+  margin-top: 7px;
+  color: #b9d0dc;
+}
+.practice-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  border-top: 1px solid #bdc9c6;
+  border-bottom: 1px solid #bdc9c6;
+  padding: 22px 0;
+  color: #526b67;
+  font-size: 14px;
+}
+.practice-strip span:first-child {
+  color: #263b43;
+  margin-right: auto;
+}
+.case-study,
+.projects {
+  padding: 100px 0;
+  border-bottom: 1px solid #bdc9c6;
+}
+.section-context {
+  font-size: 14px;
+  color: #526b67;
+}
+.standfirst {
+  font-size: 21px;
+  max-width: 68ch;
+}
+.delivery-diagram {
+  background: #d4dfe0;
+  border-radius: 8px;
+  margin: 44px 0;
+  padding: 32px 60px 24px;
+}
+.delivery-diagram svg {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+}
+.delivery-diagram figcaption {
+  font-size: 12px;
+  color: #526b67;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 14px;
+}
+.case-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 70px;
+  margin-top: 55px;
+  font-size: 18px;
+}
+.case-body aside {
+  font-size: 15px;
+}
+.case-body aside h3 {
+  font-size: 20px;
+}
+.case-body > div h3 {
+  margin-top: 36px;
+}
+.case-body > div h3:first-child {
+  margin-top: 0;
+}
+.scope-list {
+  margin: 28px 0 38px;
+}
+.scope-list > div {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  border-top: 1px solid #bdc9c6;
+  padding: 20px 0;
+  gap: 20px;
+}
+.scope-list dt {
+  font-size: 17px;
+  font-weight: 500;
+}
+.scope-list dd {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  margin-top: 44px;
+}
+.project-list article {
+  border-top: 1px solid #91a7aa;
+  padding-top: 26px;
+}
+.project-list h3 {
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  margin: 14px 0;
+}
+.project-list p {
+  font-size: 17px;
+}
+.project-list .project-kind {
+  font-size: 12px;
+  color: #526b67;
+}
+.project-list a {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.project-symbol {
+  height: 125px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.project-symbol i {
+  display: block;
+  width: 75px;
+  height: 65px;
+  border: 2px solid #78949f;
+  background: #cbd8d6;
+  box-shadow: 8px 8px 0 #b0c2c5;
+  transform: skewY(-13deg);
+}
+.framework i:nth-child(2) {
+  margin-top: -25px;
+}
+.framework i:nth-child(3) {
+  margin-top: -50px;
+}
+.branches i {
+  height: 82px;
+  width: 52px;
+  border-top: 12px solid #577d8e;
+}
+.branches i:nth-child(2) {
+  border-color: #708c6a;
+}
+.branches i:nth-child(3) {
+  border-color: #a67859;
+}
+.caption {
+  font-size: 13px;
+  color: #526b67;
+  margin-top: 35px;
+}
+.station-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  background: #294c5d;
+  color: #e4e9e3;
+  border-radius: 8px;
+  padding: 55px;
+  margin: 90px 0;
+}
+.station-story .section-context {
+  color: #b8cdd3;
+}
+.station-story p {
+  font-size: 17px;
+}
+.station-story .primary-link {
+  background: #e4e9e3;
+  color: #294c5d;
+}
+.station-index {
+  align-self: center;
+}
+.station-index a {
+  display: block;
+  text-decoration: none;
+  padding: 24px 0;
+  border-top: 1px solid #64808d;
+}
+.station-index strong {
+  font-size: 21px;
+  font-weight: 500;
+}
+.station-index span {
+  display: block;
+  color: #bbced3;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 80px;
+  padding: 0 0 90px;
+}
+.about > .section-context {
+  grid-column: 1/-1;
+}
+.about h2 {
+  margin-top: 0;
+}
+.about > div p:first-child {
+  margin-top: 0;
+}
+.about p {
+  font-size: 19px;
+}
+.about nav {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+.board-transcripts {
+  border-top: 1px solid #bdc9c6;
+  padding: 26px 0 50px;
+  font-size: 17px;
+}
+.board-transcripts summary {
+  cursor: pointer;
+  font-size: 18px;
+}
+.board-transcripts > section {
+  max-width: 760px;
+  margin: 50px auto;
+}
+.board-transcripts h2 {
+  font-size: 34px;
+}
+.board-transcripts h3 {
+  font-size: 21px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #bdc9c6;
+  padding: 28px 0 45px;
+  font-size: 13px;
+  gap: 25px;
+}
+section[id],
+article[id] {
+  scroll-margin-top: 28px;
+}
+@media (max-width: 900px) {
+  main,
+  .reading-header,
+  footer {
+    width: calc(100% - 48px);
+  }
+  .reading-header nav {
+    gap: 18px;
+  }
+  .reading-header nav > a:first-child {
+    display: none;
+  }
+  .reading-hero {
+    gap: 25px;
+    padding-top: 50px;
+  }
+  h1 {
+    font-size: 62px;
+  }
+  .case-body {
+    gap: 35px;
+    grid-template-columns: 1fr 2fr;
+  }
+  .station-story {
+    padding: 34px;
+    gap: 35px;
+  }
+  .about {
+    gap: 30px;
+  }
+  .delivery-diagram {
+    padding: 20px;
+  }
+  .scope-list > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+@media (max-width: 600px) {
+  main,
+  .reading-header,
+  footer {
+    width: calc(100% - 36px);
+  }
+  .reading-header {
+    padding: 20px 0;
+  }
+  .wordmark {
+    font-size: 19px;
+  }
+  .reading-header nav > a:not(.station-link) {
+    display: none;
+  }
+  .reading-header .station-link {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .reading-hero {
+    grid-template-columns: 1fr;
+    padding: 44px 0 32px;
+    gap: 32px;
+  }
+  h1 {
+    font-size: 58px;
+    max-width: 11ch;
+  }
+  .hero-summary {
+    font-size: 18px;
+  }
+  .orbit-art {
+    aspect-ratio: 1.4;
+    border-radius: 8px;
+  }
+  .ocean-world {
+    width: 49%;
+    left: 39%;
+    top: 8%;
+  }
+  .orbit-art p {
+    bottom: 10px;
+    left: 20px;
+  }
+  .habitat-mark {
+    top: 52%;
+    left: 22%;
+  }
+  .practice-strip {
+    gap: 15px;
+    font-size: 12px;
+  }
+  .practice-strip span:first-child {
+    width: 100%;
+  }
+  .case-study,
+  .projects {
+    padding: 60px 0;
+  }
+  .standfirst {
+    font-size: 18px;
+  }
+  .case-body {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 30px;
+  }
+  .case-body aside {
+    border-bottom: 1px solid #bdc9c6;
+    padding-bottom: 25px;
+  }
+  .delivery-diagram {
+    margin: 28px -8px;
+    padding: 14px 5px;
+  }
+  .delivery-diagram figcaption {
+    padding: 0 15px;
+  }
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .station-story {
+    grid-template-columns: 1fr;
+    padding: 27px;
+    margin: 60px 0;
+    gap: 25px;
+  }
+  .station-story h2 {
+    font-size: 40px;
+  }
+  .about {
+    grid-template-columns: 1fr;
+    padding-bottom: 55px;
+    gap: 0;
+  }
+  .about p {
+    font-size: 18px;
+  }
+  footer {
+    flex-wrap: wrap;
+  }
+  footer > span {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}
+.recommendation {
+  margin: 72px 0 0;
+  padding: 38px 0 38px 38px;
+  border-left: 4px solid #698a88;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+}
+.recommendation blockquote {
+  font-size: clamp(25px, 3vw, 38px);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  margin: 0;
+  max-width: 30ch;
+}
+.recommendation figcaption {
+  align-self: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.recommendation figcaption span {
+  display: block;
+  color: #526b67;
+  margin: 8px 0 16px;
+}
+.project-list {
+  gap: 60px;
+}
+.project-detail {
+  color: #526b67;
+  font-size: 15px !important;
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 22px;
+}
+.project-links a {
+  font-size: 14px;
+}
+.project-symbol.parviz {
+  position: relative;
+  padding-left: 40px;
+}
+.project-symbol.parviz i:first-child {
+  width: 120px;
+  height: 73px;
+  background: #294c5d;
+  border: 7px solid #c58b50;
+  border-radius: 12px;
+  box-shadow: none;
+  transform: none;
+  position: absolute;
+  top: 0;
+  left: 35px;
+}
+.project-symbol.parviz i:nth-child(2),
+.project-symbol.parviz i:nth-child(3) {
+  width: 90px;
+  height: 37px;
+  background: #394b56;
+  border: 7px dashed #85949c;
+  border-radius: 20px;
+  transform: none;
+  box-shadow: none;
+  margin-top: 50px;
+}
+.project-symbol.smart-subagents {
+  gap: 18px;
+}
+.project-symbol.smart-subagents i {
+  width: 60px;
+  height: 73px;
+  background: #8ea69d;
+  border-top: 12px solid #294c5d;
+  box-shadow: 8px 8px 0 #bdcaca;
+}
+.project-symbol.smart-subagents i:nth-child(2) {
+  height: 105px;
+  border-color: #b87943;
+}
+.project-symbol.mechlib i {
+  height: 70px;
+  width: 70px;
+  border: 12px dashed #537581;
+  border-radius: 50%;
+  transform: none;
+  box-shadow: none;
+}
+.project-symbol.mechlib i:nth-child(2) {
+  height: 100px;
+  width: 100px;
+  border-color: #b87943;
+}
+.project-symbol.socket-cluster i {
+  height: 80px;
+  width: 50px;
+  border: 0;
+  border-radius: 3px;
+  background: repeating-linear-gradient(#739096 0 13px, #c9d5d1 13px 18px);
+}
+.earlier-work {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 45px;
+  padding: 70px 0 0;
+}
+.earlier-work h2 {
+  font-size: 38px;
+  margin: 0;
+}
+.earlier-work .caption {
+  grid-column: 1/-1;
+  margin: 0;
+}
+.earlier-work h3 {
+  font-size: 24px;
+}
+.earlier-work p {
+  font-size: 16px;
+}
+@media (max-width: 700px) {
+  .recommendation {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+    padding: 24px;
+  }
+  .earlier-work {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .earlier-work h2 {
+    font-size: 34px;
+  }
+}
+.project-image {
+  margin: 0 0 28px;
+  background: #1c2830;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+}
+.project-image figcaption {
+  padding: 10px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #cbd8da;
+}
+.project-image.wide img {
+  height: 210px;
+}
+.project-list article:first-child {
+  grid-row: span 2;
+}
+@media (max-width: 600px) {
+  .project-list article:first-child {
+    grid-row: auto;
+  }
+  .project-image img {
+    height: 340px;
+  }
+  .project-image.wide img {
+    height: 160px;
+  }
+}
+.project-list article:first-child {
+  grid-column: 1/-1;
+  grid-row: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+}
+.project-list article:first-child .project-image {
+  margin-bottom: 0;
+}
+.project-list article:first-child h3 {
+  font-size: 42px;
+}
+.project-list article:last-child {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  gap: 44px;
+}
+.project-list article:last-child .project-symbol {
+  justify-content: center;
+  align-self: center;
+}
+@media (max-width: 700px) {
+  .project-list article:first-child,
+  .project-list article:last-child {
+    display: block;
+    grid-column: auto;
+  }
+  .project-list article:first-child .project-image {
+    margin-bottom: 24px;
+  }
+  .project-list article:last-child .project-symbol {
+    justify-content: flex-start;
+  }
+}
+
+/* The opening presents actual work, with the orbital experience as a second entrance. */
+:root { background: #f0f3ef; color: #243d48; }
+.reading-header { padding: 24px 0; }
+.reading-hero { grid-template-columns: 1.05fr 1fr; gap: 64px; padding: 54px 0 56px; }
+.reading-hero h1 { font-size: clamp(48px, 5.7vw, 80px); max-width: 12ch; margin: 25px 0; }
+.hero-summary { color: #53666b; font-size: 19px; line-height: 1.7; }
+.hero-secondary { display: block; width: fit-content; margin-top: 22px; font-size: 15px; }
+.hero-work { position: relative; align-self: stretch; min-height: 560px; background: #232c32; border-radius: 12px; overflow: hidden; color: #f0f3ef; }
+.hero-work > a { display: block; height: 100%; }
+.hero-work img { width: 100%; height: 100%; position: absolute; object-fit: cover; object-position: center 42%; }
+.hero-work-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 64px 28px 28px; background: linear-gradient(transparent, #17242a 65%); display: flex; gap: 20px; justify-content: space-between; align-items: end; }
+.hero-work-caption strong { display: block; font-size: 19px; font-weight: 500; max-width: 22ch; }
+.hero-work-caption span { display: block; color: #b7c8cb; font-size: 13px; margin-top: 9px; }
+.hero-work-caption a { font-size: 13px; white-space: nowrap; }
+.cad-note { position: absolute; top: 20px; left: 24px; font-size: 11px; color: #c5cfd2; }
+.practice-strip { background: #e2eae6; border: 0; padding: 22px 26px; border-radius: 8px; }
+.case-study, .projects { padding-top: 90px; }
+.primary-link { border-radius: 6px; background: #254f60; }
+@media(max-width: 800px) {
+ .reading-hero { grid-template-columns: 1fr; gap: 34px; padding-top: 36px; }
+ .reading-hero h1 { max-width: 14ch; }
+ .hero-work { min-height: 520px; }
+}
+@media(max-width: 480px) {
+ .hero-work { min-height: 440px; }
+ .hero-work-caption { padding: 60px 20px 24px; flex-direction: column; align-items: start; gap: 16px; }
+}
+
+.project-year { font-size: 13px; color: #446b77; margin: 0 0 14px; }
+.recommendations { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; padding: 68px 0; }
+.recommendations .recommendation { margin: 0; padding: 32px 0; border-top: 2px solid #769b9c; display: block; }
+.recommendations blockquote { font-size: clamp(26px, 3vw, 39px); line-height: 1.2; letter-spacing: -.025em; margin: 0 0 28px; }
+.recommendations figcaption { max-width: 44ch; }
+.recommendations figcaption span { line-height: 1.6; }
+.career-timeline, .agent-explainer { padding: 80px 0; border-top: 1px solid #c1ceca; }
+.career-timeline ol { list-style: none; padding: 0; margin: 44px 0; }
+.career-timeline li { display: grid; grid-template-columns: 180px 1fr; gap: 40px; position: relative; padding: 0 0 36px; }
+.career-timeline time { font-size: 20px; color: #446b77; padding-top: 3px; }
+.career-timeline li > div { border-left: 1px solid #9db8b5; padding-left: 40px; position: relative; }
+.career-timeline li > div:before { content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #527e87; left: -5px; top: 10px; }
+.career-timeline h3 { margin: 0 0 10px; }
+.career-timeline p { margin: 0; color: #53666b; }
+.inline-graphic { margin: 36px 0; background: #e1eae6; border-radius: 16px; overflow: hidden; }
+.graphic-top { display: flex; justify-content: space-between; align-items: center; padding: 22px 26px 0; gap: 20px; }
+.graphic-top span { font-size: 17px; }
+.graphic-top button { border: 1px solid #a7bbb6; border-radius: 6px; background: transparent; color: #355861; padding: 8px 12px; cursor: pointer; }
+.graphic-canvas { height: 380px; position: relative; touch-action: pan-y; }
+.graphic-hint { position: absolute; bottom: 8px; right: 26px; font-size: 12px; color: #5d7679; pointer-events:none; }
+.graphic-stages { display: grid; grid-template-columns: repeat(3,1fr); padding: 12px 26px 0; gap: 12px; }
+.graphic-stages button { padding: 14px; font: inherit; border: 1px solid #afc4bd; border-radius: 6px; background: transparent; color: #365761; cursor: pointer; }
+.graphic-stages button[aria-pressed=true] { background: #315c69; color: #fff; border-color:#315c69; }
+.graphic-description { padding: 0 26px; min-height: 58px; max-width: 80ch; }
+.graphic-note { padding: 0 26px 22px; font-size: 12px; color: #5d7679; }
+.graphic-error { padding: 60px 26px; }
+@media(max-width:700px) {
+ .recommendations { grid-template-columns:1fr; gap:0; }
+ .career-timeline li { grid-template-columns: 100px 1fr; gap:16px; }
+ .career-timeline li > div { padding-left:22px; }
+ .career-timeline time { font-size:16px; }
+ .graphic-canvas { height:280px; }
+ .graphic-top { padding:18px 18px 0; }
+ .graphic-top span { font-size:14px; }
+ .graphic-stages { padding:12px 18px 0; gap:6px; }
+ .graphic-stages button { padding:12px 5px; font-size:14px; }
+ .reading-header nav { gap:14px; }
+}
+</style></head><body><header class="reading-header"><a class="wordmark" href="/">Moshe's Lab <span>Engineering portfolio</span></a><nav aria-label="Main navigation"><a href="#delivery-systems">Selected work</a><a href="#timeline">Timeline</a><a href="#career">Contact</a><a class="station-link" href="/">Enter the station ↗</a></nav></header>
+<main><section class="reading-hero"><div><p class="identity">Mohsen Esmaeili <span>Helsinki, Finland</span></p><h1>Software that reaches beyond the screen.</h1><p class="hero-summary">I&#39;m Mohsen, a software engineer in Helsinki. My work connects platforms, partner integrations, developer tools, and the physical systems they serve.</p><a class="primary-link" href="#delivery-systems">Explore selected work <span>↓</span></a><a class="hero-secondary" href="/">Or explore my 3D world</a></div><aside class="hero-work"><a href="#parviz" aria-label="Explore the Parviz robotics project"><img src="/assets/projects/parviz-cad.jpg" width="920" height="1030" fetchpriority="high" alt="Parviz tracked robot CAD design with a touchscreen face"></a><div class="hero-work-caption"><div><strong>From software to something tangible.</strong><span>Parviz / A personal robotics project</span></div><a href="#parviz">Explore the build ↗</a></div><span class="cad-note">CAD design · not an assembled prototype</span></aside></section>
+<div class="practice-strip"><span>Staff Engineer at Songtradr</span><span>Platforms</span><span>Integrations</span><span>Developer tools</span></div>
+<section class="case-study" id="delivery-systems"><div class="section-intro"><p class="section-context">Starship Technologies / Joined 2021 · DaaS from around 2022</p><h2>Connecting a partner&#39;s software to a robot&#39;s delivery.</h2><p class="standfirst">At Starship Technologies, I architected and built the Delivery-as-a-Service platform. The work spanned the partner-facing API, the operational console, integrations with partner engineering teams, and the tools used to integrate and test.</p></div><div data-infographic="delivery"><figure class="delivery-diagram"><svg viewBox="0 0 680 250" role="img" aria-labelledby="flow-title flow-desc"><title id="flow-title">From partner software to physical delivery</title><desc id="flow-desc">A conceptual connection between partner software, a delivery platform, and a delivery robot. Status information travels back to the partner.</desc><defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#a9bdc4" opacity=".4"/></pattern></defs><rect width="680" height="250" fill="url(#grid)"/><path d="M157 104H520M520 152V190H157V152" stroke="#6690a2" stroke-width="2" fill="none"/><path d="m510 99 10 5-10 5M167 185l-10 5 10 5" fill="none" stroke="#6690a2" stroke-width="2"/>
+<g fill="#e4e9e3" stroke="#78909b" stroke-width="2"><rect x="46" y="65" width="140" height="87" rx="8"/><rect x="267" y="48" width="150" height="121" rx="8"/><rect x="507" y="88" width="112" height="52" rx="12"/></g><g fill="#294c5d"><circle cx="530" cy="142" r="12"/><circle cx="597" cy="142" r="12"/><rect x="558" y="65" width="6" height="24"/><rect x="549" y="61" width="25" height="12" rx="4"/></g><g fill="#263b43" font-family="Plex, sans-serif" text-anchor="middle"><text x="116" y="101" font-size="17">Partner</text><text x="116" y="124" font-size="17">software</text><text x="342" y="99" font-size="18">Delivery</text><text x="342" y="124" font-size="18">platform</text><text x="564" y="176" font-size="14">Delivery robot</text><text x="337" y="215" font-size="13">Status information</text></g></svg><figcaption>Conceptual flow, drawn for this portfolio. Not a production architecture diagram.</figcaption></figure></div><div class="case-body"><aside><h3>Delivery-as-a-Service</h3><p>Platform architecture<br>Partner integrations<br>Developer experience</p><a href="/#/exhibit/delivery-systems">Visit the delivery model ↗</a></aside><div><h3>Where software meets the last mile</h3><p>Autonomous delivery sits at the meeting point of two worlds: a partner&#39;s digital service and robots moving through the physical world. The platform connects those worlds; the surrounding tools make that connection usable by engineers and operators.</p><h3>What I built</h3><dl class="scope-list"><div><dt>Partner API</dt><dd>The software interface connecting external partners with autonomous last-mile delivery robots.</dd></div><div><dt>Operational console</dt><dd>A Next.js console for operational teams to track orders, manage workflows and access insights.</dd></div><div><dt>Integration tooling</dt><dd>Technical integrations with partner teams including Uber, Bolt, Wolt, S-Group, Foodora, Grubhub, Deliveroo and Bringg, supported by an integration playground.</dd></div><div><dt>Testing and monitoring</dt><dd>End-to-end testing systems and watchdog services supporting the partner ecosystem.</dd></div></dl><h3>The connecting thread</h3><p>Alongside DaaS, I contributed to rewriting and centralizing cart, tax and fee calculations in Go. Earlier marketplace work covered billing flows and the order lifecycle. This is the thread through my work: making complex systems easier to integrate, operate and evolve.</p></div></div></section>
+<section class="recommendations" aria-label="Recommendations from colleagues"><figure class="recommendation"><blockquote>“I&#39;d gladly work with him again.”</blockquote><figcaption><strong>Taavi Pungas</strong><span>Taavi highlights delivery on complex DaaS projects, developer tooling and early adoption of agentic engineering practices.</span><a href="https://fi.linkedin.com/in/m-esm">Read the LinkedIn recommendation</a></figcaption></figure><figure class="recommendation"><blockquote>“Mohsen is the most productive engineer I have seen”</blockquote><figcaption><strong>Pekka Kosonen</strong><span>Pekka describes a productive engineer and an easygoing, supportive teammate.</span><a href="https://fi.linkedin.com/in/m-esm">Read the LinkedIn recommendation</a></figcaption></figure></section>
+<section class="projects" id="projects"><div class="section-intro"><p class="section-context">Independent work / 2020–2026</p><h2>Tools for building<br>other things.</h2><p>Selected public work across robotics, AI engineering, mechanical design and distributed systems.</p></div><div class="project-list"><article id="parviz"><figure class="project-image"><img src="/assets/projects/parviz-cad.jpg" width="920" height="1030" loading="lazy" alt="Parviz source CAD render: tracked chassis and touchscreen head"><figcaption>Source CAD render · not a photograph of an assembled robot</figcaption></figure><div><p class="project-year">2026 · public repository opened July</p><p class="project-kind">Robotics / CAD prototype</p><h3>Parviz</h3><p>A desk robot designed from software to mechanics: tracked drive, a Raspberry Pi touchscreen face, a camera eye, and a pan/tilt neck. Parametric Python generates the assembly; the software spike includes face rendering, motion and camera integration.</p><p class="project-detail">The design explores a self-locking worm-drive tilt mechanism, a captured-ball pan race, and positive-drive tracks. The repository documents interference checks, assembly order and cable routing. The mechanical design is not yet printed or assembled.</p><div class="project-links"><a href="https://github.com/m-esm/Parviz">Source on GitHub</a><a href="https://m-esm.github.io/Parviz/viewer_glb.html">Inspect the actual CAD assembly</a><a href="/#/sector/workshop">Visit the robotics workshop ↗</a></div></div></article><article id="smart-subagents"><div class="project-symbol smart-subagents" aria-hidden="true"><i></i><i></i><i></i></div><div><p class="project-year">2026 · public repository opened August</p><p class="project-kind">AI engineering / Developer tools</p><h3>Smart subagents</h3><p>A quota-aware task router for coding CLIs. It considers available headroom, task size and reasoning difficulty, dispatches work in an isolated Git worktree, and verifies the resulting diff before reporting back.</p><p class="project-detail">Size and difficulty are separate decisions: a broad rename and a small concurrency fix demand different kinds of work. The public implementation includes worker eligibility, fallback selection, cooldowns and outcome-based routing feedback.</p><div class="project-links"><a href="https://github.com/m-esm/smart-subagents">Source on GitHub</a><a href="/#/sector/agents">Visit the agent lab ↗</a></div></div></article><article id="mechlib"><figure class="project-image wide"><img src="/assets/projects/mechlib-gallery.png" width="1200" height="394" loading="lazy" alt="Mechlib gallery renders of Geneva, herringbone and cycloidal mechanisms"><figcaption>Renders from the public Mechlib gallery</figcaption></figure><div><p class="project-year">2026 · public repository opened August</p><p class="project-kind">Mechanical design / Python</p><h3>Mechlib</h3><p>Reusable parametric parts for FDM printing: gears, cams, linkages, ratchets, couplings and flexures. Built with trimesh, Shapely and manifold3d.</p><p class="project-detail">An interactive browser gallery combines mechanism animations with editable parameters, running the Python library through Pyodide. Bought-part envelopes are kept separate from printed geometry.</p><div class="project-links"><a href="https://github.com/m-esm/mechlib">Source on GitHub</a><a href="https://m-esm.github.io/mechlib/">Open the interactive gallery</a><a href="/#/sector/workshop">Visit the fabrication bench ↗</a></div></div></article><article id="socket-cluster"><div class="project-symbol socket-cluster" aria-hidden="true"><i></i><i></i><i></i></div><div><p class="project-year">2020 · public repository opened April</p><p class="project-kind">Distributed systems / Technical writing</p><h3>WebSocket clustering</h3><p>A public NestJS and Redis example accompanying my article on WebSocket clustering: handling users with several clients connected to different instances.</p><p class="project-detail">The repository gives the article a concrete implementation readers can explore. It sits alongside earlier open-source work on end-to-end encryption, backend frameworks and per-branch environments.</p><div class="project-links"><a href="https://github.com/m-esm/socket-cluster-app">Source on GitHub</a><a href="https://medium.com/@mohsenes/websocket-cluster-with-nestjs-and-redis-a18882d418ed">Read the article</a><a href="/#/sector/systems">Visit the systems yard ↗</a></div></div></article></div><p class="caption">Project descriptions are grounded in the public repositories. The Parviz exhibit loads the actual source CAD, enlarged for display; its temporary lightweight model and the other station models are interpretations. <a href="/assets/licenses/project-credits.html">Project imagery and CAD credits</a>.</p></section>
+<section class="agent-explainer"><p class="section-context">Smart subagents / 2026</p><h2>A closer look at agent routing.</h2><div data-infographic="agents"><p>Task size and difficulty → quota-aware worker selection → isolated worktree and diff verification.</p></div><a href="https://github.com/m-esm/smart-subagents">Explore the implementation on GitHub</a></section>
+<section class="career-timeline" id="timeline"><p class="section-context">Work over time / 2013–2026</p><h2>One thread.<br>Many kinds of systems.</h2><ol><li><time>2013–2018</time><div><h3>Independent software work</h3><p>Business applications, automation, IoT backends and web products for freelance and contract clients.</p></div></li><li><time>2018–2019</time><div><h3>Serendip</h3><p>Co-founded Serendip Agency; built data dashboards, NoSQL browsing tools, services and reusable Node.js packages.</p></div></li><li><time>2019–2020</time><div><h3>Travel platforms</h3><p>TripeMa integration following its acquisition, then hotel inventory and financial integrations at Alibaba.aero.</p></div></li><li><time>2019–2020</time><div><h3>Public developer tools</h3><p>Multi Branch opened publicly in December 2019; the NestJS and Redis WebSocket clustering example followed in April 2020.</p></div></li><li><time>2020–2021</time><div><h3>BoomFit</h3><p>Video marketplace APIs, streaming infrastructure and video intelligence on Google Cloud.</p></div></li><li><time>2021</time><div><h3>Joined Starship</h3><p>Started in March on consumer experience: marketplace services, billing and the order lifecycle.</p></div></li><li><time>Around 2022</time><div><h3>Delivery-as-a-Service</h3><p>Moved into DaaS architecture, partner integrations, the operational console and developer tooling after the first year and a half at Starship.</p></div></li><li><time>2026</time><div><h3>AI engineering and physical systems</h3><p>Staff Engineer at Songtradr. Public projects include Parviz, Mechlib and Smart subagents; this orbital portfolio brings them together.</p></div></li></ol><p class="caption">Employment dates follow my CV. The DaaS start is approximate, based on the first eighteen months at Starship. Dates on public projects indicate when their GitHub repositories opened, not necessarily when experimentation began.</p></section>
+<section class="earlier-work"><h2>More systems,<br>the same engineering thread.</h2><article><p class="section-context">Alibaba.aero / 2019–2020</p><h3>Hotel inventory and financial integrations</h3><p>Integrated more than ten hotel inventory systems, built billing and invoicing integrations, and developed software to detect financial discrepancies.</p></article><article><p class="section-context">BoomFit / 2020–2021</p><h3>Video platform infrastructure</h3><p>Backend APIs, streaming, data processing and video intelligence on Google Cloud, alongside architecture documentation and a move toward a test-driven codebase.</p></article><p class="caption">Earlier open-source work includes <a href="https://github.com/m-esm/e2db">E2DB</a>, an end-to-end encryption demonstration, and <a href="https://github.com/m-esm/node-multi-branch">Multi Branch</a>, a per-branch Node.js environment tool.</p></section>
+<section class="station-story" id="station"><div><p class="section-context">The playable portfolio / 2026</p><h2>Take the long way around.</h2><p>A small maintenance robot. Five connected destinations. A blue planet beyond the glass. The station turns the portfolio into a place to explore at your own pace.</p><p>Read the physical boards, watch the illustrative models, or stop in the garden. No tasks, accounts, or progression.</p><a class="primary-link" href="/">Enter the station <span>↗</span></a></div><div class="station-index"><a href="/#/sector/systems"><strong>Delivery systems</strong><span>Platforms and partner integrations</span></a><a href="/#/sector/workshop"><strong>Robotics workshop</strong><span>Parviz and parametric mechanisms</span></a><a href="/#/sector/agents"><strong>Agent lab</strong><span>Quota-aware coding-agent routing</span></a><a href="/#/sector/career"><strong>Career garden</strong><span>A place to continue the conversation</span></a></div></section>
+<section class="about" id="career"><p class="section-context">About & contact / Current role · 2026</p><h2>Across systems.<br>Grounded in engineering.</h2><div><p>I am a Staff Engineer at Songtradr, based in Helsinki. My background spans backend platforms, integrations, and developer tools.</p><p>At Starship Technologies, I architected and built the Delivery-as-a-Service platform. My public work now spans agent orchestration, parametric mechanical design and the Parviz desk robot project.</p><p>For professional background and a way to get in touch, find me on LinkedIn. My public repositories are on GitHub.</p><nav aria-label="Public profiles"><a href="https://github.com/m-esm" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/m-esm" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav></div></section>
+<details class="board-transcripts"><summary>Read every exhibit board</summary><p>The complete text from the station, including captions for its illustrative models.</p><section id="transcript-delivery-systems"><h2>Delivery systems</h2><section id="context"><h3>Connecting the last mile</h3><p>At Starship Technologies, I architected and built the Delivery-as-a-Service platform, connecting external partners with autonomous last-mile delivery robots.</p></section><section id="responsibility"><h3>From API to operations</h3><p>I designed the unified partner API and built the Next.js operational console. I led technical integrations with partner teams including Uber, Bolt, Wolt, S-Group, Foodora, Grubhub, Deliveroo and Bringg.</p></section><section id="tooling"><h3>Tools for the ecosystem</h3><p>I built end-to-end testing systems, watchdog services and an integration playground. I also contributed to centralizing marketplace cart, tax and fee calculations in Go.</p></section><p class="caption">Illustrative delivery flow. This model is not a production architecture diagram or a live system.</p></section><section id="workshop"><h2>Parviz / Robotics</h2><section id="mechanisms"><h3>Parviz: a desk robot</h3><p>A tracked robot designed around a Raspberry Pi 5, a touchscreen face and a camera eye. Parametric Python CAD connects printed parts, a pan/tilt neck and drive tracks. The mechanical assembly is a CAD prototype; the repository also contains a working software spike.</p></section><section id="board-framework"><h3>Mechlib: code into parts</h3><p>A Python library of parametric mechanical components: gears, cams, linkages, ratchets, couplings and flexures. The interactive gallery lets you inspect mechanisms and retune parameters in the browser with Pyodide.</p></section><p class="caption">Enlarged source CAD, with a lightweight loading model. Not yet printed or assembled. Click the robot to separate its assemblies.</p></section><section id="agent-lab"><h2>Smart subagents / AI tools</h2><section id="routing"><h3>The right agent for the work</h3><p>Smart subagents routes coding tasks using CLI quota headroom and task difficulty. Work runs in an isolated Git worktree, with diff verification before reporting back. Task size and reasoning difficulty are treated separately.</p></section><section id="board-branches"><h3>One instance per branch</h3><p>Multi Branch runs an instance for each branch of a Node.js repository and selects between them using an HTTP header. It is an earlier exploration of isolated development environments, a theme that also appears in my agent tooling.</p></section><p class="caption">The routing exhibit is a deterministic illustration of the public project. No live agents or account access.</p></section><section id="transcript-career"><h2>Career and contact</h2><section id="career-now"><h3>Engineering across systems</h3><p>I am a Staff Engineer at Songtradr, based in Helsinki. My engineering background spans backend platforms, integrations and developer tools. At Starship Technologies, I architected and built the Delivery-as-a-Service platform explored in the systems yard.</p></section><section id="contact"><h3>Continue the conversation</h3><p>For professional background and a way to get in touch, visit my LinkedIn profile. You can also explore my public repositories on GitHub. The station is an invitation to look around; there is no task to finish before reaching out.</p></section></section></details></main><footer><a class="wordmark" href="/">Moshe's Lab</a><span>Built as a place to explore.</span><a href="#">Back to top ↑</a></footer><script type="module" src="/src/ui/infographics.tsx"></script></body></html>

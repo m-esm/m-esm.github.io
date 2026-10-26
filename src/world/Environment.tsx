@@ -19,7 +19,7 @@ function HabitatReflections() {
     const previous = scene.environment;
     const intensity = scene.environmentIntensity;
     scene.environment = map.texture;
-    scene.environmentIntensity = 0.22;
+    scene.environmentIntensity = 0.38;
     room.dispose();
     generator.dispose();
     return () => {
@@ -43,24 +43,24 @@ export function Environment({
       <Sky low={low} />
       <Planet reduced={reduced} />
       <OrbitalStructure />
-      <hemisphereLight args={["#dcecf3", "#8e9680", 1.3]} />
+      <hemisphereLight args={["#e2edf5", "#aaa08c", 1.15]} />
       <directionalLight
-        position={[-25, 55, 24]}
-        intensity={2.65}
+        position={[-35, 42, 28]}
+        intensity={2.15}
         color="#fff0d8"
         castShadow={!low}
-        shadow-mapSize={[2048, 2048]}
+        shadow-mapSize={[4096, 4096]}
         shadow-camera-left={-42}
         shadow-camera-right={42}
         shadow-camera-top={44}
         shadow-camera-bottom={-42}
         shadow-bias={-0.0005}
         shadow-normalBias={0.035}
-        shadow-radius={3}
+        shadow-radius={4}
       />
       <directionalLight
         position={[35, 25, -45]}
-        intensity={0.65}
+        intensity={0.85}
         color="#b5d3e3"
       />
       <Bake castShadow={false}>

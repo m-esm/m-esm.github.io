@@ -16,13 +16,13 @@ export interface BoardPlacement {
 export const boards: BoardPlacement[] = [
   {
     id: "arrival",
-    position: [5.8, 5.1, 15],
+    position: [-11, 5.1, 18],
     size: [5.6, 4.2],
     portraitY: 6.15,
   },
   {
     id: "directory",
-    position: [12.4, 5.4, 18],
+    position: [11, 5.4, 18],
     size: [4.8, 4.4],
     portraitY: 6.15,
   },
