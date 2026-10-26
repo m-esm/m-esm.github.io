@@ -1046,3 +1046,6 @@ article[id] {
 
 .delivery-photo img { object-position:50% 75%; }
 .partner-marks .partner-symbol img { width:58px; height:58px; margin:12px auto 4px; }
+
+.partner-marks .partner-text { display:flex; align-items:center; justify-content:center; min-height:88px; min-width:130px; background:transparent; border:1px solid #c4cece; border-radius:8px; font-size:20px; }
+.partner-names:empty { display:none; }

@@ -21,3 +21,11 @@ Starship’s official homepage supplies Bolt, Grubhub, S-kaupat, Wolt and Uber E
 - TripeMa and Alibaba identifiers: https://www.saleh-akhgar.com/about
 
 Company media is limited editorial illustration, not open-source artwork. Original owners retain rights; visible captions and project credits identify sources. No assertion that the photos depict Mohsen, his team, or his own event/product design.
+
+## Logo follow-up
+
+foodora: recovered historical SVG from https://github.com/monopolies/monopolies.net/blob/master/logos/takeaway.com/foodora.svg and visually inspected it in Chrome. Official logo-kit and alternate direct downloads still returned 403. Retain original artwork and trademark attribution; do not describe this as an official download or the latest brand revision.
+
+Bringg: rejected two identical public files named Bringg.svg because rendering showed SailPoint. The public mirrors were hoodini/lusha.github.io and md-nafis-sadik/prospct-homepage. No incorrect asset was published. Bringg remains text pending a trustworthy file.
+
+BoomFit: additional targeted searches for the video-platform employer and Mohsen did not establish its historical brand. Still unresolved.

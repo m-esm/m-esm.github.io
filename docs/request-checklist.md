@@ -48,13 +48,13 @@ Reconciled 26 October 2026. This tracks requested deliverables rather than claim
 ## Remaining logo assets
 
 - [ ] BoomFit: establish the historical employer’s correct brand asset; separate searches returned unrelated gyms/equipment companies.
-- [ ] foodora: obtain the identified official logo; direct download currently returns HTTP 403.
+- [x] foodora: added a visually verified historical SVG wordmark from a public repository mirror; official download remains blocked.
 - [ ] Bringg: obtain a reliable official logo file; direct site asset retrieval is blocked.
 
 ## Concrete source limitations
 
 - Two LinkedIn recommendation texts were publicly readable. Other recommendation entries and full LinkedIn experience were sign-in restricted; no additional quotes were fabricated.
-- Official logos were verified for Songtradr and Starship. A matching historical BoomFit identity was not established; unrelated gym/equipment brands were excluded. TripeMa and Alibaba identities were subsequently recovered from their former designer’s portfolio. Bringg remains text; foodora’s official asset download returned HTTP 403.
+- Official logos were verified for Songtradr and Starship. A matching historical BoomFit identity was not established; unrelated gym/equipment brands were excluded. TripeMa and Alibaba identities were subsequently recovered from their former designer’s portfolio. Bringg remains a clearly labeled text tile. foodora now uses a credited historical SVG mirror.
 - Current Songtradr title and 2026 role context are owner-confirmed. No precise starting month, confidential project detail or subsidiary-product ownership is inferred.
 
 Suites, accessibility audits and performance benchmarks remain intentionally out of scope at the user's request; they are not unfinished deliverables. Further art iteration is open-ended, not a blocked deployment.

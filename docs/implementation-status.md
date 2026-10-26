@@ -1,3 +1,7 @@
+## Partner-logo follow-up — 26 October 2026
+
+Added a verified historical foodora SVG and a consistent text tile for Bringg. Rejected mislabeled Bringg files after browser review. Updated checklist and provenance; BoomFit and Bringg artwork remain unresolved. Production build passed; no suites/audits/benchmarks run. Publication pending.
+
 ## Company imagery and request reconciliation — 26 October 2026
 
 Added separate dated Serendip/TripeMa stories and reconciled all conversation requests in `request-checklist.md`. Researched each employer separately (`company-media-research.md`). Added historical Serendip/TripeMa/Alibaba identifiers, Wolt/Uber Eats/Deliveroo partner marks, Starship delivery photography and a captioned MassiveMusic performance image as Songtradr group context. Build passed; local imagery and historical logos visually reviewed. BoomFit identity remains unverified; foodora/Bringg asset downloads unavailable. Published over SSH as c564017. Pages run 40399526645 succeeded; the public reading HTML was confirmed to include the new company photos and historical/partner identifiers. Localhost remains running.

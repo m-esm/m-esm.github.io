@@ -22,3 +22,5 @@ Official Starship header SVG extracted from https://www.starship.xyz/ (monochrom
 ## Company media expansion
 
 See `company-media-research.md` for individual employer searches and exact source URLs. Local company photos illustrate Starship delivery and the Songtradr group’s musical context. Historical Serendip, TripeMa and Alibaba identities and additional Wolt/Uber Eats/Deliveroo marks are editorial identifiers; rights remain with original owners.
+
+foodora historical wordmark: public mirror at https://github.com/monopolies/monopolies.net/blob/master/logos/takeaway.com/foodora.svg, visually verified. Trademark rights remain with foodora; used only to identify a past integration partner.
