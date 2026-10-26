@@ -24,3 +24,7 @@ CV read again for dates: freelance June 2013–February 2018; Serendip February 
 GitHub API creation dates: node-multi-branch December 2019; socket-cluster-app April 2020; Parviz July 2026; mechlib and smart-subagents August 2026. These dates label public repositories, not necessarily the beginning of private experimentation.
 
 Public LinkedIn search result https://fi.linkedin.com/in/m-esm contains recommendations by Taavi Pungas and Pekka Kosonen. Two short exact excerpts are attributed and linked; surrounding descriptions are paraphrases. The public result says six recommenders exist, but only two were readable, so no other quotes were invented. Direct profile navigation currently hits the sign-in wall.
+
+## Second Brain review
+
+Reviewed local application code in pipeline/build.py, pipeline/merge.py, pipeline/corrections.py and web/lib/layout.ts after workspace access returned. Verified schema validation before final data publication, retained source provenance, merge candidate/model decision plumbing, persistent human correction handling, and time-based relationship layout. Added only a generic prototype architecture summary to the public chronology. The repository is private; no private records, source snapshots, personal relationship graph, credentials or internal endpoints are published. Runtime quality and model accuracy were not evaluated.
