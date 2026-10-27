@@ -1,8 +1,10 @@
 # Current component critique pass — 27 October 2026
 
-The 27 October component critique pass adds fitted robot/record platforms, a more compact Songtradr panel, an integrated Starship model, complete partner marks, project-specific diagrams and clearer project sheets. The full career rail expands inline on mobile. Real district previews lead into the habitat, which has finer foliage, readable exhibit plates and corrected loading/controls. The reading companion has persistent contents. See [the component-by-component critique](visual-critique-2026-10-27.md).
+The 27 October component critique pass adds fitted robot/record platforms, a more compact Songtradr panel, an integrated Starship model, consistently framed partner marks, project-specific diagrams and clearer project sheets. The full career rail expands inline on mobile. Real district previews lead into the habitat, which has finer foliage, readable exhibit plates and corrected loading/controls. The reading companion has persistent contents. See [the component-by-component critique](visual-critique-2026-10-27.md).
 
-Production build passed locally. Publication confirmation is pending this pass; earlier deployment records below describe previous releases. Test suites, audits and benchmarks remain skipped as requested.
+Production builds passed in the working and release checkouts. Test suites, audits and benchmarks remain skipped as requested.
+
+Published over SSH as `f2aec75`, followed by the mobile timeline correction in `53ea8fa`. [Pages run 40496343420](https://github.com/m-esm/m-esm.github.io/actions/runs/40496343420) completed successfully. The public homepage serves `main-DIBM-WTV.js`; the matching `MotionPortfolio-DXdAJNJX.js` bundle and updated reading document returned HTTP 200. The deployed homepage was visually confirmed and captured in `docs/validation/critique-home-2026-10-27.jpg`. The refined habitat is captured in `docs/validation/critique-habitat-2026-10-27.jpg`. Localhost on port 5173 was visually confirmed and remains running.
 
 ## Section refinement — 27 October 2026
 

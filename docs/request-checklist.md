@@ -92,4 +92,4 @@ Suites, accessibility audits and performance benchmarks remain intentionally out
 
 
 - [x] Critique every visible homepage section, project sheets, timeline, reading companion and habitat interface. See `visual-critique-2026-10-27.md` for specific problems and implemented fixes.
-- [ ] Confirm this component critique release on GitHub Pages.
+- [x] Confirm this component critique release on GitHub Pages: `f2aec75` and `53ea8fa`; successful Pages run 40496343420, matching public bundle, reading HTTP 200 and saved live homepage capture.

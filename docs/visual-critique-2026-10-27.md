@@ -39,8 +39,12 @@ Verification scope: production build and manual desktop/mobile visual review. No
 - Arrival, delivery, workshop, agent lab and garden were visually inspected. New local destination screenshots are honest in-game captures. The arrival preview was refreshed after the foliage changes.
 - The full career rail exposes the early roles. Mobile expands the selected story beside its year, rather than putting all stories below the entire rail.
 
-Production build passes. Desktop/mobile visual review and deployment confirmation are recorded below when completed. No test suites or audits were run.
+Production builds passed in the working and release checkouts. Manual review covered desktop and phone layouts, project sheets and their interactions, timeline selections, the static reading companion, station controls and all five habitat destinations. No test suites, accessibility audits or performance benchmarks were run.
 
 The final scene review confirmed finer foliage and preserved daylight. A root loading-error boundary also prevents a failed lazy import (for example, from a tab open during a new deployment) from leaving a blank page.
 
 A full mobile-page review caught timeline rail decoration leaking into the inline story’s bullet list. The selectors now target only direct career rows.
+
+## Published result
+
+Published over SSH as `f2aec75`, followed by the mobile timeline correction in `53ea8fa`. [Pages run 40496343420](https://github.com/m-esm/m-esm.github.io/actions/runs/40496343420) completed successfully. The public homepage serves `main-DIBM-WTV.js`; the matching `MotionPortfolio-DXdAJNJX.js` bundle and updated reading document returned HTTP 200. The deployed homepage was visually confirmed and captured in `docs/validation/critique-home-2026-10-27.jpg`. The refined habitat is captured in `docs/validation/critique-habitat-2026-10-27.jpg`. Localhost on port 5173 was visually confirmed and remains running.
