@@ -1,36 +1,5 @@
 import { useState } from "react";
-import { recommendations } from "../content/chronology";
 import { sectorStories } from "../content/editorial";
-export function Recommendations() {
-  return (
-    <section
-      className="motion-chapter colleague-section"
-      aria-label="Colleague recommendations"
-      data-chapter="People behind the systems"
-    >
-      <header>
-        <h2>
-          From the people
-          <br />I worked with.
-        </h2>
-        <a className="text-link" href="https://fi.linkedin.com/in/m-esm">
-          Recommendations on LinkedIn ↗
-        </a>
-      </header>
-      <div className="colleague-quotes">
-        {recommendations.map((r) => (
-          <figure key={r.author}>
-            <blockquote>“{r.quote}”</blockquote>
-            <figcaption>
-              <strong>{r.author}</strong>
-              <span>Starship colleague</span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
-  );
-}
 export function WorldEntrance() {
   const [selected, setSelected] = useState("arrival");
   const current = sectorStories.find((s) => s.id === selected)!;

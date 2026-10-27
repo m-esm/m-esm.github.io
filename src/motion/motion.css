@@ -622,53 +622,15 @@ body.motion-mode #root {
 .case-footnote a {
   white-space: nowrap;
 }
-.colleague-section {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 55px;
-  border-block: 1px solid var(--line);
-  padding-block: 42px;
-}
-.colleague-section h2 {
-  font-size: 24px;
-  line-height: 1.3;
-  margin-bottom: 25px;
-}
-.colleague-section header a {
-  font-size: 11px !important;
-}
-.colleague-quotes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-}
-.colleague-quotes figure {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-left: 22px;
-  border-left: 1px solid #d2a58555;
-}
-.colleague-quotes blockquote {
-  font-size: 22px;
-  line-height: 1.45;
-  margin: 0 0 20px;
-  letter-spacing: -0.02em;
-}
-.colleague-quotes figcaption {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-}
-.colleague-quotes figcaption strong {
-  font-weight: 500;
-  color: #d2a585;
-}
-.colleague-quotes figcaption span {
-  font-size: 12px;
-  color: #9fb4be;
-  margin-top: 3px;
-}
+
+
+
+
+
+
+
+
+
 .catalog-tools {
   display: flex;
   justify-content: space-between;
@@ -1277,13 +1239,8 @@ body.motion-mode #root {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
-  .colleague-section {
-    grid-template-columns: 210px 1fr;
-    gap: 30px;
-  }
-  .colleague-quotes {
-    gap: 25px;
-  }
+
+
   .project-tile-art {
     height: 155px;
   }
@@ -1478,34 +1435,12 @@ body.motion-mode #root {
   .case-footnote p {
     font-size: 12px;
   }
-  .colleague-section {
-    display: block;
-  }
-  .colleague-section header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-  .colleague-section h2 {
-    font-size: 22px;
-    margin: 0;
-  }
-  .colleague-section header a {
-    max-width: 120px;
-    font-size: 10px !important;
-  }
-  .colleague-quotes figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 22px;
-    border-left: 1px solid #d2a58555;
-  }
-  .colleague-quotes blockquote {
-    font-size: 19px;
-  }
+
+
+
+
+
+
   .section-header {
     align-items: start;
     gap: 20px;
@@ -1659,14 +1594,8 @@ body.motion-mode #root {
   .company-line {
     justify-content: space-between;
   }
-  .colleague-quotes {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .colleague-quotes figure + figure {
-    padding-top: 25px;
-    border-top: 1px solid var(--line);
-  }
+
+
   .project-tile-art {
     height: 150px;
   }

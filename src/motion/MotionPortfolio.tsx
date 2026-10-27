@@ -3,7 +3,8 @@ import { Navigation, Hero } from "./Navigation";
 import { MusicChapter, DeliveryChapter } from "./ProfessionalChapters";
 import { ProjectGallery } from "./ProjectGallery";
 import { CareerJourney } from "./CareerJourney";
-import { Recommendations, WorldEntrance, Contact } from "./ConnectionSections";
+import { WorldEntrance, Contact } from "./ConnectionSections";
+import { Recommendations } from "./Recommendations";
 import "./motion.css";
 
 export default function MotionPortfolio() {

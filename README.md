@@ -1,6 +1,6 @@
 # Mohsen Esmaeili - Personal portfolio
 
-The homepage introduces Mohsen / Moshe through a compact robot-and-record workbench, a current-role Songtradr panel and a detailed Starship case study. Both colleague quotations stay visible. A visual catalog of 15 independent projects opens focused project sheets with real imagery, implementation details and source links. The career rail keeps each company’s story separate. An actual in-game capture leads into the playable orbital habitat at `/#/sector/arrival`; `/reading.html` shares the catalog and chronology as a static alternative.
+The homepage introduces Mohsen / Moshe through a compact robot-and-record workbench, a current-role Songtradr panel and a detailed Starship case study. A dedicated recommendation reader provides author selection, attributed excerpts, context and a LinkedIn source link. A visual catalog of 15 independent projects opens focused project sheets with real imagery, implementation details and source links. The career rail keeps each company’s story separate. An actual in-game capture leads into the playable orbital habitat at `/#/sector/arrival`; `/reading.html` shares the catalog and chronology as a static alternative.
 
 A playable third-person portfolio for Mohsen “Moshe” Esmaeili. Drive a wheeled maintenance robot through an open terraced engineering settlement beneath a glass dome, with a blue ocean planet overhead. Portfolio content lives on physical signs.
 

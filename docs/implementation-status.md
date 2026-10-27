@@ -1,3 +1,7 @@
+# Recommendation reader — 27 October 2026
+
+Removed the old two-quote strip and its breakpoint styles. Added a dedicated reader with named author tabs, clear excerpt attribution, separated paraphrased context, a LinkedIn source link and manual previous/next navigation. The source content still contains only the two previously verified excerpts; the latest request referred to all recommendations but included no new text or attachment. Full recommendations remain pending that content. Production build passed and the desktop layout and reader navigation were visually reviewed. No suites, audits or benchmarks were run.
+
 # Compact integration partners — 27 October 2026
 
 Replaced the large partner tiles and repeated captions with a wrapping row of small circular logo badges. Retained image names and hover labels; Bringg remains a text mark. Production build passed and the local layout was visually reviewed. Published over SSH as `e6b340e`; [Pages run 40567512796](https://github.com/m-esm/m-esm.github.io/actions/runs/40567512796) completed successfully.
