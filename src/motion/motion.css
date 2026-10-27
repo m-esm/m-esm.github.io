@@ -556,54 +556,55 @@ body.motion-mode #root {
 }
 .partner-strip {
   grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 .partner-strip > p {
+  max-width: 170px;
   font-size: 13px;
+  line-height: 1.5;
   color: #b8cbd1;
-  margin: 0 0 18px;
+  margin: 0;
 }
-.partner-strip > div {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 18px;
-  align-items: start;
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-.partner-strip img {
-  width: 100%;
-  height: 54px;
-  object-fit: contain;
-  border-radius: 3px;
-  background: #edf2ef;
-}
-.partner-strip img[src$="deliveroo.png"] {
-  object-fit: contain;
-}
-.partner-strip img[src$="foodora.svg"] {
-  object-fit: contain;
-  background: none;
-  filter: brightness(0) invert(1);
-}
-.partner-mark {
-  height: 54px;
+.partner-logo {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f7f8f6;
+  box-shadow: 0 0 0 1px #ffffff18;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
-.partner-strip figcaption {
-  text-align: center;
-  font-size: 11px;
-  color: #a8bbc4;
-  margin-top: 8px;
+.partner-logo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 2px #d2a585;
 }
-.partner-wordmark {
-  font-size: 21px;
-  color: #d0dde0;
-  font-weight: 500;
+.partner-logo img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
 }
-.partner-strip > div > span {
-  font-size: 20px;
-  font-weight: 500;
-  color: #b8cbd1;
+.partner-logo img[src$="foodora.svg"] {
+  width: 51px;
+}
+.partner-logo-wordmark {
+  color: #233b49;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -.5px;
 }
 .case-footnote {
   grid-column: 1/-1;
@@ -1289,10 +1290,6 @@ body.motion-mode #root {
   .career-layout {
     gap: 30px;
   }
-  .partner-strip > div {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
   .habitat-section {
     gap: 30px;
   }
@@ -1452,33 +1449,27 @@ body.motion-mode #root {
   .case-footnote {
     grid-column: 1;
   }
-  .partner-strip > div {
-    justify-content: flex-start;
-    gap: 14px 22px;
+  .partner-strip {
+    display: block;
   }
-  .partner-strip img {
-    width: 100%;
-    height: 46px;
+  .partner-strip > p {
+    max-width: none;
+    margin-bottom: 14px;
   }
-  .partner-mark {
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .partner-logos {
+    gap: 10px;
   }
-  .partner-strip figcaption {
-    text-align: center;
-    font-size: 11px;
-    color: #a8bbc4;
-    margin-top: 8px;
+  .partner-logo {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
   }
-  .partner-wordmark {
-    font-size: 21px;
-    color: #d0dde0;
-    font-weight: 500;
+  .partner-logo img {
+    width: 48px;
+    height: 48px;
   }
-  .partner-strip > div > span {
-    font-size: 17px;
+  .partner-logo img[src$="foodora.svg"] {
+    width: 45px;
   }
   .case-footnote {
     display: block;

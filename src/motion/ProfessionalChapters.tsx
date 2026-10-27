@@ -185,20 +185,16 @@ export function DeliveryChapter({ paused }: { paused: boolean }) {
       </div>
       <div className="partner-strip">
         <p>Integration partners I worked with</p>
-        <div>
+        <ul className="partner-logos" aria-label="Integration partners">
           {partners.map(([file, label]) => (
-            <figure key={label}>
-              <div className="partner-mark">
-                <img src={"/assets/brands/" + file} alt="" loading="lazy" />
-              </div>
-              <figcaption>{label}</figcaption>
-            </figure>
+            <li className="partner-logo" key={label} title={label}>
+              <img src={"/assets/brands/" + file} alt={label} loading="lazy" />
+            </li>
           ))}
-          <figure>
-            <div className="partner-mark partner-wordmark">Bringg</div>
-            <figcaption>Bringg</figcaption>
-          </figure>
-        </div>
+          <li className="partner-logo partner-logo-wordmark" title="Bringg">
+            Bringg
+          </li>
+        </ul>
       </div>
       <div className="case-footnote">
         <p>

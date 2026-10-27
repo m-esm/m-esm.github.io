@@ -1,3 +1,7 @@
+# Compact integration partners — 27 October 2026
+
+Replaced the large partner tiles and repeated captions with a wrapping row of small circular logo badges. Retained image names and hover labels; Bringg remains a text mark. Production build passed and the local layout was visually reviewed.
+
 # Current component critique pass — 27 October 2026
 
 The 27 October component critique pass adds fitted robot/record platforms, a more compact Songtradr panel, an integrated Starship model, consistently framed partner marks, project-specific diagrams and clearer project sheets. The full career rail expands inline on mobile. Real district previews lead into the habitat, which has finer foliage, readable exhibit plates and corrected loading/controls. The reading companion has persistent contents. See [the component-by-component critique](visual-critique-2026-10-27.md).
