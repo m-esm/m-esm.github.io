@@ -4,7 +4,7 @@ Reworked every homepage section to reduce repetition and make the content easier
 
 Captured Alamut and the habitat from the actual apps, retained credits, aligned the reading palette and tightened the writing. No new career achievements were inferred. Production build passed. Desktop and phone-sized layouts, project opening/Escape, mobile navigation, Starship scope selection and career selection were reviewed manually. Suites, accessibility audits and benchmarks were not run. Vite previews on ports 5173 and 5174 were confirmed to render the new homepage. Production preview on port 4174 also renders correctly.
 
-Publication: pending this refinement’s SSH release and Pages confirmation.
+Published over SSH as `ba1bde9`, followed by the complete-wordmark correction in `7e241c6`. [Pages run 40479122650](https://github.com/m-esm/m-esm.github.io/actions/runs/40479122650) completed successfully. The public homepage serves `main-CGH_6kPA.js`; the matching `MotionPortfolio-D46bM1yu.js` bundle and reading document returned HTTP 200. The live homepage was visually confirmed and captured in `docs/validation/refined-home-2026-10-27.jpg`. Localhost on port 5173 was also visually confirmed after refreshing the Vite server.
 
 ## Motion portfolio redesign — 26 October 2026
 

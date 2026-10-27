@@ -48,7 +48,7 @@ The 26 October artwork includes dark orbital space, stars, solar wings, differen
 
 `.github/workflows/pages.yml` builds and publishes to **https://m-esm.github.io/** on pushes to `master`, with an optional manual trigger. The repository Pages source is configured to **GitHub Actions**. Deployment uses the official Pages artifact and OIDC workflow, without browser test suites or budget checks.
 
-The previous compact personal release was deployed as `fe665c9` ([Pages run 40473926714](https://github.com/m-esm/m-esm.github.io/actions/runs/40473926714)). The section-by-section refinement has passed its production build and visual review; publication verification is recorded below once complete.
+Published over SSH as `ba1bde9`, followed by the complete-wordmark correction in `7e241c6`. [Pages run 40479122650](https://github.com/m-esm/m-esm.github.io/actions/runs/40479122650) completed successfully. The public homepage serves `main-CGH_6kPA.js`; the matching `MotionPortfolio-D46bM1yu.js` bundle and reading document returned HTTP 200. The live homepage was visually confirmed and captured in `docs/validation/refined-home-2026-10-27.jpg`. Localhost on port 5173 was also visually confirmed after refreshing the Vite server.
 
 For future SSH releases, run `npm run deploy:github`. It builds, fetches the SSH origin, commits the project files, merges remote history without rewriting it, rebuilds after a merge, and pushes `master`. Existing staged work or merge conflicts stop the release for review. The original checkout has read-only Git metadata. Current releases preserve its working files and publish from a separate checkout of remote master over SSH.
 

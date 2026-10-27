@@ -15,3 +15,5 @@ Palette: deep marine #101d28, steel #233b49, pale slate #b8cbd1, ink-white #edf2
 - Reading: keep the same factual material, align typography/palette and remove redundant explanatory copy.
 
 Avoid adding chrome merely to make something look technical: no arbitrary counters, fake terminal output, fictitious metrics, or production architecture claims. Existing sourced details remain the boundary of the prose.
+
+Production build and desktop/phone-sized visual review complete. The public homepage and static companion are deployed; see the latest implementation-status entry for release evidence.

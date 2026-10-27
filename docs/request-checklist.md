@@ -88,4 +88,4 @@ Suites, accessibility audits and performance benchmarks remain intentionally out
 - [x] Lead project sheets with actual software captures or CAD evidence, with optional interactions only where they explain the work.
 - [x] Give the monitoring infographic a relevant screen/status illustration and match the workbench’s restrained material palette.
 - [x] Complete a production build and visual review without running suites/audits/benchmarks.
-- [ ] Confirm SSH publication and the updated public build.
+- [x] Confirm SSH publication and the updated public build: `ba1bde9` plus `7e241c6`, successful Pages run 40479122650, matching public bundle and live screenshot.
