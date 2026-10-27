@@ -21,6 +21,7 @@ import {
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import { runtime } from "../app/runtime";
 import { Label } from "../world/Settlement";
+import { Box } from "../world/kit";
 import { ParvizExhibit } from "./SignatureExhibits";
 
 class AssetBoundary extends Component<
@@ -132,10 +133,16 @@ function Assembly({ reduced }: { reduced: boolean }) {
       >
         <primitive object={assembly.root} dispose={null} />
       </group>
-      <Label at={[0, -0.06, 1.05]} size={0.15}>
+      <Box
+        at={[0, -0.14, 1.01]}
+        size={[3.3, 0.59, 0.08]}
+        color="#e4e9e3"
+        round
+      />
+      <Label at={[0, -0.06, 1.06]} size={0.15}>
         Parviz / Actual CAD assembly
       </Label>
-      <Label at={[0, -0.28, 1.05]} size={0.12}>
+      <Label at={[0, -0.28, 1.06]} size={0.12}>
         {exploded
           ? "Click to reassemble"
           : "Click for exploded view / Enlarged"}

@@ -40,32 +40,32 @@ export function HabitatTree() {
                 r={0.045}
                 color="#948263"
               />
-              {Array.from({ length: 24 }, (_, j) => {
+              {Array.from({ length: 76 }, (_, j) => {
                 const a = j * 2.399 + i,
-                  radius = 0.3 + (j % 5) * 0.24;
+                  radius = 0.18 + Math.sqrt((j + 1) / 76) * 1.3;
                 return (
                   <group
                     key={j}
                     position={[
                       x + Math.cos(a) * radius,
-                      y + Math.sin(j * 1.8) * 0.4,
+                      y + Math.sin(j * 1.8) * 0.62,
                       z + Math.sin(a) * radius,
                     ]}
-                    rotation={[0.2, a, 0]}
+                    rotation={[Math.sin(j * 2.1) * 0.7, a, Math.cos(j) * 0.6]}
                   >
                     <Leaf
                       rotation={[0.6, 0, -0.9]}
-                      size={[1.5, 0.85, 1.5]}
+                      size={[0.54, 0.48, 0.7]}
                       color={
-                        ["#536f59", "#6c8962", "#8fa174", "#769470"][
+                        ["#395d48", "#557a54", "#7b945f", "#63875b"][
                           (i + j) % 4
                         ]
                       }
                     />
                     <Leaf
                       rotation={[-0.8, 1.2, 0.7]}
-                      size={[1.3, 0.7, 1.3]}
-                      color={["#617d60", "#9daa7b", "#7b976d"][(i + j) % 3]}
+                      size={[0.45, 0.38, 0.55]}
+                      color={["#476d50", "#8b9c66", "#62835b"][(i + j) % 3]}
                     />
                   </group>
                 );

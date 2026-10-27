@@ -89,3 +89,7 @@ Suites, accessibility audits and performance benchmarks remain intentionally out
 - [x] Give the monitoring infographic a relevant screen/status illustration and match the workbench’s restrained material palette.
 - [x] Complete a production build and visual review without running suites/audits/benchmarks.
 - [x] Confirm SSH publication and the updated public build: `ba1bde9` plus `7e241c6`, successful Pages run 40479122650, matching public bundle and live screenshot.
+
+
+- [x] Critique every visible homepage section, project sheets, timeline, reading companion and habitat interface. See `visual-critique-2026-10-27.md` for specific problems and implemented fixes.
+- [ ] Confirm this component critique release on GitHub Pages.

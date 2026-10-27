@@ -1,4 +1,10 @@
-export function LoadingScreen({ station = false }: { station?: boolean }) {
+export function LoadingScreen({
+  station = false,
+  slow = false,
+}: {
+  station?: boolean;
+  slow?: boolean;
+}) {
   return (
     <div className="experience-loading" role="status">
       <svg viewBox="0 0 100 60" aria-hidden="true">
@@ -14,6 +20,12 @@ export function LoadingScreen({ station = false }: { station?: boolean }) {
       <span>
         {station ? "Loading the playable habitat…" : "Loading my portfolio…"}
       </span>
+      {slow && (
+        <p className="loading-note">
+          The habitat is taking longer to prepare. You can keep waiting or open
+          the reading version.
+        </p>
+      )}
       <a href="/reading.html">Open the reading version</a>
     </div>
   );

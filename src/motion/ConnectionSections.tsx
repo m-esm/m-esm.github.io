@@ -45,12 +45,16 @@ export function WorldEntrance() {
         aria-label={"Explore " + current.title}
       >
         <img
-          src="/assets/projects/orbital-habitat.jpg"
-          alt="Actual in-game view: a maintenance robot overlooking terraced workshops beneath a glass dome"
+          src={
+            selected === "arrival"
+              ? "/assets/projects/orbital-habitat.jpg"
+              : `/assets/projects/habitat-${selected}.jpg`
+          }
+          alt={`Actual in-game view of ${current.title.toLowerCase()}, with physical portfolio exhibits`}
           loading="lazy"
         />
         <span className="habitat-play">
-          Enter the habitat <span aria-hidden="true">↗</span>
+          Enter {current.title.toLowerCase()} <span aria-hidden="true">↗</span>
         </span>
         <small>Captured from the playable portfolio</small>
       </a>
@@ -89,7 +93,13 @@ export function WorldEntrance() {
     </section>
   );
 }
-export function Contact() {
+export function Contact({
+  paused,
+  onPause,
+}: {
+  paused: boolean;
+  onPause: () => void;
+}) {
   return (
     <footer
       id="contact"
@@ -97,19 +107,20 @@ export function Contact() {
       data-chapter="Let’s build something"
     >
       <div>
-        <h2>Mohsen Esmaeili</h2>
-        <p>Moshe, for short. Software engineer in Helsinki.</p>
+        <h2>Say hello.</h2>
+        <p>I’m Mohsen — Moshe, for short. Based in Helsinki.</p>
         <p>
           Outside work: music practice, mechanical design and tools for my own
           projects. You’ll find the source for most of them on GitHub.
         </p>
       </div>
       <nav aria-label="Contact and profiles">
-        <a href="https://www.linkedin.com/in/m-esm">
+        <a className="contact-primary" href="https://www.linkedin.com/in/m-esm">
           <span>
-            LinkedIn<small>Professional background & messages</small>
+            Message me on LinkedIn
+            <small>Work, projects or a conversation</small>
           </span>
-          ↗
+          <span aria-hidden="true">↗</span>
         </a>
         <a href="https://github.com/m-esm">
           <span>
@@ -129,6 +140,13 @@ export function Contact() {
         <a href="/assets/licenses/project-credits.html">
           Image & asset credits
         </a>
+        <button
+          className="footer-motion"
+          onClick={onPause}
+          aria-pressed={paused}
+        >
+          {paused ? "Resume animation" : "Pause animation"}
+        </button>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>

@@ -16,7 +16,7 @@ import type { SectorId } from "../content/portfolio";
 import { nearestSector } from "../world/layout";
 import { TouchControls } from "../ui/TouchControls";
 import { StationMap } from "../ui/StationMap";
-import { editorial } from "../content/editorial";
+import { LoadingScreen } from "../ui/LoadingScreen";
 const World = lazy(() => import("../world/World"));
 class Boundary extends Component<
   { children: ReactNode; onError: () => void },
@@ -46,6 +46,7 @@ function canRender() {
 export function App() {
   const [route, setRoute] = useState<Route>(() => parseRoute(location.hash)),
     [ready, setReady] = useState(false),
+    [slow, setSlow] = useState(false),
     [error, setError] = useState(() => !canRender()),
     [near, setNear] = useState<string | null>(null),
     [menu, setMenu] = useState(false),
@@ -126,7 +127,7 @@ export function App() {
   }, []);
   useEffect(() => {
     if (ready || error || hidden) return;
-    const timer = setTimeout(fail, 20000);
+    const timer = setTimeout(() => setSlow(true), 20000);
     return () => clearTimeout(timer);
   }, [ready, error, hidden, fail]);
   useEffect(() => {
@@ -303,7 +304,10 @@ export function App() {
         >
           ☷ <span>Map & controls</span>
         </button>
-        <a href="/reading.html">Read portfolio</a>
+        <nav className="station-links" aria-label="Portfolio views">
+          <a href="/">Portfolio</a>
+          <a href="/reading.html">Reading version</a>
+        </nav>
       </div>
       {menu && (
         <aside
@@ -410,10 +414,10 @@ export function App() {
           <p className="intro-name">
             Mohsen Esmaeili <span>Staff Engineer at Songtradr</span>
           </p>
-          <h1>{editorial.headline}</h1>
+          <h1>Welcome to the habitat.</h1>
           <p>
-            Previously, I built Starship’s Delivery-as-a-Service platform.
-            Explore the engineering behind my work.
+            Drive the maintenance robot, explore five connected districts and
+            inspect the physical project boards.
           </p>
           <div className="intro-actions">
             <button
@@ -426,32 +430,12 @@ export function App() {
             </button>
             <a href="/reading.html">Read my work</a>
           </div>
-          <button
-            className="intro-feature"
-            onClick={() => {
-              go("systems");
-              inspect("context");
-            }}
-          >
-            Featured work <strong>Delivery-as-a-Service at Starship</strong>
-          </button>
-          <div className="intro-projects">
-            <button onClick={() => go("workshop")}>
-              Parviz <span>Robotics</span>
-            </button>
-            <button onClick={() => go("agents")}>
-              Smart subagents <span>AI engineering</span>
-            </button>
-          </div>
+          <p className="intro-controls">
+            <kbd>WASD</kbd> Drive <span>Drag to look</span>
+          </p>
         </aside>
       )}
-      {!ready && (
-        <div className="loading" role="status">
-          <span className="loading-mark" />
-          <p>Preparing the station</p>
-          <a href="/reading.html">Read portfolio while it loads</a>
-        </div>
-      )}
+      {!ready && <LoadingScreen station slow={slow} />}
       {ready && !selected && !menu && (
         <>
           <div className="explore-hint" aria-live="polite">

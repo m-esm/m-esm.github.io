@@ -34,3 +34,10 @@ The workbench, handpan synthesizer and torque illustration are original portfoli
 ## Actual-app captures — 27 October
 
 `alamut-app.jpg` captures the owner’s live Alamut app at https://m-esm.github.io/handpan/. `orbital-habitat.jpg` captures this repository’s playable arrival scene. Both are unmodified browser captures, used to show the actual software rather than generic illustrations. Sources and capture date are recorded in the public project credits. The older Alamut thumbnail remains in the repository but is no longer used by the project catalog.
+
+
+### 27 October component critique pass
+
+- `public/assets/projects/habitat-{systems,workshop,agents,career}.jpg`: original captures of the playable portfolio, taken through its visible destination/camera controls and encoded as local JPEGs. No generated scene imagery.
+- `src/motion/ProjectArtwork.tsx`: original SVG concept drawings tailored to the public project descriptions; explicitly labeled as illustrations, not product screenshots.
+- Hero robot/record refinements, leaf geometry and exhibit caption plates are original procedural geometry. Existing font and external-asset credits remain unchanged.

@@ -9,7 +9,7 @@ import {
   OrbitControls,
   RoundedBox,
 } from "@react-three/drei";
-import { Group, MathUtils, Mesh, OrthographicCamera } from "three";
+import { Group, MathUtils, OrthographicCamera } from "three";
 import { useEffect } from "react";
 
 export type WorkFocus = "both" | "robotics" | "music";
@@ -107,7 +107,25 @@ function Robot({
           />
         </mesh>
       ))}
-      <group ref={lid} position={[-0.73, 1.19, 0]}>
+      <Part
+        at={[0, 1.205, 0]}
+        size={[1.38, 0.025, 0.86]}
+        color="#25323a"
+        radius={0.06}
+      />
+      <Part
+        at={[-0.72, 1.16, 0]}
+        size={[0.07, 0.1, 0.74]}
+        color="#7e939a"
+        radius={0.025}
+      />
+      <group ref={lid} position={[-0.73, 1.25, 0]}>
+        <Part
+          at={[0.73, -0.045, 0]}
+          size={[1.38, 0.035, 0.82]}
+          color="#abbab9"
+          radius={0.03}
+        />
         <Part
           at={[0.73, 0, 0]}
           size={[1.58, 0.1, 1.02]}
@@ -140,6 +158,18 @@ function Robot({
                   roughness={0.28}
                 />
               </mesh>
+              {Array.from({ length: 18 }, (_, i) => (
+                <group key={i} rotation={[0, 0, (i * Math.PI) / 9]}>
+                  <mesh position={[0, 0.255, 0]}>
+                    <boxGeometry args={[0.035, 0.019, 0.155]} />
+                    <meshStandardMaterial color="#26323a" roughness={0.95} />
+                  </mesh>
+                </group>
+              ))}
+              <mesh position={[0, 0, Math.sign(z) * 0.091]}>
+                <torusGeometry args={[0.197, 0.009, 6, 40]} />
+                <meshStandardMaterial color="#35414a" roughness={0.9} />
+              </mesh>
               <Part
                 at={[0.05, 0.03, Math.sign(z) * 0.1]}
                 size={[0.13, 0.04, 0.02]}
@@ -159,9 +189,31 @@ function Robot({
       <Part
         at={[-0.38, 1.92, -0.33]}
         size={[0.42, 0.22, 0.025]}
-        color="#81dfe8"
+        color="#df9463"
         radius={0.015}
       />
+      {[-1, 1].map((side) => (
+        <group key={side}>
+          <Line
+            points={[
+              [-0.62, 1.07, side * 0.548],
+              [0.58, 1.07, side * 0.548],
+            ]}
+            color="#a6b4b9"
+            lineWidth={0.8}
+          />
+          {[-0.5, 0.5].map((x) => (
+            <mesh key={x} position={[x, 0.62, side * 0.557]}>
+              <sphereGeometry args={[0.018, 8, 6]} />
+              <meshStandardMaterial
+                color="#809399"
+                metalness={0.8}
+                roughness={0.4}
+              />
+            </mesh>
+          ))}
+        </group>
+      ))}
       <Line
         points={[
           [-0.5, 0.71, 0.552],
@@ -257,7 +309,11 @@ function Music({
         {[0.42, 0.5, 0.58, 0.66, 0.74, 0.8].map((r) => (
           <mesh key={r} rotation={[Math.PI / 2, 0, 0]} position={[0, 0.035, 0]}>
             <torusGeometry args={[r, 0.004, 6, 80]} />
-            <meshBasicMaterial color="#56647a" />
+            <meshStandardMaterial
+              color="#34434b"
+              metalness={0.65}
+              roughness={0.4}
+            />
           </mesh>
         ))}
         <mesh position={[0, 0.036, 0]}>
@@ -271,6 +327,20 @@ function Music({
           radius={0.005}
         />
       </group>
+      <mesh position={[-0.2, 0.49, 0]}>
+        <cylinderGeometry args={[0.025, 0.025, 0.1, 16]} />
+        <meshStandardMaterial
+          color="#cbd3d0"
+          metalness={0.95}
+          roughness={0.2}
+        />
+      </mesh>
+      <Part
+        at={[0.92, 0.53, -0.79]}
+        size={[0.16, 0.12, 0.27]}
+        color="#6c777a"
+        radius={0.025}
+      />
       <Line
         points={[
           [0.88, 0.5, -0.72],
@@ -316,7 +386,7 @@ function Workbench(props: Props) {
   const { camera, size } = useThree();
   useEffect(() => {
     if (camera instanceof OrthographicCamera) {
-      camera.zoom = Math.min(size.width / 9.1, size.height / 6);
+      camera.zoom = Math.min(size.width / 7.4, size.height / 4.9);
       camera.updateProjectionMatrix();
     }
   }, [camera, size]);
@@ -340,56 +410,58 @@ function Workbench(props: Props) {
       </Environment>
       <group position={[0, -0.6, 0]}>
         <Part
-          at={[0, -0.12, 0]}
-          size={[8, 0.18, 4.6]}
-          color="#253c45"
-          radius={0.15}
+          at={[-1.8, -0.09, 0]}
+          size={[3.2, 0.18, 2.55]}
+          color="#40555e"
+          radius={0.1}
         />
-        <Line
-          points={[
-            [-3.35, 0.006, -1.6],
-            [-0.35, 0.006, -1.6],
-            [-0.35, 0.006, 1.65],
-            [-3.35, 0.006, 1.65],
-            [-3.35, 0.006, -1.6],
-          ]}
-          color="#77b8c8"
-          lineWidth={1.5}
+        <Part
+          at={[1.65, -0.09, -0.12]}
+          size={[2.95, 0.18, 3.05]}
+          color="#45565b"
+          radius={0.1}
         />
-        {[-3.35, -0.35].flatMap((x) =>
-          [-1.6, 1.65].map((z) => (
+        <Part
+          at={[-0.03, -0.13, 0]}
+          size={[0.55, 0.1, 1]}
+          color="#72868c"
+          radius={0.03}
+        />
+        {[-1, 1].map((z) => (
+          <Line
+            key={z}
+            points={[
+              [-3.13, 0.012, z * 0.83],
+              [-0.47, 0.012, z * 0.83],
+            ]}
+            color={props.focus === "robotics" ? "#dfad83" : "#738f97"}
+            lineWidth={1.3}
+          />
+        ))}
+        {[-1.8, 1.65].flatMap((x) =>
+          [-1, 1].map((z) => (
             <mesh
               key={`${x}${z}`}
-              position={[x, 0.03, z]}
+              position={[x - 1.22, 0.016, z * (x < 0 ? 1.05 : 1.26)]}
               rotation={[-Math.PI / 2, 0, 0]}
             >
-              <ringGeometry args={[0.06, 0.09, 24]} />
-              <meshBasicMaterial color="#b6e7ee" />
+              <circleGeometry args={[0.034, 12]} />
+              <meshStandardMaterial
+                color="#bdc7c7"
+                metalness={0.8}
+                roughness={0.3}
+              />
             </mesh>
           )),
         )}
         <Line
           points={[
-            [0.12, 0.015, -1.9],
-            [0.12, 0.015, 1.9],
+            [0.3, 0.016, 1.27],
+            [2.98, 0.016, 1.27],
           ]}
-          color="#52647f"
-          lineWidth={1}
+          color={props.focus === "music" ? "#dfad83" : "#738f97"}
+          lineWidth={1.3}
         />
-        <mesh position={[-1.8, 0.015, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[3.3, 3.5]} />
-          <meshStandardMaterial
-            color={props.focus === "robotics" ? "#4b6d78" : "#334d58"}
-            roughness={0.85}
-          />
-        </mesh>
-        <mesh position={[1.65, 0.015, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[3.1, 3.5]} />
-          <meshStandardMaterial
-            color={props.focus === "music" ? "#5c6260" : "#30464e"}
-            roughness={0.8}
-          />
-        </mesh>
         <Robot
           active={props.focus === "robotics"}
           running={props.running && !props.paused && props.focus !== "music"}

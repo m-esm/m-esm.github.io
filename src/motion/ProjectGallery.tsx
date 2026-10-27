@@ -1,9 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import {
-  personalProjects,
-  projectCategories,
-  type PersonalProject,
-} from "../content/projects";
+import { personalProjects, projectCategories } from "../content/projects";
+import { ProjectArtwork } from "./ProjectArtwork";
 const Sketch = lazy(() => import("./ProjectSketches"));
 const featured = [
   "handpan",
@@ -13,37 +10,6 @@ const featured = [
   "mechlib",
   "smart-subagents",
 ];
-const diagrams: Record<string, string[]> = {
-  "smart-subagents": ["Task", "Worker selection", "Verified diff"],
-  hillshot: ["Aim", "Server simulation", "Shared game state"],
-  "claude-code-cockpit": ["Prompt", "Workflow state", "Visible progress"],
-  "jev-model-router": ["Prompt", "Difficulty score", "Model & effort"],
-  "socket-cluster": ["Client", "Redis", "Application instances"],
-  e2db: ["Selected fields", "Encryption", "Stored data"],
-  "node-multi-branch": ["Git branches", "App instances", "Request routing"],
-  whichui: ["Libraries", "Components", "Comparison"],
-  "torque-lever": ["Scale reading", "Lever arm", "Torque"],
-};
-function ProjectArt({ project }: { project: PersonalProject }) {
-  return project.image ? (
-    <img
-      src={project.image}
-      alt={project.imageAlt || project.title}
-      loading="lazy"
-    />
-  ) : (
-    <div className="project-schema" aria-label="Project concept">
-      {(diagrams[project.id] || ["Model", "Inspect", "Print"]).map(
-        (label, i) => (
-          <span key={label}>
-            <i aria-hidden="true">{i === 1 ? "◇" : i === 0 ? "○" : "□"}</i>
-            {label}
-          </span>
-        ),
-      )}
-    </div>
-  );
-}
 export function ProjectGallery({ paused }: { paused: boolean }) {
   const initial = new URLSearchParams(location.search).get("project");
   const [selected, setSelected] = useState<string | null>(
@@ -120,14 +86,22 @@ export function ProjectGallery({ paused }: { paused: boolean }) {
             </button>
           ))}
         </div>
-        <input
-          type="search"
-          aria-label="Find a project"
-          placeholder="Find a project"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
+        <label className="catalog-search">
+          <span aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            aria-label="Find a project"
+            placeholder="Find a project"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </label>
       </div>
+      <p className="catalog-count" aria-live="polite">
+        {filter === "All" && !query && !expanded
+          ? "Selected projects"
+          : `${visible.length} ${visible.length === 1 ? "project" : "projects"}`}
+      </p>
       <div className="project-grid">
         {visible.map((p) => (
           <button
@@ -136,9 +110,9 @@ export function ProjectGallery({ paused }: { paused: boolean }) {
             onClick={() => open(p.id)}
           >
             <div className="project-tile-art">
-              <ProjectArt project={p} />
+              <ProjectArtwork project={p} />
               <span className="project-open" aria-hidden="true">
-                ↗
+                View project <b>+</b>
               </span>
             </div>
             <div className="project-tile-copy">
@@ -184,6 +158,7 @@ export function ProjectGallery({ paused }: { paused: boolean }) {
         <dialog
           ref={dialog}
           className="project-dialog"
+          aria-labelledby="project-sheet-title"
           onCancel={(e) => {
             e.preventDefault();
             close();
@@ -198,7 +173,7 @@ export function ProjectGallery({ paused }: { paused: boolean }) {
                 <span>
                   {project.category} / {project.year}
                 </span>
-                <h2>{project.title}</h2>
+                <h2 id="project-sheet-title">{project.title}</h2>
               </div>
               <button
                 className="sheet-close"
@@ -214,8 +189,19 @@ export function ProjectGallery({ paused }: { paused: boolean }) {
                 <Suspense fallback={<p>Loading interaction…</p>}>
                   <Sketch kind={project.sketch} paused={paused} />
                 </Suspense>
+              ) : project.image ? (
+                <a
+                  href={project.image}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="sheet-image-link"
+                  aria-label={"Open full image of " + project.title}
+                >
+                  <ProjectArtwork project={project} />
+                  <span>View full image ↗</span>
+                </a>
               ) : (
-                <ProjectArt project={project} />
+                <ProjectArtwork project={project} />
               )}
             </div>
             <div className="sheet-body">

@@ -308,10 +308,16 @@ export function ParvizExhibit({ paused, reduced }: Motion) {
           </Bake>
         </group>
       </group>
-      <Label at={[0, -0.06, 1.03]} size={0.16}>
+      <Box
+        at={[0, -0.14, 0.99]}
+        size={[3.3, 0.59, 0.08]}
+        color="#e4e9e3"
+        round
+      />
+      <Label at={[0, -0.06, 1.04]} size={0.16}>
         Parviz / CAD prototype
       </Label>
-      <Label at={[0, -0.28, 1.03]} size={0.12}>
+      <Label at={[0, -0.28, 1.04]} size={0.12}>
         {exploded
           ? "Click robot to reassemble"
           : "Click robot for exploded view"}
@@ -472,7 +478,13 @@ export function AgentRoutingExhibit({ paused, reduced }: Motion) {
           {s}
         </Label>
       ))}
-      <Label at={[0, -0.18, 1.22]} size={0.14}>
+      <Box
+        at={[0, -0.16, 1.18]}
+        size={[5.4, 0.42, 0.08]}
+        color="#e4e9e3"
+        round
+      />
+      <Label at={[0, -0.16, 1.23]} size={0.16}>
         Smart subagents / Illustrative dispatch cycle
       </Label>
     </group>

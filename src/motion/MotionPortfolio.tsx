@@ -54,18 +54,8 @@ export default function MotionPortfolio() {
         <ProjectGallery paused={paused} />
         <CareerJourney />
         <WorldEntrance />
-        <Contact />
+        <Contact paused={paused} onPause={() => setPaused(!paused)} />
       </main>
-      <aside className="motion-indicator">
-        <a href="#top" aria-label="Back to introduction">
-          <span className="status-dot" />
-          {chapter}
-        </a>
-        <button onClick={() => setPaused(!paused)} aria-pressed={paused}>
-          <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
-          {paused ? "Resume motion" : "Pause motion"}
-        </button>
-      </aside>
     </div>
   );
 }

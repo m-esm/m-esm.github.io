@@ -239,21 +239,21 @@ const leafGeometry = new BufferGeometry();
 {
   const vertices: number[] = [],
     indices: number[] = [];
-  for (let i = 0; i <= 6; i++) {
-    const t = i / 6,
-      w = Math.pow(Math.sin(t * Math.PI), 0.7) * 0.28;
+  for (let i = 0; i <= 10; i++) {
+    const t = i / 10,
+      w = Math.pow(Math.sin(t * Math.PI), 0.9) * 0.19;
     vertices.push(
       -w,
       t,
-      Math.sin(t * Math.PI) * 0.15,
+      Math.sin(t * Math.PI) * 0.06,
       0,
       t,
-      Math.sin(t * Math.PI) * 0.24,
+      Math.sin(t * Math.PI) * 0.11,
       w,
       t,
-      Math.sin(t * Math.PI) * 0.15,
+      Math.sin(t * Math.PI) * 0.06,
     );
-    if (i < 6)
+    if (i < 10)
       for (let j = 0; j < 2; j++) {
         const a = i * 3 + j;
         indices.push(a, a + 3, a + 1, a + 1, a + 3, a + 4);

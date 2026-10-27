@@ -946,3 +946,157 @@ main .career-highlight h2 {
 .about h2 {
   font-size: 30px;
 }
+
+/* Persistent contents and a tighter editorial reading rhythm. */
+.reading-contents {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  padding: 14px 24px;
+  border-block: 1px solid #abc9d32b;
+  background: #101d28f5;
+  backdrop-filter: blur(12px);
+  font-size: 13px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.reading-contents span {
+  color: #8fa8b3;
+  font-size: 11px;
+}
+.reading-contents a {
+  text-decoration: none;
+}
+section[id] {
+  scroll-margin-top: 80px;
+}
+.current-role {
+  grid-template-columns: 0.9fr 1.3fr 0.8fr;
+  align-items: start;
+  gap: 30px;
+}
+.current-role h2 {
+  margin-bottom: 0;
+}
+.current-role .standfirst {
+  margin-top: 28px;
+  font-size: 19px;
+}
+.music-photo {
+  grid-column: auto;
+  margin: 24px 0 0;
+}
+.music-photo img {
+  height: 240px;
+  object-position: center 30%;
+}
+.company-photo figcaption {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #b8cbd1;
+}
+.delivery-photo img {
+  height: 340px;
+  object-position: center 66%;
+}
+.case-body {
+  gap: 40px;
+  grid-template-columns: 0.7fr 2fr;
+}
+.scope-list dt {
+  font-size: 18px;
+}
+.recommendation {
+  border-left: 1px solid #d2a58566;
+  padding-left: 24px;
+}
+.recommendation blockquote {
+  font-size: 23px;
+}
+.timeline-track,
+.timeline-focus li,
+.timeline-image figcaption {
+  font-size: 12px;
+  color: #b8cbd1;
+}
+.timeline-card {
+  padding: 24px;
+  border-top-color: #abc9d33b;
+}
+.timeline-card h3 {
+  font-size: 23px;
+  margin-block: 16px 10px;
+}
+.timeline-card p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+.timeline-brand img {
+  margin-bottom: 12px;
+}
+.timeline-glyph {
+  width: 35px;
+  color: #abc4b6;
+}
+.timeline-image img {
+  object-fit: contain;
+  background: #152731;
+}
+.graphic-stages button[aria-pressed="true"] {
+  background: #385966;
+  border-color: #9bb8c2;
+}
+.graphic-stages button,
+.graphic-top button {
+  border-radius: 5px;
+}
+.graphic-note,
+.graphic-hint {
+  font-size: 12px;
+  color: #b8cbd1;
+}
+.catalog-story figure a {
+  display: block;
+}
+@media (max-width: 900px) {
+  .current-role {
+    grid-template-columns: 1fr 1.3fr;
+  }
+  .music-photo {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .music-photo img {
+    height: 190px;
+  }
+  .reading-contents {
+    justify-content: flex-start;
+    gap: 22px;
+  }
+}
+@media (max-width: 750px) {
+  .current-role {
+    grid-template-columns: 1fr;
+  }
+  .current-role .standfirst {
+    margin-top: 0;
+  }
+  .music-photo {
+    grid-column: auto;
+  }
+  .case-body {
+    grid-template-columns: 1fr;
+  }
+  .delivery-photo img {
+    height: 280px;
+  }
+  .reading-contents span {
+    display: none;
+  }
+}

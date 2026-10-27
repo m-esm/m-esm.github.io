@@ -29,9 +29,8 @@ export function Navigation({ chapter }: { chapter: string }) {
           <path d="M5 29V11l15 18 15-18v18M5 20h30" />
         </svg>
         <span>
-          Mohsen
-          <br />
-          <strong>Esmaeili</strong>
+          <strong>Mohsen Esmaeili</strong>
+          <small>Personal website</small>
         </span>
       </a>
       <nav aria-label="Portfolio" id="portfolio-navigation">
@@ -101,7 +100,7 @@ export function Hero({ paused }: { paused: boolean }) {
             Selected work <span>↓</span>
           </a>
           <a className="text-link" href="#experiments">
-            Personal projects <span>↗</span>
+            Personal projects <span>↓</span>
           </a>
         </div>
         <div className="intro-profiles">
@@ -110,7 +109,7 @@ export function Hero({ paused }: { paused: boolean }) {
           <a href="/reading.html">Reading version</a>
         </div>
       </div>
-      <div className="hero-workbench">
+      <div className="hero-workbench" data-focus={focus}>
         <div className="workbench-canvas">
           <Suspense
             fallback={

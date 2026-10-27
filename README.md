@@ -40,6 +40,8 @@ The station has no mandatory tasks, sound, account, backend, contact form, or ru
 
 ## Current visual release
 
+The 27 October component critique pass adds fitted robot/record platforms, a more compact Songtradr panel, an integrated Starship model, complete partner marks, project-specific diagrams and clearer project sheets. The full career rail expands inline on mobile. Real district previews lead into the habitat, which has finer foliage, readable exhibit plates and corrected loading/controls. The reading companion has persistent contents. See [the component-by-component critique](docs/visual-critique-2026-10-27.md).
+
 The 26 October artwork includes dark orbital space, stars, solar wings, differentiated rubber/enamel/metal, and local reflection lighting. The ocean planet has sheared cloud fronts, a day/night terminator, cloud shading and ocean glint. Habitat modules have recessed glazing, pressure doors, panel joints and roof services. Physical bevels and a bolted, braced garden pergola complete the construction pass. All assets remain local and distributable.
 
 `npm run build` runs the strict TypeScript check, regenerates the static reading document, and creates the production bundle. Test suites, accessibility audits and performance benchmarks were deliberately not rerun for this art pass. Older results in `docs/validation` describe earlier builds.

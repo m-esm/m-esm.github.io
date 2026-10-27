@@ -768,23 +768,349 @@ kbd {
 }
 
 /* A quieter invitation leaves more of the habitat visible. */
-.arrival-introduction { background: #f0f3efed; border-color: #ffffff99; border-radius: 16px; padding: 28px; width: 340px; box-shadow: 0 18px 70px #10272e29; }
-.arrival-introduction h1 { font-size: 33px; line-height: 1.12; letter-spacing: -1.1px; }
-.arrival-introduction p { color: #50666a; font-size: 15px; }
-.arrival-introduction .intro-name { color: #243d48; margin-bottom: 20px; }
-.intro-actions { margin: 22px 0 16px; gap: 16px; }
-.intro-actions button { border-radius: 8px; padding: 13px 16px; }
-.intro-projects { display: none; }
-@media(max-width:700px) { .arrival-introduction { width: auto; padding: 20px; } .arrival-introduction h1 { font-size: 27px; } }
-@media(max-height:650px) and (min-width:701px) { .arrival-introduction { top: 80px; padding: 20px; } .arrival-introduction h1 { font-size: 27px; } .intro-feature { display:none; } }
-/* Station interface shares the motion portfolio's glass and indigo palette. */
-.station .arrival-introduction,.station .utility-menu{background:linear-gradient(135deg,#151d38ed,#10172bdc);color:#edf0ff;border:1px solid #b4baff4d;backdrop-filter:blur(24px);box-shadow:0 20px 80px #050a2540}
-.station .arrival-introduction p,.station .intro-name span,.station .menu-foot{color:#b8c5de}
-.station .arrival-introduction .intro-name,.station .intro-feature strong{color:#eef1ff}
-.station .intro-actions a,.station .intro-feature,.station .utility-menu a{color:#bdceff}
-.station .intro-feature{border-top-color:#b0b8e333}
-.station .utility-bar button,.station .utility-bar>a,.station .explore-hint,.station .inspection-utility button{background:#151e36e8;color:#e0eaff;border:1px solid #b2bfe54d;backdrop-filter:blur(16px);border-radius:24px}
-.station .utility-menu button,.station .intro-actions button{background:#324668;color:#f1f5ff;border:1px solid #8299c477}
-.station .intro-dismiss{color:#d7e1ff;background:transparent}
-.station .atlas-destinations small{color:#b4c7de}
-.experience-loading{min-height:100svh;background:#101d28;color:#edf2ef;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px;font-family:Plex,sans-serif}.experience-loading svg{width:100px;height:60px;fill:none;stroke:#b8cbd1;stroke-width:1.2;margin-bottom:30px}.experience-loading svg circle{fill:none}.experience-loading p{font-size:22px;letter-spacing:-.04em;margin:0 0 10px}.experience-loading>span{font-size:13px;color:#8e9fbe}.experience-loading a{font-size:12px;color:#b3d1ed;margin-top:40px}.station-portfolio-link{position:fixed;right:18px;bottom:18px;z-index:90;color:#e5edff;background:#10172de8;border:1px solid #ffffff40;border-radius:24px;padding:10px 16px;font-size:12px;text-decoration:none}@keyframes loading-orbit{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.experience-loading svg{animation:none}}
+.arrival-introduction {
+  background: #f0f3efed;
+  border-color: #ffffff99;
+  border-radius: 16px;
+  padding: 28px;
+  width: 340px;
+  box-shadow: 0 18px 70px #10272e29;
+}
+.arrival-introduction h1 {
+  font-size: 33px;
+  line-height: 1.12;
+  letter-spacing: -1.1px;
+}
+.arrival-introduction p {
+  color: #50666a;
+  font-size: 15px;
+}
+.arrival-introduction .intro-name {
+  color: #243d48;
+  margin-bottom: 20px;
+}
+.intro-actions {
+  margin: 22px 0 16px;
+  gap: 16px;
+}
+.intro-actions button {
+  border-radius: 8px;
+  padding: 13px 16px;
+}
+.intro-projects {
+  display: none;
+}
+@media (max-width: 700px) {
+  .arrival-introduction {
+    width: auto;
+    padding: 20px;
+  }
+  .arrival-introduction h1 {
+    font-size: 27px;
+  }
+}
+@media (max-height: 650px) and (min-width: 701px) {
+  .arrival-introduction {
+    top: 80px;
+    padding: 20px;
+  }
+  .arrival-introduction h1 {
+    font-size: 27px;
+  }
+  .intro-feature {
+    display: none;
+  }
+}
+/* Station chrome uses the same quiet marine palette as the portfolio. */
+.station {
+  color: #edf2ef;
+  background: #030509;
+}
+.station .arrival-introduction,
+.station .utility-menu {
+  background: #142a35ed;
+  color: #edf2ef;
+  border: 1px solid #9dbac75c;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 40px #08141b38;
+  border-radius: 8px;
+}
+.station .arrival-introduction {
+  top: auto;
+  bottom: 24px;
+  left: 24px;
+  width: 330px;
+  padding: 23px;
+}
+.station .arrival-introduction h1 {
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+  margin-bottom: 14px;
+}
+.station .arrival-introduction p {
+  color: #b8cbd1;
+  font-size: 14px;
+}
+.station .arrival-introduction .intro-name {
+  color: #edf2ef;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.station .intro-name span {
+  color: #a8bbc4;
+  font-size: 12px;
+}
+.station .intro-actions {
+  gap: 15px;
+  margin: 20px 0 12px;
+}
+.station .intro-actions button {
+  background: #bfd1d7;
+  color: #101d28;
+  border: 1px solid #bfd1d7;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.station .intro-actions a {
+  color: #d1dfe3;
+  font-size: 13px;
+}
+.station .intro-dismiss {
+  color: #d1dfe3;
+  background: transparent;
+}
+.station .intro-controls {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+}
+.station .intro-controls kbd {
+  margin: 0;
+  color: #d1dfe3;
+  border-color: #6b8997;
+}
+.station .intro-controls > span {
+  margin-left: 14px;
+}
+.station .utility-bar {
+  align-items: start;
+}
+.station .utility-bar > button,
+.station .station-links,
+.station .inspection-utility button {
+  background: #142a35ed;
+  color: #edf2ef;
+  border: 1px solid #9dbac75c;
+  backdrop-filter: blur(16px);
+  border-radius: 5px;
+}
+.station-links {
+  display: flex;
+  padding: 0 5px;
+}
+.station-links a {
+  color: #d8e3e6;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 12px;
+}
+.station-links a + a {
+  border-left: 1px solid #9dbac733;
+}
+.station .utility-menu {
+  padding: 18px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #6c8b99 #142a35;
+}
+.station .utility-menu p {
+  color: #b8cbd1;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.station .utility-menu button {
+  background: transparent;
+  color: #edf2ef;
+  border-color: #8ba5b14d;
+}
+.station .utility-menu .menu-grid button {
+  background: #243d49;
+  border-radius: 4px;
+}
+.station .utility-menu button:hover {
+  background: #304c5b;
+}
+.station .utility-menu label {
+  font-size: 13px;
+  color: #bfd1d7;
+}
+.station .utility-menu select {
+  background: #213b48;
+  color: #edf2ef;
+  border-color: #71909f;
+}
+.station .atlas-destinations button {
+  padding: 11px 7px;
+  border-radius: 0;
+}
+.station .atlas-destinations button[aria-current] {
+  background: #294653;
+  border-left: 2px solid #d2a585;
+}
+.station .atlas-destinations small {
+  color: #a8bbc4;
+  font-size: 11px;
+}
+.station .menu-foot {
+  border-top-color: #9dbac733;
+}
+.station .desktop-hint,
+.station .explore-hint button {
+  background: #142a35ed;
+  color: #d6e2e5;
+  border: 1px solid #9dbac75c;
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+}
+.station .desktop-hint span {
+  color: #9dbac7;
+}
+.station .explore-hint {
+  background: none;
+  border: 0;
+}
+.station .inspection-utility kbd {
+  border-color: #71909f;
+}
+.station .joystick {
+  border-color: #66839199;
+  background: #142a3544;
+}
+.station .joystick-thumb {
+  background: #bdd0d8e8;
+}
+.station .joystick-label {
+  color: #edf2ef;
+  text-shadow: 0 1px 3px #06131d;
+}
+.station .look-hint {
+  background: #142a35ed;
+  color: #edf2ef;
+}
+.experience-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  min-height: 100svh;
+  background: #101d28;
+  color: #edf2ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  font-family: Plex, sans-serif;
+}
+.experience-loading svg {
+  width: 112px;
+  height: 68px;
+  fill: none;
+  stroke: #b8cbd1;
+  stroke-width: 1.4;
+  margin-bottom: 27px;
+}
+.experience-loading p {
+  font-size: 22px;
+  letter-spacing: -0.04em;
+  margin: 0 0 10px;
+}
+.experience-loading > span {
+  font-size: 14px;
+  color: #b8cbd1;
+}
+.experience-loading a {
+  font-size: 13px;
+  color: #d2a585;
+  margin-top: 30px;
+  padding: 12px;
+}
+.experience-loading .loading-note {
+  font-size: 14px;
+  letter-spacing: 0;
+  max-width: 380px;
+  line-height: 1.6;
+  margin: 20px 0 0;
+  color: #b8cbd1;
+}
+.failure {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  max-width: none;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #101d28;
+  color: #edf2ef;
+}
+.failure h1 {
+  max-width: 650px;
+  font-size: 32px;
+  margin: 15px 0;
+}
+.failure p {
+  max-width: 590px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #b8cbd1;
+}
+.failure .fallback-symbol {
+  color: #d2a585;
+  font-size: 46px;
+}
+.failure a {
+  color: #d2a585;
+  font-size: 15px;
+  margin: 0 0 12px;
+}
+.failure button {
+  color: #101d28;
+  background: #bfd1d7;
+  border: 0;
+  padding: 12px 18px;
+}
+@media (max-width: 700px) {
+  .station .arrival-introduction {
+    left: 14px;
+    right: 14px;
+    width: auto;
+    bottom: auto;
+    top: 76px;
+    padding: 20px;
+  }
+  .station .arrival-introduction h1 {
+    font-size: 24px;
+  }
+  .station .arrival-introduction p {
+    max-width: none;
+  }
+  .station .utility-menu {
+    width: calc(100% - 24px);
+  }
+  .station .utility-bar > button {
+    font-size: 13px;
+  }
+  .station-links a {
+    font-size: 12px;
+    padding: 12px 8px;
+  }
+  .station .intro-controls {
+    display: none;
+  }
+}

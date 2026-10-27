@@ -1,3 +1,9 @@
+# Current component critique pass — 27 October 2026
+
+The 27 October component critique pass adds fitted robot/record platforms, a more compact Songtradr panel, an integrated Starship model, complete partner marks, project-specific diagrams and clearer project sheets. The full career rail expands inline on mobile. Real district previews lead into the habitat, which has finer foliage, readable exhibit plates and corrected loading/controls. The reading companion has persistent contents. See [the component-by-component critique](visual-critique-2026-10-27.md).
+
+Production build passed locally. Publication confirmation is pending this pass; earlier deployment records below describe previous releases. Test suites, audits and benchmarks remain skipped as requested.
+
 ## Section refinement — 27 October 2026
 
 Reworked every homepage section to reduce repetition and make the content easier to inspect: a concise personal hero; warm metal on the robot/record workbench; a compact current-role panel; a tabbed Starship case study with a deliberately opened 3D scope model; both verified recommendations; a six-project visual selection with all 15 available; native-dialog project sheets; a career rail with separate employer stories; a real captured habitat entrance; and direct contact links. Replaced the orbiting monitoring symbol with an actual monitoring-screen illustration. Removed the fabricated nutrition table and artillery demo. Handpan notes, the repository-based torque calculation and agent explanation remain optional within relevant project sheets.

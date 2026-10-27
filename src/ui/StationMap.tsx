@@ -46,7 +46,7 @@ export function StationMap({
               cx={s.x}
               cy={s.y}
               r={current === s.id ? 10 : 6}
-              fill={current === s.id ? "#397ca5" : "#617c57"}
+              fill={current === s.id ? "#d2a585" : "#6c928b"}
               stroke="#e4e9e3"
               strokeWidth="3"
             />
@@ -54,7 +54,7 @@ export function StationMap({
               x={s.x}
               y={s.y + (s.id === "arrival" ? 23 : -16)}
               textAnchor="middle"
-              fontSize="11"
+              fontSize="12"
               fill="currentColor"
             >
               {s.title}
