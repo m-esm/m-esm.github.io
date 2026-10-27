@@ -79,4 +79,4 @@ Suites, accessibility audits and performance benchmarks remain intentionally out
 - [x] Add project search/category controls, selectable details, direct project URLs, source links and five newly credited repository images.
 - [x] Add useful sketches: handpan notes, adjustable aiming, torque calculation, nutrition sorting, CAD stages and agent-routing stages.
 - [x] Share the expanded chronology and project material with the reading page; preserve separate travel stories, professional dates and the architecture-only Second Brain summary.
-- [ ] Record successful SSH publication and public confirmation of this revision.
+- [x] Record successful SSH publication and public confirmation: `fe665c9`, Pages run 40473926714 succeeded; homepage, matching bundle, reading catalog, new image and local preview confirmed.

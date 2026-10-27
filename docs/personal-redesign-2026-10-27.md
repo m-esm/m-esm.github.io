@@ -25,3 +25,7 @@ Selection prioritizes things a visitor can understand or inspect: Alamut (music 
 Each added entry links directly to the repository whose README was reviewed. Creation dates were read from GitHub's repository API. Grouped CAD work covers three repositories rather than inflating the apparent number of standalone products. Questioning is linked from Cockpit. Macros is explicitly independent from the Starship partnership work. E2DB is an historical educational example; Which UI has no implied current comparison data. No unsourced business metrics or employer project details were added.
 
 The latest change is focused on the public homepage and its reading companion. The existing playable habitat, controls, materials, CAD exhibit and routing remain intact. The new scenes are illustrative, and the source links lead to the full projects.
+
+## Publication
+
+Release `fe665c9` was pushed over SSH without rewriting remote history. GitHub Pages run 40473926714 completed successfully. Production build passed; public homepage, matching bundle, reading catalog and a new project image returned HTTP 200. Public workbench screenshot: `validation/personal-home-2026-10-27.jpg`. Local preview remained available on port 5173. No suites, audits or benchmarks were run.

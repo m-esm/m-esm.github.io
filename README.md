@@ -48,7 +48,7 @@ The 26 October artwork includes dark orbital space, stars, solar wings, differen
 
 `.github/workflows/pages.yml` builds and publishes to **https://m-esm.github.io/** on pushes to `master`, with an optional manual trigger. The repository Pages source is configured to **GitHub Actions**. Deployment uses the official Pages artifact and OIDC workflow, without browser test suites or budget checks.
 
-The previous motion release is deployed at `b88485e` (Pages run 40404738120). The 27 October personal-workbench redesign is prepared locally; deployment verification will be recorded after the new Pages workflow succeeds.
+The compact personal redesign was pushed over SSH as `fe665c9`. [Pages run 40473926714](https://github.com/m-esm/m-esm.github.io/actions/runs/40473926714) built and deployed successfully on 27 October 2026. The public homepage, matching motion bundle, expanded reading catalog and new inventory image returned HTTP 200; the robot-and-record workbench was visually confirmed on the public URL. Localhost responded on port 5173 at completion.
 
 For future SSH releases, run `npm run deploy:github`. It builds, fetches the SSH origin, commits the project files, merges remote history without rewriting it, rebuilds after a merge, and pushes `master`. Existing staged work or merge conflicts stop the release for review. The original checkout has read-only Git metadata. Current releases preserve its working files and publish from a separate checkout of remote master over SSH.
 
