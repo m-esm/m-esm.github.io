@@ -779,3 +779,115 @@ footer {
 .recommendation figcaption a {
   margin-top: 8px;
 }
+
+/* Compact reading companion to the personal homepage. */
+.reading-hero {
+  padding-top: 58px;
+  padding-bottom: 55px;
+  gap: 48px;
+}
+.reading-hero h1 {
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+}
+.reading-hero h1 span {
+  font-size: 0.78em;
+  font-weight: 400;
+  color: #b9c5d5;
+}
+.reading-hero .hero-summary {
+  font-size: 18px;
+  line-height: 1.65;
+}
+main > section[class] {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+main h2 {
+  font-size: clamp(28px, 3vw, 35px);
+  line-height: 1.2;
+}
+.reading-project-catalog {
+  margin-top: 30px;
+  border-top: 1px solid #334053;
+}
+.reading-project-catalog details {
+  border-bottom: 1px solid #334053;
+  scroll-margin-top: 90px;
+}
+.reading-project-catalog summary {
+  padding: 20px 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: space-between;
+}
+.reading-project-catalog summary small {
+  display: block;
+  font-size: 11px;
+  color: #a3b3c7;
+  margin-bottom: 6px;
+}
+.reading-project-catalog summary strong {
+  font-size: 20px;
+  font-weight: 500;
+}
+.catalog-tagline {
+  font-size: 14px;
+  color: #b4c1d1;
+  max-width: 320px;
+  text-align: right;
+}
+.catalog-tagline:after {
+  content: " +";
+  margin-left: 15px;
+  color: #b3d6dc;
+}
+.reading-project-catalog [open] .catalog-tagline:after {
+  content: " −";
+}
+.catalog-story {
+  max-width: 850px;
+  padding: 0 0 28px;
+  line-height: 1.75;
+  font-size: 16px;
+}
+.catalog-story figure {
+  margin: 0 0 20px;
+  max-width: 700px;
+}
+.catalog-story img {
+  width: 100%;
+  max-height: 330px;
+  object-fit: contain;
+  background: #0c1420;
+}
+.catalog-story figcaption {
+  font-size: 11px;
+  color: #a9b9cb;
+}
+.catalog-story .project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: 13px;
+}
+@media (max-width: 650px) {
+  .reading-project-catalog summary {
+    display: block;
+  }
+  .catalog-tagline {
+    display: block;
+    text-align: left;
+    margin-top: 8px;
+  }
+  .reading-hero {
+    padding-top: 35px;
+    gap: 30px;
+  }
+  .reading-hero h1 {
+    font-size: 34px;
+  }
+}

@@ -1,11 +1,10 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigation, Hero } from "./Navigation";
 import { MusicChapter, DeliveryChapter } from "./ProfessionalChapters";
 import { ProjectGallery } from "./ProjectGallery";
 import { CareerJourney } from "./CareerJourney";
 import { Recommendations, WorldEntrance, Contact } from "./ConnectionSections";
 import "./motion.css";
-const Scene = lazy(() => import("./MotionScene"));
 
 export default function MotionPortfolio() {
   const [paused, setPaused] = useState(
@@ -46,12 +45,6 @@ export default function MotionPortfolio() {
       className={`motion-site ${paused ? "motion-paused" : ""}`}
       data-scene={chapter}
     >
-      <div className="motion-backdrop" aria-hidden="true">
-        <Suspense fallback={null}>
-          <Scene paused={paused} chapter={chapter} />
-        </Suspense>
-      </div>
-      <div className="motion-vignette" aria-hidden="true" />
       <Navigation chapter={chapter} />
       <aside className="motion-indicator">
         <a href="#top" aria-label="Back to introduction">
@@ -64,7 +57,7 @@ export default function MotionPortfolio() {
         </button>
       </aside>
       <main>
-        <Hero />
+        <Hero paused={paused} />
         <MusicChapter />
         <DeliveryChapter paused={paused} />
         <Recommendations />

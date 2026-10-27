@@ -223,3 +223,11 @@ Screenshots were opened and visually inspected; DOM geometry assertions were als
 8. No deployment workflow or Pages settings were changed. Release configuration and publication remain outside this session.
 
 Next session: test real phones/Safari first, then expand the connected world using these board, collision and content contracts. Repeat route, readability and payload checks as each sector is added.
+
+## 27 October 2026 - compact personal revision
+
+Replaced the generic rotating homepage sculpture with a contained delivery-robot and record/waveform workbench. Smaller type and tighter sections make the first screen an explicit personal introduction. Professional chapters keep verified contributions prominent. Recommendations, destination selection and contact have been compacted.
+
+A new shared 15-project catalog incorporates the additional public GitHub review. The homepage explorer supports category/search selection, project images, expandable engineering notes and simplified interactive sketches. The static reading companion includes the same projects and expanded chronology. Career rows disclose detail on demand; both timeline views preserve separate Alibaba and TripeMa chapters and dated independent work. New images and repository licenses are local and credited.
+
+Production build and visual review are the validation scope; test suites, accessibility audits and performance benchmarks remain skipped by request. This revision is not yet recorded as deployed here; publication evidence follows after Pages succeeds.

@@ -68,3 +68,15 @@ Suites, accessibility audits and performance benchmarks remain intentionally out
 - [x] Rethink each presentation component individually: navigation/mobile menu, hero, music and delivery chapters, recommendation selector, project evidence/diagrams, timeline eras, orbital destination selector, contact, loading and favicon.
 - [x] Give delivery and agent work new selectable 3D models and synchronize their automatic animation with the page pause control.
 - [x] Publish and verify the motion redesign: 7899c63 plus b88485e, Pages run 40404738120 succeeded; public homepage, matching motion bundle and corrected reading route confirmed.
+
+## Compact personal redesign - 27 October
+
+- [x] Remove the turning homepage globe; replace it with recognizable delivery-robot and record/waveform objects, selectable context and visitor-controlled motion.
+- [x] Put Mohsen/Moshe, Helsinki, current role and personal profile links first; reduce headline sizes and section spacing throughout.
+- [x] Review navigation, hero, employer chapters, recommendations, project presentation, chronology, world entrance, contact and reading companion individually.
+- [x] Review all 40 public GitHub repository records; read 14 additional READMEs and select original, relevant work instead of listing forks/starters indiscriminately.
+- [x] Expand to 15 project entries: Alamut, My Inventory, Hillshot, Macros, Parviz, Smart subagents, Mechlib, grouped CAD/print tools, Claude Code Cockpit, Jev Model Router, torque lever, Which UI, WebSocket clustering, E2DB and Multi Branch.
+- [x] Add project search/category controls, selectable details, direct project URLs, source links and five newly credited repository images.
+- [x] Add useful sketches: handpan notes, adjustable aiming, torque calculation, nutrition sorting, CAD stages and agent-routing stages.
+- [x] Share the expanded chronology and project material with the reading page; preserve separate travel stories, professional dates and the architecture-only Second Brain summary.
+- [ ] Record successful SSH publication and public confirmation of this revision.

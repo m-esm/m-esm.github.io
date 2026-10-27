@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 
+const Scene = lazy(() => import("./MotionScene"));
 const links = [
   ["work", "Selected work"],
-  ["experiments", "The workshop"],
-  ["journey", "My journey"],
-  ["contact", "Get in touch"],
+  ["experiments", "Projects"],
+  ["journey", "Timeline"],
+  ["contact", "About & contact"],
 ];
 
 export function Navigation({ chapter }: { chapter: string }) {
@@ -74,46 +75,134 @@ export function Navigation({ chapter }: { chapter: string }) {
   );
 }
 
-export function Hero() {
+export function Hero({ paused }: { paused: boolean }) {
+  const [focus, setFocus] = useState<import("./MotionScene").WorkFocus>("both");
+  const [running, setRunning] = useState(false);
+  const copy = {
+    both: [
+      "Two chapters of my work",
+      "Delivery platforms at Starship. AI engineering at Songtradr. Two chapters of my career, illustrated on one workbench.",
+      "#work",
+      "Explore my work",
+    ],
+    robotics: [
+      "Starship · delivery systems",
+      "I architected and built the DaaS platform: partner APIs, operational tools and the integrations behind autonomous deliveries.",
+      "#starship",
+      "See my Starship work",
+    ],
+    music: [
+      "Songtradr · music & AI",
+      "I’m a Staff Engineer at Songtradr, bringing platform engineering and AI into music technology.",
+      "#work",
+      "My current role",
+    ],
+  };
   return (
     <section id="top" className="motion-hero" data-chapter="Introduction">
-      <p className="motion-intro">Staff Engineer. Systems thinker. Maker.</p>
-      <h1>
-        Systems.
-        <br />
-        With a life
-        <br />
-        of their own.
-      </h1>
-      <div className="motion-hero-bottom">
-        <p>
-          From robots moving through cities
-          <br />
-          to the technology behind music.
-          <br />I build the systems that connect them.
+      <div className="personal-intro">
+        <p className="motion-intro">
+          My corner of the internet / Helsinki, Finland
         </p>
-        <a
-          href="#work"
-          className="motion-orbit-button"
-          aria-label="Explore my work"
+        <h1>
+          Hi, I’m Mohsen.
+          <br />
+          <span>You can call me Moshe.</span>
+        </h1>
+        <p className="hero-summary">
+          I’m a software engineer who likes making things work—from platforms
+          behind delivery robots to tools for music, agents and my own
+          workbench.
+        </p>
+        <p className="hero-role">
+          Currently <strong>Staff Engineer at Songtradr.</strong>
+          <br />
+          Previously, I built Starship’s Delivery-as-a-Service platform.
+        </p>
+        <div className="hero-links">
+          <a className="motion-pill" href="#experiments">
+            Explore my projects <span>↓</span>
+          </a>
+          <a className="motion-text-link" href="https://github.com/m-esm">
+            GitHub ↗
+          </a>
+          <a className="motion-text-link" href="https://linkedin.com/in/m-esm">
+            LinkedIn ↗
+          </a>
+        </div>
+        <div className="motion-current">
+          <a href="#work">
+            <span>Now / 2026</span>
+            <img src="/assets/brands/songtradr.svg" alt="Songtradr" />
+          </a>
+          <a href="#starship">
+            <span>Previously / joined 2021</span>
+            <img
+              src="/assets/brands/starship.svg"
+              alt="Starship Technologies"
+            />
+          </a>
+        </div>
+      </div>
+      <div className="hero-workbench">
+        <div className="workbench-label">
+          <span>A little interactive workbench</span>
+          <button
+            onClick={() => setRunning(!running)}
+            disabled={paused}
+            aria-pressed={running}
+          >
+            {paused
+              ? "Motion paused"
+              : running
+                ? "Stop the sketch"
+                : "Run the sketch"}
+          </button>
+        </div>
+        <div className="workbench-canvas">
+          <Suspense
+            fallback={
+              <div className="workbench-fallback">
+                Assembling the workbench…
+              </div>
+            }
+          >
+            <Scene
+              focus={focus}
+              onFocus={setFocus}
+              running={running}
+              paused={paused}
+            />
+          </Suspense>
+        </div>
+        <div
+          className="workbench-tabs"
+          aria-label="Explore two chapters of my work"
         >
-          <span aria-hidden="true">↓</span>
-        </a>
-      </div>
-      <div className="motion-current">
-        <a href="#work">
-          <span>Current chapter</span>
-          <img src="/assets/brands/songtradr.svg" alt="Songtradr" />
-        </a>
-        <a href="#starship">
-          <span>Previously</span>
-          <img src="/assets/brands/starship.svg" alt="Starship Technologies" />
-        </a>
-      </div>
-      <div className="hero-object-caption">
-        <span className="status-dot" />
-        An exploration of connected systems
-        <span>Move your pointer. Follow the thread.</span>
+          {(
+            [
+              ["both", "Both worlds"],
+              ["robotics", "Delivery robotics"],
+              ["music", "Music & AI"],
+            ] as const
+          ).map(([id, label]) => (
+            <button
+              key={id}
+              aria-pressed={focus === id}
+              onClick={() => setFocus(id)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <div className="workbench-caption" aria-live="polite">
+          <strong>{copy[focus][0]}</strong>
+          <p>{copy[focus][1]}</p>
+          <a href={copy[focus][2]}>{copy[focus][3]} ↗</a>
+        </div>
+        <small>
+          Click an object to explore it. Drag to change the view. No sound.
+        </small>
       </div>
     </section>
   );

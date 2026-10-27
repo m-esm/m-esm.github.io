@@ -12,11 +12,7 @@ export function Recommendations() {
       aria-label="Colleague recommendations"
     >
       <div className="quote-context">
-        <p>
-          Good systems are
-          <br />
-          built with good people.
-        </p>
+        <p>People I’ve worked with.</p>
         <span>From colleagues at Starship</span>
         <div className="quote-choices" aria-label="Choose a recommendation">
           {recommendations.map((r, i) => (
@@ -64,11 +60,7 @@ export function WorldEntrance() {
     <section className="motion-world" data-chapter="Step inside">
       <div className="world-invitation">
         <p>The playable portfolio / 2026</p>
-        <h2>
-          A world
-          <br />
-          to wander.
-        </h2>
+        <h2>Walk around my portfolio.</h2>
         <p>
           A maintenance robot. An orbital habitat.
           <br />
@@ -127,11 +119,22 @@ export function Contact() {
     >
       <div className="contact-heading">
         <p>Mohsen Esmaeili · Helsinki, Finland</p>
-        <h2>
-          Something
-          <br />
-          worth building?
-        </h2>
+        <h2>A little more about me.</h2>
+      </div>
+      <div className="personal-note">
+        <p>
+          I’m Mohsen Esmaeili—Moshe for short—a software engineer based in
+          Helsinki.
+        </p>
+        <p>
+          My projects often start with an ordinary question: where did I put
+          that component, how can I practise this rhythm, or what would make a
+          coding workflow easier to understand?
+        </p>
+        <p>
+          This site brings those experiments together with my professional work.
+          The source, sketches and rough edges are part of the story.
+        </p>
       </div>
       <div className="contact-links">
         <a href="https://www.linkedin.com/in/m-esm">
@@ -154,7 +157,7 @@ export function Contact() {
         </a>
       </div>
       <div className="contact-colophon">
-        <span>Designed as a system. Built to explore.</span>
+        <span>A personal website by Mohsen Esmaeili.</span>
         <a href="/assets/licenses/project-credits.html">
           Image & asset credits
         </a>

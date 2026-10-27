@@ -22,11 +22,7 @@ export function MusicChapter() {
         <p>
           Songtradr <span>2026 — current</span>
         </p>
-        <h2>
-          Where intelligence
-          <br />
-          meets music.
-        </h2>
+        <h2>Now: music & AI.</h2>
       </div>
       <div className="music-composition">
         <figure className="motion-photo music">
@@ -43,31 +39,25 @@ export function MusicChapter() {
             . Company context.
           </figcaption>
         </figure>
-        <div className="music-vinyl" aria-hidden="true">
-          <div className="vinyl-grooves">
-            <div className="vinyl-label">
-              <span>Software</span>
-              <i />
-              <span>Music</span>
-            </div>
-          </div>
-        </div>
         <article className="music-role">
           <img src="/assets/brands/songtradr.svg" alt="Songtradr" />
-          <h3>
-            Staff Engineer.
-            <br />
-            AI engineering.
-          </h3>
+          <h3>Staff Engineer at Songtradr.</h3>
           <p>
             I’m bringing a background in platforms, integrations and developer
             tools into music technology.
           </p>
           <p>
-            Songtradr’s brand portfolio includes MassiveMusic and Bandcamp. My
-            current chapter connects software, music and complex commercial
-            workflows.
+            My current focus is AI engineering. Before this, I spent several
+            years building partner integrations and operational systems at
+            Starship.
           </p>
+          <details className="company-context">
+            <summary>About the company</summary>
+            <p>
+              Songtradr connects creators, rights holders, brands and digital
+              platforms. Its brand portfolio includes MassiveMusic and Bandcamp.
+            </p>
+          </details>
           <a
             className="motion-text-link"
             href="https://www.songtradr.com/about"
@@ -75,16 +65,6 @@ export function MusicChapter() {
             About Songtradr <span>↗</span>
           </a>
         </article>
-        <div className="music-frequency" aria-hidden="true">
-          {Array.from({ length: 48 }, (_, i) => (
-            <i
-              key={i}
-              style={{
-                height: `${18 + Math.abs(Math.sin(i * 0.39) * Math.cos(i * 0.14)) * 80}%`,
-              }}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -102,11 +82,7 @@ export function DeliveryChapter({ paused }: { paused: boolean }) {
         <p>
           Starship Technologies <span>Joined 2021 · DaaS from around 2022</span>
         </p>
-        <h2>
-          Code that moves
-          <br />
-          the physical world.
-        </h2>
+        <h2>Previously: delivery robotics.</h2>
       </div>
       <figure className="motion-photo wide">
         <img
@@ -122,11 +98,7 @@ export function DeliveryChapter({ paused }: { paused: boolean }) {
         </span>
       </figure>
       <div className="motion-case-copy">
-        <h3>
-          From the architecture
-          <br />
-          to the integrations.
-        </h3>
+        <h3>What I built at Starship.</h3>
         <div>
           <p>{editorial.delivery.introduction}</p>
           <p>{editorial.delivery.perspective}</p>
@@ -139,7 +111,7 @@ export function DeliveryChapter({ paused }: { paused: boolean }) {
         <div className="system-heading">
           <div>
             <p>Inside the platform</p>
-            <h3>Every connection counts.</h3>
+            <h3>Explore my engineering scope.</h3>
           </div>
           <p>Choose a layer to explore the work.</p>
         </div>

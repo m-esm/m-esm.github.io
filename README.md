@@ -1,6 +1,6 @@
-# Mohsen Esmaeili — Motion portfolio
+# Mohsen Esmaeili - Personal portfolio
 
-The homepage is now a cinematic motion portfolio: a custom iridescent WebGL sculpture, scroll/pointer-responsive composition, a music-inspired Songtradr composition, an explorable Starship scope model, project-specific diagrams, selectable colleague quotations and a three-era career timeline. Every homepage section is a separate, purpose-designed component. The playable orbital habitat remains at `/#/sector/arrival`; `/reading.html` is the static reading alternative. Both use the new indigo, pearl and glacial-blue visual language.
+The homepage is a compact personal introduction to Mohsen / Moshe, with a selectable six-wheel delivery robot and record/waveform workbench in place of the old orbiting globe. Songtradr and Starship lead the professional story. A searchable 15-project explorer adds playable or adjustable sketches, real repository imagery and engineering notes. A filterable, expandable career timeline and concise recommendations/contact finish the page. The playable orbital habitat remains at `/#/sector/arrival`; `/reading.html` shares the project catalog and chronology as a static alternative.
 
 A playable third-person portfolio for Mohsen “Moshe” Esmaeili. Drive a wheeled maintenance robot through an open terraced engineering settlement beneath a glass dome, with a blue ocean planet overhead. Portfolio content lives on physical signs.
 
@@ -36,7 +36,7 @@ Production preview: `http://127.0.0.1:4173`. Static reading view: `/reading.html
 - Portrait/touch layouts have a movement thumb control. Drag the remaining view to look.
 - **Station controls** contains safe transfers to every destination, named camera buttons, quality, reduced motion, and exhibit-model pause. **Read portfolio** opens a separate semantic reading document.
 
-No mandatory tasks, sound, account, backend, contact form, or runtime CDN. Public profile links are on the arrival and final project boards. No CV download is advertised.
+The station has no mandatory tasks, sound, account, backend, contact form, or runtime CDN. The homepage handpan sketch synthesizes sound locally only when a visitor taps a note. Public profile links are on the arrival and final project boards. No CV download is advertised.
 
 ## Current visual release
 
@@ -48,7 +48,7 @@ The 26 October artwork includes dark orbital space, stars, solar wings, differen
 
 `.github/workflows/pages.yml` builds and publishes to **https://m-esm.github.io/** on pushes to `master`, with an optional manual trigger. The repository Pages source is configured to **GitHub Actions**. Deployment uses the official Pages artifact and OIDC workflow, without browser test suites or budget checks.
 
-The motion redesign was published over SSH as `7899c63`, followed by the reading-route correction in `b88485e`. [Pages run 40404738120](https://github.com/m-esm/m-esm.github.io/actions/runs/40404738120) built and deployed successfully. The public motion homepage and matching JavaScript bundle were confirmed. Localhost remains available on port 5173. See [implementation status](docs/implementation-status.md) for earlier releases.
+The previous motion release is deployed at `b88485e` (Pages run 40404738120). The 27 October personal-workbench redesign is prepared locally; deployment verification will be recorded after the new Pages workflow succeeds.
 
 For future SSH releases, run `npm run deploy:github`. It builds, fetches the SSH origin, commits the project files, merges remote history without rewriting it, rebuilds after a merge, and pushes `master`. Existing staged work or merge conflicts stop the release for review. The original checkout has read-only Git metadata. Current releases preserve its working files and publish from a separate checkout of remote master over SSH.
 
