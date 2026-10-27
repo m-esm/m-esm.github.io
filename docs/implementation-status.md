@@ -1,6 +1,6 @@
 # Recommendation reader — 27 October 2026
 
-Removed the old two-quote strip and its breakpoint styles. Added a dedicated reader with named author tabs, clear excerpt attribution, separated paraphrased context, a LinkedIn source link and manual previous/next navigation. The source content still contains only the two previously verified excerpts; the latest request referred to all recommendations but included no new text or attachment. Full recommendations remain pending that content. Production build passed and the desktop layout and reader navigation were visually reviewed. No suites, audits or benchmarks were run.
+Removed the old two-quote strip and its breakpoint styles. Added a dedicated reader with named author tabs, clear excerpt attribution, separated paraphrased context, a LinkedIn source link and manual previous/next navigation. The source content still contains only the two previously verified excerpts; the latest request referred to all recommendations but included no new text or attachment. Full recommendations remain pending that content. Production build passed; desktop and compact layouts and author/previous/next controls were reviewed. Published over SSH as `518356d`; [Pages run 40568486195](https://github.com/m-esm/m-esm.github.io/actions/runs/40568486195) succeeded. No suites, audits or benchmarks were run.
 
 # Compact integration partners — 27 October 2026
 
