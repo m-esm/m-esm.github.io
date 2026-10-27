@@ -1,6 +1,6 @@
 # Compact integration partners — 27 October 2026
 
-Replaced the large partner tiles and repeated captions with a wrapping row of small circular logo badges. Retained image names and hover labels; Bringg remains a text mark. Production build passed and the local layout was visually reviewed.
+Replaced the large partner tiles and repeated captions with a wrapping row of small circular logo badges. Retained image names and hover labels; Bringg remains a text mark. Production build passed and the local layout was visually reviewed. Published over SSH as `e6b340e`; [Pages run 40567512796](https://github.com/m-esm/m-esm.github.io/actions/runs/40567512796) completed successfully.
 
 # Current component critique pass — 27 October 2026
 
