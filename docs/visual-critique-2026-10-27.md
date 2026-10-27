@@ -42,3 +42,5 @@ Verification scope: production build and manual desktop/mobile visual review. No
 Production build passes. Desktop/mobile visual review and deployment confirmation are recorded below when completed. No test suites or audits were run.
 
 The final scene review confirmed finer foliage and preserved daylight. A root loading-error boundary also prevents a failed lazy import (for example, from a tab open during a new deployment) from leaving a blank page.
+
+A full mobile-page review caught timeline rail decoration leaking into the inline story’s bullet list. The selectors now target only direct career rows.

@@ -985,12 +985,12 @@ body.motion-mode #root {
   margin: 0;
   overflow: visible;
 }
-.career-rail li {
+.career-rail > li {
   border-left: 1px solid #688b9b66;
   padding: 0 0 0 22px;
   position: relative;
 }
-.career-rail li:before {
+.career-rail > li:before {
   content: "";
   position: absolute;
   left: -4px;
@@ -1000,7 +1000,7 @@ body.motion-mode #root {
   background: #517182;
   border-radius: 50%;
 }
-.career-rail li:has([aria-pressed="true"]):before {
+.career-rail > li:has([aria-pressed="true"]):before {
   background: #d2a585;
   box-shadow: 0 0 0 4px #d2a58518;
 }
