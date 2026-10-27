@@ -19,7 +19,7 @@ export interface PersonalProject {
   demoLabel?: string;
   image?: string;
   imageAlt?: string;
-  sketch?: "handpan" | "trajectory" | "torque" | "cad" | "agents" | "nutrition";
+  sketch?: "handpan" | "torque" | "agents";
   related?: { label: string; href: string }[];
 }
 export const personalProjects: PersonalProject[] = [
@@ -31,13 +31,12 @@ export const personalProjects: PersonalProject[] = [
     tagline: "A practice space for the handpan.",
     body: "A playable D Kurd handpan, a searchable pattern library and phrase-by-phrase practice, set in Persian-inspired mountain courtyards.",
     detail:
-      "Play and Learn share the same score. Practice can isolate a phrase, slow it down, highlight notes and respond to screen taps. The full app also offers optional microphone input; this small sketch only synthesizes notes when you tap.",
+      "Play and Learn share the same score. Practice can isolate a phrase, slow it down, highlight notes and respond to screen taps. The full app also offers optional microphone input for practice feedback.",
     source: "https://github.com/m-esm/handpan",
     demo: "https://m-esm.github.io/handpan/",
     demoLabel: "Open Alamut",
-    image: "/assets/projects/alamut.webp",
-    imageAlt:
-      "Alamut at dusk, original cover artwork from the handpan repository",
+    image: "/assets/projects/alamut-app.jpg",
+    imageAlt: "Alamut, showing the playable handpan and pattern library",
     sketch: "handpan",
   },
   {
@@ -64,9 +63,8 @@ export const personalProjects: PersonalProject[] = [
     tagline: "A game with the physics on the server.",
     body: "A turn-based browser artillery game with destructible terrain, wind, multiple weapons and room codes for playing together.",
     detail:
-      "The server resolves physics, damage and turn order; Phaser presents the resulting trajectories. Bots simulate candidate shots against a copy of the game state. The sketch here demonstrates aiming, not the full game or its physics implementation.",
+      "The server resolves physics, damage and turn order; Phaser presents the resulting trajectories. Bots simulate candidate shots against a copy of the game state.",
     source: "https://github.com/m-esm/hillshot",
-    sketch: "trajectory",
   },
   {
     id: "macros",
@@ -82,7 +80,6 @@ export const personalProjects: PersonalProject[] = [
     demoLabel: "Chrome Web Store",
     image: "/assets/projects/macros-table.png",
     imageAlt: "Macros nutrition table, from the extension’s repository",
-    sketch: "nutrition",
   },
   ...editorial.projects
     .filter((p) => p.id !== "socket-cluster")
@@ -128,7 +125,6 @@ export const personalProjects: PersonalProject[] = [
     source: "https://github.com/m-esm/3d-print-modeling",
     image: "/assets/projects/cad-workflow.png",
     imageAlt: "Parts viewer from the 3d-print-modeling repository",
-    sketch: "cad",
     related: [
       {
         label: "CAD import",

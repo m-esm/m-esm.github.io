@@ -1,167 +1,135 @@
 import { useState } from "react";
 import { recommendations } from "../content/chronology";
 import { sectorStories } from "../content/editorial";
-
 export function Recommendations() {
-  const [selected, setSelected] = useState(0);
-  const quote = recommendations[selected];
   return (
     <section
-      className="motion-quotes"
-      data-chapter="People behind the systems"
+      className="motion-chapter colleague-section"
       aria-label="Colleague recommendations"
+      data-chapter="People behind the systems"
     >
-      <div className="quote-context">
-        <p>People I’ve worked with.</p>
-        <span>From colleagues at Starship</span>
-        <div className="quote-choices" aria-label="Choose a recommendation">
-          {recommendations.map((r, i) => (
-            <button
-              key={r.author}
-              onClick={() => setSelected(i)}
-              aria-pressed={selected === i}
-            >
-              <span>
-                {r.author
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </span>
-              {r.author}
-              <i aria-hidden="true">↗</i>
-            </button>
-          ))}
-        </div>
+      <header>
+        <h2>
+          From the people
+          <br />I worked with.
+        </h2>
+        <a className="text-link" href="https://fi.linkedin.com/in/m-esm">
+          Recommendations on LinkedIn ↗
+        </a>
+      </header>
+      <div className="colleague-quotes">
+        {recommendations.map((r) => (
+          <figure key={r.author}>
+            <blockquote>“{r.quote}”</blockquote>
+            <figcaption>
+              <strong>{r.author}</strong>
+              <span>Starship colleague</span>
+            </figcaption>
+          </figure>
+        ))}
       </div>
-      <figure key={quote.author} aria-live="polite">
-        <div className="quote-mark" aria-hidden="true">
-          “
-        </div>
-        <blockquote>{quote.quote}</blockquote>
-        <figcaption>
-          <strong>{quote.author}</strong>
-          <span>{quote.body}</span>
-          <a
-            className="motion-text-link"
-            href="https://fi.linkedin.com/in/m-esm"
-          >
-            Read on LinkedIn <span>↗</span>
-          </a>
-        </figcaption>
-      </figure>
     </section>
   );
 }
-
 export function WorldEntrance() {
   const [selected, setSelected] = useState("arrival");
   const current = sectorStories.find((s) => s.id === selected)!;
   return (
-    <section className="motion-world" data-chapter="Step inside">
-      <div className="world-invitation">
-        <p>The playable portfolio / 2026</p>
-        <h2>Walk around my portfolio.</h2>
-        <p>
-          A maintenance robot. An orbital habitat.
+    <section
+      className="motion-chapter habitat-section"
+      data-chapter="Step inside"
+    >
+      <a
+        className="habitat-preview"
+        href={"#/sector/" + selected}
+        aria-label={"Explore " + current.title}
+      >
+        <img
+          src="/assets/projects/orbital-habitat.jpg"
+          alt="Actual in-game view: a maintenance robot overlooking terraced workshops beneath a glass dome"
+          loading="lazy"
+        />
+        <span className="habitat-play">
+          Enter the habitat <span aria-hidden="true">↗</span>
+        </span>
+        <small>Captured from the playable portfolio</small>
+      </a>
+      <div className="habitat-copy">
+        <p className="section-date">Personal project / 2026</p>
+        <h2>
+          A portfolio you
           <br />
-          Five places to explore. No tasks to finish.
+          can walk around.
+        </h2>
+        <p>
+          Drive a maintenance robot through a small orbital settlement. The
+          projects are exhibits; the writing lives on physical boards.
         </p>
-        <a className="motion-pill" href={"#/sector/" + selected}>
-          Enter {current.title.toLowerCase()} <span>↗</span>
-        </a>
-        <a className="motion-text-link" href="/reading.html">
-          Prefer a quiet read?
-        </a>
-      </div>
-      <div className="world-directory">
-        <div className="world-portal" aria-hidden="true">
-          <div className="portal-orbit" />
-          <div className="portal-orbit second" />
-          <div className="portal-planet" />
-          <svg viewBox="0 0 320 260">
-            <path d="M156 202L62 143V58L230 47L254 161Z M62 143L254 161 M156 202L230 47" />
-            {sectorStories.map((s) => (
-              <g key={s.id} className={s.id === selected ? "selected" : ""}>
-                <circle cx={s.x} cy={s.y} r={s.id === selected ? 10 : 5} />
-                <circle className="map-halo" cx={s.x} cy={s.y} r="18" />
-              </g>
-            ))}
-          </svg>
-        </div>
         <div
-          className="world-destinations"
+          className="habitat-destinations"
           aria-label="Choose a station destination"
         >
           {sectorStories.map((s) => (
             <button
               key={s.id}
-              aria-pressed={s.id === selected}
+              aria-pressed={selected === s.id}
               onClick={() => setSelected(s.id)}
             >
               {s.title}
             </button>
           ))}
         </div>
-        <p className="world-destination-description" aria-live="polite">
+        <p className="destination-note" aria-live="polite">
           {current.description}
+        </p>
+        <p className="habitat-controls">
+          WASD or arrows to drive. Drag to look. Touch controls on mobile.
         </p>
       </div>
     </section>
   );
 }
-
 export function Contact() {
   return (
     <footer
       id="contact"
-      className="motion-contact"
+      className="motion-chapter personal-footer"
       data-chapter="Let’s build something"
     >
-      <div className="contact-heading">
-        <p>Mohsen Esmaeili · Helsinki, Finland</p>
-        <h2>A little more about me.</h2>
-      </div>
-      <div className="personal-note">
+      <div>
+        <h2>Mohsen Esmaeili</h2>
+        <p>Moshe, for short. Software engineer in Helsinki.</p>
         <p>
-          I’m Mohsen Esmaeili—Moshe for short—a software engineer based in
-          Helsinki.
-        </p>
-        <p>
-          My projects often start with an ordinary question: where did I put
-          that component, how can I practise this rhythm, or what would make a
-          coding workflow easier to understand?
-        </p>
-        <p>
-          This site brings those experiments together with my professional work.
-          The source, sketches and rough edges are part of the story.
+          Outside work: music practice, mechanical design and tools for my own
+          projects. You’ll find the source for most of them on GitHub.
         </p>
       </div>
-      <div className="contact-links">
+      <nav aria-label="Contact and profiles">
         <a href="https://www.linkedin.com/in/m-esm">
           <span>
-            <small>Start a conversation</small>LinkedIn
+            LinkedIn<small>Professional background & messages</small>
           </span>
-          <i aria-hidden="true">↗</i>
+          ↗
         </a>
         <a href="https://github.com/m-esm">
           <span>
-            <small>Look under the hood</small>GitHub
+            GitHub<small>Source code & ongoing projects</small>
           </span>
-          <i aria-hidden="true">↗</i>
+          ↗
         </a>
         <a href="/reading.html">
           <span>
-            <small>Take your time</small>The reading version
+            Reading version<small>The work, without the 3D</small>
           </span>
-          <i aria-hidden="true">↗</i>
+          ↗
         </a>
-      </div>
-      <div className="contact-colophon">
-        <span>A personal website by Mohsen Esmaeili.</span>
+      </nav>
+      <div className="footer-bottom">
+        <span>A personal website, built by Moshe.</span>
         <a href="/assets/licenses/project-credits.html">
           Image & asset credits
         </a>
-        <a href="#top">Back to the beginning ↑</a>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
   );

@@ -77,6 +77,15 @@ Suites, accessibility audits and performance benchmarks remain intentionally out
 - [x] Review all 40 public GitHub repository records; read 14 additional READMEs and select original, relevant work instead of listing forks/starters indiscriminately.
 - [x] Expand to 15 project entries: Alamut, My Inventory, Hillshot, Macros, Parviz, Smart subagents, Mechlib, grouped CAD/print tools, Claude Code Cockpit, Jev Model Router, torque lever, Which UI, WebSocket clustering, E2DB and Multi Branch.
 - [x] Add project search/category controls, selectable details, direct project URLs, source links and five newly credited repository images.
-- [x] Add useful sketches: handpan notes, adjustable aiming, torque calculation, nutrition sorting, CAD stages and agent-routing stages.
+- [x] Add relevant interactions. The subsequent refinement retains handpan notes, torque calculation and agent stages; removes fabricated nutrition and aiming demos, and uses real CAD/project imagery.
 - [x] Share the expanded chronology and project material with the reading page; preserve separate travel stories, professional dates and the architecture-only Second Brain summary.
 - [x] Record successful SSH publication and public confirmation: `fe665c9`, Pages run 40473926714 succeeded; homepage, matching bundle, reading catalog, new image and local preview confirmed.
+
+## Section refinement — 27 October
+
+- [x] Review and rework navigation, hero, current role, Starship case, quotes, project catalog/details, career, habitat entrance, contact, loading and static reading.
+- [x] Replace repetitive panels and captions with section-specific layouts; keep the introduction compact and explicitly personal.
+- [x] Lead project sheets with actual software captures or CAD evidence, with optional interactions only where they explain the work.
+- [x] Give the monitoring infographic a relevant screen/status illustration and match the workbench’s restrained material palette.
+- [x] Complete a production build and visual review without running suites/audits/benchmarks.
+- [ ] Confirm SSH publication and the updated public build.

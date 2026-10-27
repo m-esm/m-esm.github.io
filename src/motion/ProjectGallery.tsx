@@ -1,209 +1,274 @@
-import { lazy, Suspense, useState } from "react";
-import { personalProjects, projectCategories } from "../content/projects";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import {
+  personalProjects,
+  projectCategories,
+  type PersonalProject,
+} from "../content/projects";
 const Sketch = lazy(() => import("./ProjectSketches"));
-
+const featured = [
+  "handpan",
+  "my-inventory",
+  "parviz",
+  "macros",
+  "mechlib",
+  "smart-subagents",
+];
+const diagrams: Record<string, string[]> = {
+  "smart-subagents": ["Task", "Worker selection", "Verified diff"],
+  hillshot: ["Aim", "Server simulation", "Shared game state"],
+  "claude-code-cockpit": ["Prompt", "Workflow state", "Visible progress"],
+  "jev-model-router": ["Prompt", "Difficulty score", "Model & effort"],
+  "socket-cluster": ["Client", "Redis", "Application instances"],
+  e2db: ["Selected fields", "Encryption", "Stored data"],
+  "node-multi-branch": ["Git branches", "App instances", "Request routing"],
+  whichui: ["Libraries", "Components", "Comparison"],
+  "torque-lever": ["Scale reading", "Lever arm", "Torque"],
+};
+function ProjectArt({ project }: { project: PersonalProject }) {
+  return project.image ? (
+    <img
+      src={project.image}
+      alt={project.imageAlt || project.title}
+      loading="lazy"
+    />
+  ) : (
+    <div className="project-schema" aria-label="Project concept">
+      {(diagrams[project.id] || ["Model", "Inspect", "Print"]).map(
+        (label, i) => (
+          <span key={label}>
+            <i aria-hidden="true">{i === 1 ? "◇" : i === 0 ? "○" : "□"}</i>
+            {label}
+          </span>
+        ),
+      )}
+    </div>
+  );
+}
 export function ProjectGallery({ paused }: { paused: boolean }) {
   const initial = new URLSearchParams(location.search).get("project");
-  const [selected, setSelected] = useState(initial || "handpan"),
+  const [selected, setSelected] = useState<string | null>(
+      personalProjects.some((p) => p.id === initial) ? initial : null,
+    ),
     [filter, setFilter] = useState("All"),
     [query, setQuery] = useState(""),
-    [view, setView] = useState("sketch");
-  const visible = personalProjects.filter(
+    [expanded, setExpanded] = useState(false),
+    [trySketch, setTrySketch] = useState(false);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const project = personalProjects.find((p) => p.id === selected);
+  const matches = personalProjects.filter(
     (p) =>
       (filter === "All" || p.category === filter) &&
-      [p.title, p.tagline, p.body, p.category]
+      [p.title, p.body, p.category]
         .join(" ")
         .toLowerCase()
         .includes(query.toLowerCase()),
   );
-  const project = visible.find((p) => p.id === selected) || visible[0];
-  function select(id: string) {
+  const visible =
+    expanded || filter !== "All" || query
+      ? matches
+      : featured.map((id) => personalProjects.find((p) => p.id === id)!);
+  useEffect(() => {
+    if (!project) return;
+    dialog.current?.showModal();
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = overflow;
+    };
+  }, [project]);
+  function open(id: string) {
+    setTrySketch(false);
     setSelected(id);
-    setView("sketch");
     const url = new URL(location.href);
     url.searchParams.set("project", id);
-    url.hash = "experiments";
     history.replaceState(null, "", url);
   }
-  function changeFilter(nextFilter: string, nextQuery: string) {
-    setFilter(nextFilter);
-    setQuery(nextQuery);
-    setView("sketch");
-    const matches = personalProjects.filter(
-      (p) =>
-        (nextFilter === "All" || p.category === nextFilter) &&
-        [p.title, p.tagline, p.body, p.category]
-          .join(" ")
-          .toLowerCase()
-          .includes(nextQuery.toLowerCase()),
-    );
-    if (!matches.some((p) => p.id === selected)) {
-      if (matches[0]) select(matches[0].id);
-      else {
-        const url = new URL(location.href);
-        url.searchParams.delete("project");
-        history.replaceState(null, "", url);
-      }
-    }
+  function close() {
+    dialog.current?.close();
+    setSelected(null);
+    const url = new URL(location.href);
+    url.searchParams.delete("project");
+    history.replaceState(null, "", url);
   }
   return (
     <section
       id="experiments"
-      className="motion-chapter project-explorer"
+      className="motion-chapter project-section"
       data-chapter="Independent experiments"
     >
-      <div className="motion-section-heading">
-        <p>
-          My projects <span>2019–2026</span>
-        </p>
-        <h2>Things I’ve made.</h2>
-        <p className="motion-deck">
-          Music, useful little products, agent tools and physical things. Pick
-          something to look inside.
-        </p>
-      </div>
-      <div className="project-toolbar">
-        <div className="project-filters" aria-label="Project categories">
+      <header className="section-header">
+        <div>
+          <h2>On my own time.</h2>
+          <p>
+            Music, small useful products and a growing collection of mechanical
+            and developer tools.
+          </p>
+        </div>
+        <a className="text-link" href="https://github.com/m-esm">
+          All repositories ↗
+        </a>
+      </header>
+      <div className="catalog-tools">
+        <div className="catalog-filters" aria-label="Project categories">
           {["All", ...projectCategories].map((c) => (
             <button
               key={c}
               aria-pressed={filter === c}
-              onClick={() => changeFilter(c, query)}
+              onClick={() => setFilter(c)}
             >
               {c}
             </button>
           ))}
         </div>
-        <label className="project-search">
-          <span>Find a project</span>
-          <input
-            type="search"
-            placeholder="Search projects…"
-            value={query}
-            onChange={(e) => changeFilter(filter, e.target.value)}
-          />
-        </label>
+        <input
+          type="search"
+          aria-label="Find a project"
+          placeholder="Find a project"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
       </div>
-      <div className="project-explorer-layout">
-        <div className="project-index">
-          <p>
-            {visible.length} projects <span>Choose to explore</span>
-          </p>
-          <div className="project-index-list" aria-label="Select a project">
-            {visible.map((p) => (
-              <button
-                key={p.id}
-                aria-pressed={project?.id === p.id}
-                onClick={() => select(p.id)}
-              >
-                <span>
-                  {p.title}
-                  <small>{p.tagline}</small>
-                </span>
-                <span className="project-list-year">{p.year.slice(0, 4)}</span>
-              </button>
-            ))}
-          </div>
-          {!visible.length && (
-            <div className="project-empty">
-              <p>No projects match this search.</p>
-              <button
-                onClick={() => {
-                  changeFilter("All", "");
-                }}
-              >
-                Show all projects
-              </button>
+      <div className="project-grid">
+        {visible.map((p) => (
+          <button
+            className={"project-tile tile-" + p.id}
+            key={p.id}
+            onClick={() => open(p.id)}
+          >
+            <div className="project-tile-art">
+              <ProjectArt project={p} />
+              <span className="project-open" aria-hidden="true">
+                ↗
+              </span>
             </div>
-          )}
-        </div>
-        {project && (
-          <article className="project-workspace" key={project.id}>
+            <div className="project-tile-copy">
+              <p>
+                {p.category}
+                <time>{p.year.slice(0, 4)}</time>
+              </p>
+              <h3>{p.title}</h3>
+              <span>{p.tagline}</span>
+            </div>
+          </button>
+        ))}
+      </div>
+      {!visible.length && (
+        <p className="empty-catalog">
+          No matching projects.{" "}
+          <button
+            onClick={() => {
+              setQuery("");
+              setFilter("All");
+            }}
+          >
+            Clear filters
+          </button>
+        </p>
+      )}
+      {filter === "All" && !query && (
+        <button
+          className="catalog-expand"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded
+            ? "Show selected projects"
+            : `Browse all ${personalProjects.length} projects`}{" "}
+          <span>{expanded ? "−" : "+"}</span>
+        </button>
+      )}
+      <p className="source-note">
+        Personal projects, 2019–2026. Dates indicate when the public
+        repositories opened.
+      </p>
+      {project && (
+        <dialog
+          ref={dialog}
+          className="project-dialog"
+          onCancel={(e) => {
+            e.preventDefault();
+            close();
+          }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) close();
+          }}
+        >
+          <div className="project-sheet">
             <header>
               <div>
-                <p>
+                <span>
                   {project.category} / {project.year}
-                </p>
-                <h3>{project.title}</h3>
+                </span>
+                <h2>{project.title}</h2>
               </div>
-              {project.sketch && project.image && (
-                <div className="project-view-switch">
+              <button
+                className="sheet-close"
+                onClick={close}
+                aria-label="Close project"
+              >
+                Close <span>×</span>
+              </button>
+            </header>
+            <div className={"sheet-visual sheet-" + project.id}>
+              {trySketch &&
+              ["handpan", "torque", "agents"].includes(project.sketch || "") ? (
+                <Suspense fallback={<p>Loading interaction…</p>}>
+                  <Sketch kind={project.sketch} paused={paused} />
+                </Suspense>
+              ) : (
+                <ProjectArt project={project} />
+              )}
+            </div>
+            <div className="sheet-body">
+              <div className="sheet-actions">
+                {project.demo && (
+                  <a className="motion-pill" href={project.demo}>
+                    {project.demoLabel || "Open project"} ↗
+                  </a>
+                )}
+                <a className="text-link" href={project.source}>
+                  Source on GitHub ↗
+                </a>
+                {["handpan", "torque", "agents"].includes(
+                  project.sketch || "",
+                ) && (
                   <button
-                    aria-pressed={view === "sketch"}
-                    onClick={() => setView("sketch")}
+                    className="text-link"
+                    onClick={() => setTrySketch(!trySketch)}
                   >
-                    Try a sketch
+                    {trySketch
+                      ? "Back to overview"
+                      : project.sketch === "handpan"
+                        ? "Play the notes here"
+                        : project.sketch === "torque"
+                          ? "Try the torque calculation"
+                          : "Explore the routing model"}
                   </button>
-                  <button
-                    aria-pressed={view === "image"}
-                    onClick={() => setView("image")}
-                  >
-                    Project image
-                  </button>
+                )}
+              </div>
+              <p className="sheet-summary">{project.body}</p>
+              <h3>Inside the project</h3>
+              <p>{project.detail}</p>
+              {project.related && (
+                <div className="sheet-related">
+                  {project.related.map((l) => (
+                    <a className="text-link" key={l.href} href={l.href}>
+                      {l.label} ↗
+                    </a>
+                  ))}
                 </div>
               )}
-            </header>
-            {(project.sketch || project.image) && (
-              <div className={"project-stage stage-" + project.id}>
-                {project.sketch && view === "sketch" ? (
-                  <Suspense
-                    fallback={
-                      <p className="sketch-loading">
-                        Opening the project sketch…
-                      </p>
-                    }
-                  >
-                    <Sketch kind={project.sketch} paused={paused} />
-                  </Suspense>
-                ) : (
-                  <figure>
-                    <img src={project.image} alt={project.imageAlt} />
-                    <figcaption>
-                      {project.imageAlt}.{" "}
-                      <a href="/assets/licenses/project-credits.html">
-                        Source & credits
-                      </a>
-                    </figcaption>
-                  </figure>
-                )}
-              </div>
-            )}
-            <div className="project-writeup">
-              <p>{project.body}</p>
-              <details>
-                <summary>
-                  Engineering notes <span>+</span>
-                </summary>
-                <p>{project.detail}</p>
-              </details>
-              <div className="project-links">
-                {project.demo && (
-                  <a className="motion-text-link" href={project.demo}>
-                    {project.demoLabel} ↗
+              {project.image && (
+                <p className="source-note">
+                  {project.imageAlt}.{" "}
+                  <a href="/assets/licenses/project-credits.html">
+                    Image credits
                   </a>
-                )}
-                <a className="motion-text-link" href={project.source}>
-                  Read the source ↗
-                </a>
-                {project.related?.map((link) => (
-                  <a
-                    className="motion-text-link"
-                    key={link.href}
-                    href={link.href}
-                  >
-                    {link.label} ↗
-                  </a>
-                ))}
-              </div>
+                </p>
+              )}
             </div>
-          </article>
-        )}
-      </div>
-      <p className="motion-source-note">
-        Selected from my public GitHub work. Dates refer to repository creation.
-        Sketches are simplified illustrations; source links lead to the actual
-        implementations.
-      </p>
+          </div>
+        </dialog>
+      )}
     </section>
   );
 }

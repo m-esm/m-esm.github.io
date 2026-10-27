@@ -12,8 +12,8 @@
 }
 :root {
   font-family: Plex, sans-serif;
-  color: #e9ebfa;
-  background: #0c1025;
+  color: #edf2ef;
+  background: #101d28;
   font-synthesis: none;
   scroll-behavior: smooth;
 }
@@ -22,10 +22,10 @@
 }
 body {
   margin: 0;
-  background: radial-gradient(ellipse at 90% 0, #252247, transparent 22%);
+  background: #101d28;
 }
 a {
-  color: #bed1ff;
+  color: #c4d4d9;
   text-underline-offset: 5px;
 }
 button,
@@ -54,7 +54,7 @@ h3 {
 }
 h1 {
   font-size: clamp(46px, 6vw, 86px);
-  margin: 25px 0;
+  margin: 0 0 14px;
 }
 h2 {
   font-size: clamp(34px, 4.5vw, 62px);
@@ -88,13 +88,13 @@ section[id] {
 }
 .wordmark {
   font-size: 21px;
-  color: #eef0ff;
+  color: #edf2ef;
   text-decoration: none;
 }
 .wordmark span {
   display: block;
   font-size: 11px;
-  color: #a2acca;
+  color: #a8bbc4;
 }
 .reading-header nav {
   display: flex;
@@ -110,7 +110,7 @@ section[id] {
   display: inline-flex;
   padding: 13px 22px;
   border: 1px solid #9faadc66;
-  border-radius: 30px;
+  border-radius: 4px;
   gap: 35px;
   text-decoration: none;
   color: #e6eaff;
@@ -128,12 +128,12 @@ section[id] {
 }
 .identity span {
   display: block;
-  color: #a3afcf;
+  color: #a8bbc4;
   font-size: 12px;
 }
 .hero-summary {
   font-size: 18px;
-  color: #b6c0dd;
+  color: #b8cbd1;
 }
 .hero-secondary {
   display: block;
@@ -145,31 +145,38 @@ section[id] {
   gap: 20px;
 }
 .career-highlight {
-  padding: 30px;
+  padding: 23px;
   border-radius: 14px;
   text-decoration: none;
-  display: block;
-  background: linear-gradient(135deg, #272844, #131d35);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background: #233b49;
   border: 1px solid #ffffff15;
-  color: #eaeaff;
+  color: #edf2ef;
 }
 .career-highlight.starship {
-  background: linear-gradient(135deg, #322d53, #1c2140);
+  background: #1b2e3a;
 }
 .role-date {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  padding-bottom: 14px;
   font-size: 12px;
   display: block;
-  color: #bac4de;
+  color: #b8cbd1;
 }
 .career-highlight img {
-  width: 190px;
-  height: 42px;
+  width: 140px;
+  height: 36px;
+  grid-column: 1;
+  grid-row: 1;
   object-fit: contain;
   object-position: left center;
-  margin: 25px 0;
+  margin: 0 0 14px;
 }
 .career-highlight.songtradr img {
-  height: 60px;
+  height: 36px;
   object-fit: cover;
 }
 .career-highlight.starship img,
@@ -177,14 +184,18 @@ section[id] {
   filter: brightness(0) invert(1);
 }
 .career-highlight h2 {
-  font-size: 30px;
+  grid-column: 1/-1;
+  font-size: 24px;
   margin: 0;
 }
 .career-highlight p {
+  grid-column: 1/-1;
+  margin: 8px 0 12px;
   font-size: 14px;
-  color: #b5c1dd;
+  color: #b8cbd1;
 }
 .highlight-link {
+  grid-column: 1/-1;
   font-size: 12px;
   text-decoration: underline;
 }
@@ -195,7 +206,7 @@ section[id] {
   padding: 24px 0;
   border-block: 1px solid #ffffff20;
   font-size: 13px;
-  color: #aebbd9;
+  color: #a8bbc4;
 }
 .current-role,
 .case-study,
@@ -215,11 +226,11 @@ section[id] {
 .project-year,
 .project-kind {
   font-size: 12px;
-  color: #a7b6d9;
+  color: #a8bbc4;
 }
 .standfirst {
   font-size: 21px;
-  color: #ccd4ed;
+  color: #d4dfe1;
 }
 .company-source {
   font-size: 13px;
@@ -228,7 +239,7 @@ section[id] {
   border-radius: 12px;
   overflow: hidden;
   margin: 35px 0;
-  background: #171d36;
+  background: #1b2e3a;
 }
 .company-photo img {
   display: block;
@@ -284,7 +295,7 @@ section[id] {
 }
 .integration-partners {
   padding: 28px;
-  background: #182039;
+  background: #1b2e3a;
   border-radius: 12px;
   margin: 40px 0;
 }
@@ -297,7 +308,7 @@ section[id] {
   flex-wrap: wrap;
   gap: 18px;
   align-items: center;
-  margin: 25px 0;
+  margin: 0 0 14px;
 }
 .partner-marks figure {
   width: 110px;
@@ -359,12 +370,12 @@ section[id] {
 }
 .earlier-work article {
   padding: 28px;
-  background: #151d33;
+  background: #233b49;
   border-radius: 10px;
 }
 .earlier-work article p {
   font-size: 15px;
-  color: #b0bedb;
+  color: #b8cbd1;
 }
 .earlier-logo {
   width: 55px;
@@ -444,7 +455,7 @@ section[id] {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(#82cde9, #b49aff, #d8b4aa);
+  background: linear-gradient(#8facb9, #d2a585);
 }
 .timeline-entry {
   grid-column: 1;
@@ -460,15 +471,15 @@ section[id] {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #a7b6ff;
-  box-shadow: 0 0 20px #8a8aff;
+  background: #d2a585;
+  box-shadow: 0 0 0 4px #d2a58518;
 }
 .independent .timeline-node {
   right: auto;
   left: -40px;
 }
 .timeline-card {
-  background: #172039;
+  background: #1b2e3a;
   padding: 25px;
   border-radius: 9px;
   border-top: 1px solid #7c96c955;
@@ -487,7 +498,7 @@ section[id] {
 }
 .timeline-card time {
   font-size: 17px;
-  color: #aebcfa;
+  color: #d2a585;
 }
 .timeline-track {
   display: block;
@@ -581,7 +592,7 @@ section[id] {
 .board-transcripts {
   margin: 40px 0 70px;
   padding: 25px;
-  background: #161e36;
+  background: #1b2e3a;
   border-radius: 10px;
 }
 .board-transcripts > section {
@@ -608,7 +619,7 @@ footer {
   border-top: 1px solid #ffffff20;
 }
 .inline-graphic {
-  background: #18223b;
+  background: #1b2e3a;
   border-radius: 14px;
   padding: 25px;
 }
@@ -621,7 +632,7 @@ footer {
 }
 .graphic-top button,
 .graphic-stages button {
-  background: #202e49;
+  background: #233b49;
   border: 1px solid #6f82b855;
   color: #e3ecff;
   padding: 10px 16px;
@@ -890,4 +901,48 @@ main h2 {
   .reading-hero h1 {
     font-size: 34px;
   }
+}
+
+/* Editorial finish: quieter cards and more useful reading density. */
+.reading-hero {
+  gap: 40px;
+}
+.reading-header {
+  border-bottom: 1px solid #abc9d32b;
+}
+.earlier-work article {
+  border-radius: 5px;
+  padding: 24px;
+}
+main .career-highlight h2 {
+  font-size: 24px;
+}
+.career-highlight {
+  border-radius: 5px;
+}
+.timeline-card {
+  box-shadow: none;
+  border-radius: 5px;
+}
+.time-tree {
+  row-gap: 22px;
+}
+.recommendation blockquote {
+  font-size: 25px;
+  line-height: 1.4;
+}
+.recommendation figcaption strong {
+  color: #d2a585;
+}
+.reading-project-catalog summary strong {
+  font-size: 20px;
+}
+.company-photo {
+  border-radius: 5px;
+}
+.catalog-story h3 {
+  font-size: 19px;
+}
+.about h2 {
+  font-size: 30px;
 }

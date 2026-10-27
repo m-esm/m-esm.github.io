@@ -46,16 +46,6 @@ export default function MotionPortfolio() {
       data-scene={chapter}
     >
       <Navigation chapter={chapter} />
-      <aside className="motion-indicator">
-        <a href="#top" aria-label="Back to introduction">
-          <span className="status-dot" />
-          {chapter}
-        </a>
-        <button onClick={() => setPaused(!paused)} aria-pressed={paused}>
-          <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
-          {paused ? "Resume motion" : "Pause motion"}
-        </button>
-      </aside>
       <main>
         <Hero paused={paused} />
         <MusicChapter />
@@ -66,6 +56,16 @@ export default function MotionPortfolio() {
         <WorldEntrance />
         <Contact />
       </main>
+      <aside className="motion-indicator">
+        <a href="#top" aria-label="Back to introduction">
+          <span className="status-dot" />
+          {chapter}
+        </a>
+        <button onClick={() => setPaused(!paused)} aria-pressed={paused}>
+          <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
+          {paused ? "Resume motion" : "Pause motion"}
+        </button>
+      </aside>
     </div>
   );
 }

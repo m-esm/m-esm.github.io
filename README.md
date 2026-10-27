@@ -1,6 +1,6 @@
 # Mohsen Esmaeili - Personal portfolio
 
-The homepage is a compact personal introduction to Mohsen / Moshe, with a selectable six-wheel delivery robot and record/waveform workbench in place of the old orbiting globe. Songtradr and Starship lead the professional story. A searchable 15-project explorer adds playable or adjustable sketches, real repository imagery and engineering notes. A filterable, expandable career timeline and concise recommendations/contact finish the page. The playable orbital habitat remains at `/#/sector/arrival`; `/reading.html` shares the project catalog and chronology as a static alternative.
+The homepage introduces Mohsen / Moshe through a compact robot-and-record workbench, a current-role Songtradr panel and a detailed Starship case study. Both colleague quotations stay visible. A visual catalog of 15 independent projects opens focused project sheets with real imagery, implementation details and source links. The career rail keeps each company’s story separate. An actual in-game capture leads into the playable orbital habitat at `/#/sector/arrival`; `/reading.html` shares the catalog and chronology as a static alternative.
 
 A playable third-person portfolio for Mohsen “Moshe” Esmaeili. Drive a wheeled maintenance robot through an open terraced engineering settlement beneath a glass dome, with a blue ocean planet overhead. Portfolio content lives on physical signs.
 
@@ -48,7 +48,7 @@ The 26 October artwork includes dark orbital space, stars, solar wings, differen
 
 `.github/workflows/pages.yml` builds and publishes to **https://m-esm.github.io/** on pushes to `master`, with an optional manual trigger. The repository Pages source is configured to **GitHub Actions**. Deployment uses the official Pages artifact and OIDC workflow, without browser test suites or budget checks.
 
-The compact personal redesign was pushed over SSH as `fe665c9`. [Pages run 40473926714](https://github.com/m-esm/m-esm.github.io/actions/runs/40473926714) built and deployed successfully on 27 October 2026. The public homepage, matching motion bundle, expanded reading catalog and new inventory image returned HTTP 200; the robot-and-record workbench was visually confirmed on the public URL. Localhost responded on port 5173 at completion.
+The previous compact personal release was deployed as `fe665c9` ([Pages run 40473926714](https://github.com/m-esm/m-esm.github.io/actions/runs/40473926714)). The section-by-section refinement has passed its production build and visual review; publication verification is recorded below once complete.
 
 For future SSH releases, run `npm run deploy:github`. It builds, fetches the SSH origin, commits the project files, merges remote history without rewriting it, rebuilds after a merge, and pushes `master`. Existing staged work or merge conflicts stop the release for review. The original checkout has read-only Git metadata. Current releases preserve its working files and publish from a separate checkout of remote master over SSH.
 

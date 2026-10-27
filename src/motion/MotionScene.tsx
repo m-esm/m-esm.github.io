@@ -74,7 +74,9 @@ function Robot({
         dt,
       );
     if (wheels.current && running)
-      wheels.current.children.forEach((w) => (w.rotation.z -= dt * 1.4));
+      wheels.current.children.forEach(
+        (w) => (w.rotation.z -= dt * Math.cos(time.current * 0.65) * 0.875),
+      );
   });
   return (
     <group
@@ -206,9 +208,43 @@ function Music({
       <Part
         at={[0, 0.22, 0]}
         size={[2.45, 0.3, 2.15]}
-        color="#384866"
+        color="#a38e73"
         radius={0.12}
       />
+      {[-0.92, 0.92].flatMap((x) =>
+        [-0.77, 0.77].map((z) => (
+          <mesh key={`${x}-${z}`} position={[x, 0.035, z]}>
+            <cylinderGeometry args={[0.13, 0.15, 0.15, 24]} />
+            <meshStandardMaterial color="#101c23" roughness={0.7} />
+          </mesh>
+        )),
+      )}
+      <mesh position={[-0.2, 0.38, 0]}>
+        <cylinderGeometry args={[0.88, 0.88, 0.07, 80]} />
+        <meshStandardMaterial
+          color="#b6c1c4"
+          metalness={0.9}
+          roughness={0.22}
+        />
+      </mesh>
+      <mesh position={[0.88, 0.49, -0.72]}>
+        <cylinderGeometry args={[0.13, 0.14, 0.18, 32]} />
+        <meshStandardMaterial
+          color="#d7d1c3"
+          metalness={0.8}
+          roughness={0.25}
+        />
+      </mesh>
+      {[0.3, 0.58].map((x) => (
+        <mesh key={x} position={[x, 0.4, 0.77]}>
+          <cylinderGeometry args={[0.05, 0.05, 0.065, 24]} />
+          <meshStandardMaterial
+            color="#2e4049"
+            metalness={0.7}
+            roughness={0.3}
+          />
+        </mesh>
+      ))}
       <group ref={record} position={[-0.2, 0.4, 0]}>
         <mesh castShadow>
           <cylinderGeometry args={[0.84, 0.84, 0.055, 80]} />
@@ -226,7 +262,7 @@ function Music({
         ))}
         <mesh position={[0, 0.036, 0]}>
           <cylinderGeometry args={[0.28, 0.28, 0.01, 48]} />
-          <meshStandardMaterial color="#c7abe0" roughness={0.5} />
+          <meshStandardMaterial color="#d0aa7c" roughness={0.5} />
         </mesh>
         <Part
           at={[0.1, 0.05, 0.04]}
@@ -256,7 +292,7 @@ function Music({
           <mesh key={i} position={[-1.1 + i * 0.16, 0.5, 0]} castShadow>
             <boxGeometry args={[0.055, 1, 0.09]} />
             <meshStandardMaterial
-              color={i % 3 === 0 ? "#b7a3d8" : "#81c8d3"}
+              color={i % 3 === 0 ? "#c6aa88" : "#8db4c0"}
               emissive="#7396b9"
               emissiveIntensity={0.15}
               metalness={0.45}
@@ -297,7 +333,7 @@ function Workbench(props: Props) {
         <Lightformer position={[0, 5, 2]} scale={[8, 4, 1]} intensity={3} />
         <Lightformer
           position={[4, 2, -2]}
-          color="#c0b4ff"
+          color="#d4c2a2"
           scale={[5, 4, 1]}
           intensity={2}
         />
@@ -306,7 +342,7 @@ function Workbench(props: Props) {
         <Part
           at={[0, -0.12, 0]}
           size={[8, 0.18, 4.6]}
-          color="#1c2c43"
+          color="#253c45"
           radius={0.15}
         />
         <Line
@@ -340,6 +376,20 @@ function Workbench(props: Props) {
           color="#52647f"
           lineWidth={1}
         />
+        <mesh position={[-1.8, 0.015, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[3.3, 3.5]} />
+          <meshStandardMaterial
+            color={props.focus === "robotics" ? "#4b6d78" : "#334d58"}
+            roughness={0.85}
+          />
+        </mesh>
+        <mesh position={[1.65, 0.015, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[3.1, 3.5]} />
+          <meshStandardMaterial
+            color={props.focus === "music" ? "#5c6260" : "#30464e"}
+            roughness={0.8}
+          />
+        </mesh>
         <Robot
           active={props.focus === "robotics"}
           running={props.running && !props.paused && props.focus !== "music"}

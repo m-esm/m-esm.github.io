@@ -29,4 +29,8 @@ foodora historical wordmark: public mirror at https://github.com/monopolies/mono
 
 Five unmodified public repository images are stored in `public/assets/projects`: `alamut.webp` (handpan cover thumbnail), `inventory-dashboard.png` (My Inventory public dashboard), `macros-table.png` (extension-store screenshot), `cad-workflow.png` (parametric viewer), `bambu-plates.png` (repository plate diagram, not a Bambu UI capture). Exact source links and source licenses are in `public/assets/licenses/project-credits.html`. Images were visually inspected before use. Alamut is owner portfolio artwork with no general reuse license asserted. Repository license copies accompany the other four assets. No private inventory data was queried.
 
-The new workbench, handpan synthesizer, trajectory and torque sketches, and fictional nutrition samples are original portfolio illustrations. Handpan audio is synthesized locally only after a visitor's tap. No runtime asset hotlinks or trackers were added. Existing IBM Plex and prior image/CAD notices remain.
+The workbench, handpan synthesizer and torque illustration are original portfolio assets. The trajectory sketch and fictional nutrition samples were removed in the section refinement. Handpan audio is synthesized locally only after a visitor's tap. No runtime asset hotlinks or trackers were added. Existing IBM Plex and prior image/CAD notices remain.
+
+## Actual-app captures — 27 October
+
+`alamut-app.jpg` captures the owner’s live Alamut app at https://m-esm.github.io/handpan/. `orbital-habitat.jpg` captures this repository’s playable arrival scene. Both are unmodified browser captures, used to show the actual software rather than generic illustrations. Sources and capture date are recorded in the public project credits. The older Alamut thumbnail remains in the repository but is no longer used by the project catalog.

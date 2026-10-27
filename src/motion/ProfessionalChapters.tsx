@@ -1,167 +1,213 @@
 import { lazy, Suspense, useState } from "react";
-import { editorial } from "../content/editorial";
 const Diagram = lazy(() => import("./SystemDiagram"));
+const scope = [
+  {
+    title: "Partner API",
+    audience: "For partner engineers",
+    stack: "NestJS",
+    text: "I architected and built the API that connects a partner’s service to Starship delivery. It was the integration surface shared across the DaaS partner ecosystem.",
+    artifact: "A common delivery interface",
+    relationship: ["Partner software", "DaaS API", "Robot delivery"],
+    note: "The public-facing part of the platform: where partner software meets the delivery service.",
+  },
+  {
+    title: "Operational console",
+    audience: "For operational teams",
+    stack: "Next.js",
+    text: "I built the Partner Console for tracking orders, managing operational workflows and accessing insights. The same delivery operation needed to be understandable to people as well as software.",
+    artifact: "An operational view of delivery",
+    relationship: ["Delivery activity", "Partner Console", "Operations team"],
+    note: "The human interface: orders and operational workflows presented in one place.",
+  },
+  {
+    title: "Integration tooling",
+    audience: "With partner engineering teams",
+    stack: "Partner integrations",
+    text: "I worked directly with partner engineers on integrations, supported by a playground for exploring the interface. The work included Uber, Bolt, Wolt, S-Group, foodora, Grubhub, Deliveroo and Bringg.",
+    artifact: "Tools to make integration practical",
+    relationship: ["Partner engineers", "Playground", "Integration"],
+    note: "The developer experience around the API, including a place to explore and integrate it.",
+  },
+  {
+    title: "Testing & monitoring",
+    audience: "For the partner ecosystem",
+    stack: "End-to-end tests · watchdogs",
+    text: "I built end-to-end testing systems and watchdog services around the partner ecosystem. Integration work extended beyond the API into checking and observing the surrounding flows.",
+    artifact: "Checks around the delivery flow",
+    relationship: [
+      "Integration flow",
+      "Tests & watchdogs",
+      "Operational visibility",
+    ],
+    note: "The supporting checks and services around the integrations.",
+  },
+];
 const partners = [
-  ["foodora.svg", "foodora"],
   ["uber-eats.avif", "Uber Eats"],
   ["wolt.avif", "Wolt"],
   ["bolt.avif", "Bolt"],
   ["grubhub.avif", "Grubhub"],
   ["s-kaupat.avif", "S-Group"],
   ["deliveroo.png", "Deliveroo"],
+  ["foodora.svg", "foodora"],
 ];
-
 export function MusicChapter() {
   return (
     <section
       id="work"
-      className="motion-chapter motion-song"
+      className="motion-chapter current-chapter"
       data-chapter="Music & intelligence"
     >
-      <div className="motion-section-heading">
-        <p>
-          Songtradr <span>2026 — current</span>
-        </p>
-        <h2>Now: music & AI.</h2>
-      </div>
-      <div className="music-composition">
-        <figure className="motion-photo music">
-          <img
-            src="/assets/companies/music-performance.webp"
-            alt="Live performance from MassiveMusic’s official company imagery"
-            loading="lazy"
-          />
-          <figcaption>
-            Image:{" "}
-            <a href="https://massivemusic.com/about">
-              MassiveMusic / Songtradr group
-            </a>
-            . Company context.
-          </figcaption>
-        </figure>
-        <article className="music-role">
+      <div className="current-copy">
+        <div className="company-line">
           <img src="/assets/brands/songtradr.svg" alt="Songtradr" />
-          <h3>Staff Engineer at Songtradr.</h3>
-          <p>
-            I’m bringing a background in platforms, integrations and developer
-            tools into music technology.
-          </p>
-          <p>
-            My current focus is AI engineering. Before this, I spent several
-            years building partner integrations and operational systems at
-            Starship.
-          </p>
-          <details className="company-context">
-            <summary>About the company</summary>
-            <p>
-              Songtradr connects creators, rights holders, brands and digital
-              platforms. Its brand portfolio includes MassiveMusic and Bandcamp.
-            </p>
-          </details>
-          <a
-            className="motion-text-link"
-            href="https://www.songtradr.com/about"
-          >
-            About Songtradr <span>↗</span>
-          </a>
-        </article>
-      </div>
-    </section>
-  );
-}
-
-export function DeliveryChapter({ paused }: { paused: boolean }) {
-  const [active, setActive] = useState(0);
-  return (
-    <section
-      id="starship"
-      className="motion-chapter motion-starship"
-      data-chapter="Software → physical world"
-    >
-      <div className="motion-section-heading">
+          <span>2026 — present</span>
+        </div>
+        <h2>
+          Staff Engineer.
+          <br />
+          Music technology.
+        </h2>
         <p>
-          Starship Technologies <span>Joined 2021 · DaaS from around 2022</span>
+          My current focus at Songtradr is AI engineering. I bring a background
+          in backend platforms, partner integrations and developer tooling.
         </p>
-        <h2>Previously: delivery robotics.</h2>
+        <a className="text-link" href="https://www.songtradr.com/about">
+          About Songtradr <span>↗</span>
+        </a>
       </div>
-      <figure className="motion-photo wide">
+      <figure className="current-image">
         <img
-          src="/assets/companies/starship-delivery.avif"
-          alt="Starship robot being loaded for a grocery delivery"
+          src="/assets/companies/music-performance.webp"
+          alt="A live performance, from MassiveMusic’s official company photography"
           loading="lazy"
         />
         <figcaption>
-          Autonomous delivery in the real world. Image: Starship Technologies.
+          <span>
+            MassiveMusic, part of Songtradr. Official company photography.
+          </span>
         </figcaption>
-        <span className="motion-image-label">
-          A digital request. A physical delivery.
-        </span>
       </figure>
-      <div className="motion-case-copy">
-        <h3>What I built at Starship.</h3>
-        <div>
-          <p>{editorial.delivery.introduction}</p>
-          <p>{editorial.delivery.perspective}</p>
-          <a className="motion-text-link" href="/reading.html#delivery-systems">
-            Read the complete story <span>↗</span>
-          </a>
+    </section>
+  );
+}
+export function DeliveryChapter({ paused }: { paused: boolean }) {
+  const [active, setActive] = useState(0);
+  const [modelOpen, setModelOpen] = useState(false);
+  const item = scope[active];
+  return (
+    <section
+      id="starship"
+      className="motion-chapter delivery-chapter"
+      data-chapter="Software → physical world"
+    >
+      <header className="case-heading">
+        <div className="company-line">
+          <img src="/assets/brands/starship.svg" alt="Starship Technologies" />
+          <span>Joined 2021 / DaaS from around 2022</span>
         </div>
-      </div>
-      <div className="delivery-system">
-        <div className="system-heading">
-          <div>
-            <p>Inside the platform</p>
-            <h3>Explore my engineering scope.</h3>
-          </div>
-          <p>Choose a layer to explore the work.</p>
-        </div>
-        <Suspense
-          fallback={
-            <div className="system-loading">Preparing the platform model…</div>
-          }
-        >
-          <Diagram
-            kind="delivery"
-            selected={active}
-            onSelect={setActive}
-            paused={paused}
-          />
-        </Suspense>
-        <div
-          className="system-controls"
-          role="group"
-          aria-label="Delivery platform layers"
-        >
-          {editorial.delivery.scope.map((s, i) => (
-            <button
-              key={s.title}
-              aria-pressed={active === i}
-              onClick={() => setActive(i)}
-            >
-              <span className="system-control-dot" />
-              {s.title}
-            </button>
-          ))}
-        </div>
-        <div className="system-detail" aria-live="polite">
-          <span>{editorial.delivery.scope[active].title}</span>
-          <p>{editorial.delivery.scope[active].body}</p>
-        </div>
-        <p className="motion-source-note">
-          Conceptual model of my engineering scope, not a production
-          architecture diagram. Drag to rotate.
+        <h2>
+          The software behind
+          <br />a robot delivery.
+        </h2>
+        <p>
+          I architected and built Starship’s Delivery-as-a-Service platform: the
+          partner API, operational console and tools used to integrate with the
+          delivery service.
         </p>
-      </div>
-      <div className="motion-partners">
-        <p>Built in collaboration with partner engineering teams</p>
-        <div>
-          {partners.map(([asset, name]) => (
-            <div className="partner-mark" key={name}>
-              <img src={"/assets/brands/" + asset} alt={name} loading="lazy" />
-            </div>
-          ))}
-          <div className="partner-mark partner-wordmark">Bringg</div>
+      </header>
+      <figure className="delivery-photo">
+        <img
+          src="/assets/companies/starship-delivery.avif"
+          alt="Loading groceries into a Starship delivery robot"
+          loading="lazy"
+        />
+        <figcaption>Starship Technologies / autonomous delivery</figcaption>
+      </figure>
+      <div className="case-work">
+        <div className="case-index">
+          <h3>My work on DaaS</h3>
+          <div role="tablist" aria-label="Starship engineering scope">
+            {scope.map((s, i) => (
+              <button
+                role="tab"
+                id={"scope-tab-" + i}
+                aria-selected={active === i}
+                aria-controls="scope-panel"
+                key={s.title}
+                onClick={() => setActive(i)}
+              >
+                <span>
+                  {s.title}
+                  <small>{s.audience}</small>
+                </span>
+                <span aria-hidden="true">↗</span>
+              </button>
+            ))}
+          </div>
         </div>
+        <article
+          id="scope-panel"
+          role="tabpanel"
+          aria-labelledby={"scope-tab-" + active}
+          className="case-panel"
+        >
+          <span className="implementation-label">{item.stack}</span>
+          <h3>{item.artifact}</h3>
+          <p>{item.text}</p>
+          <div
+            className="scope-relationship"
+            aria-label="Conceptual relationship"
+          >
+            {item.relationship.map((label, i) => (
+              <span key={label}>
+                {i > 0 && <i aria-hidden="true">→</i>}
+                {label}
+              </span>
+            ))}
+          </div>
+          <details
+            className="scope-model"
+            onToggle={(e) => setModelOpen(e.currentTarget.open)}
+          >
+            <summary>Explore the 3D scope model</summary>
+            {modelOpen && (
+              <Suspense fallback={<p>Loading model…</p>}>
+                <Diagram
+                  kind="delivery"
+                  selected={active}
+                  onSelect={setActive}
+                  paused={paused}
+                />
+              </Suspense>
+            )}
+            <p>{item.note} Conceptual illustration; drag to rotate.</p>
+          </details>
+        </article>
+      </div>
+      <div className="partner-strip">
+        <p>Integration partners I worked with</p>
+        <div>
+          {partners.map(([file, label]) => (
+            <img
+              src={"/assets/brands/" + file}
+              alt={label}
+              key={label}
+              loading="lazy"
+            />
+          ))}
+          <span>Bringg</span>
+        </div>
+      </div>
+      <div className="case-footnote">
+        <p>
+          Before DaaS, I worked on marketplace services, billing and the order
+          lifecycle. I also contributed to centralizing cart, tax and fee
+          calculations in Go.
+        </p>
+        <a className="text-link" href="/reading.html#delivery-systems">
+          Read the full case study <span>↗</span>
+        </a>
       </div>
     </section>
   );

@@ -16,11 +16,11 @@ type Props = {
   onSelect: (n: number) => void;
   paused: boolean;
 };
-const colors = ["#89e4ee", "#c4adff", "#ffc7a8", "#a0c8ff"];
+const colors = ["#9fc8d4", "#d2a585", "#abc4b6", "#c0d0d8"];
 function Block({
   position = [0, 0, 0],
   size,
-  color = "#687aab",
+  color = "#718996",
 }: {
   position?: [number, number, number];
   size: [number, number, number];
@@ -80,7 +80,7 @@ function Module({
         <Block
           position={[0, -0.22, 0]}
           size={[1.9, 0.18, 1.8]}
-          color={active ? "#7776b8" : "#2b3b64"}
+          color={active ? "#496370" : "#233b49"}
         />
         {index === 0 ? (
           <>
@@ -88,7 +88,7 @@ function Module({
             <Block
               size={[1.32, 0.92, 0.03]}
               position={[0, 0.64, 0.11]}
-              color="#101f42"
+              color="#12232e"
             />
             <Line
               points={[
@@ -116,7 +116,7 @@ function Module({
             <Block
               size={[1.55, 0.95, 0.03]}
               position={[0, 0.7, 0.12]}
-              color="#1b2947"
+              color="#182c38"
             />
             {[0, 1, 2, 3].map((i) => (
               <Block
@@ -137,7 +137,7 @@ function Module({
               >
                 <Block
                   size={[0.4, 0.4, 0.5]}
-                  color={i === 0 ? color : "#b1b6e0"}
+                  color={i === 0 ? color : "#b8cbd1"}
                 />
               </group>
             ))}
@@ -171,7 +171,7 @@ function Module({
                 key={i}
                 size={[1.35, 0.28, 1.05]}
                 position={[0, 0.2 + i * 0.38, 0]}
-                color={i === 1 ? color : "#6b79aa"}
+                color={i === 1 ? color : "#68808d"}
               />
             ))}
           </>
@@ -180,7 +180,7 @@ function Module({
             <Block
               size={[1.3, 1.3, 0.18]}
               position={[0, 0.65, 0]}
-              color="#25385b"
+              color="#233b49"
             />
             <Line
               points={[
@@ -194,24 +194,37 @@ function Module({
           </>
         ) : (
           <>
-            <mesh position={[0, 0.65, 0]}>
-              <sphereGeometry args={[0.34, 32, 24]} />
-              <meshPhysicalMaterial
-                color={color}
-                metalness={0.7}
-                roughness={0.16}
-              />
-            </mesh>
+            <Block
+              size={[1.55, 1.35, 0.3]}
+              position={[0, 0.7, 0]}
+              color="#718996"
+            />
+            <Block
+              size={[1.36, 1.16, 0.04]}
+              position={[0, 0.7, 0.18]}
+              color="#12232e"
+            />
             {[0, 1, 2].map((i) => (
-              <mesh
-                key={i}
-                position={[0, 0.65, 0]}
-                rotation={[i * 0.8, 0.6 + i, 0.4]}
-              >
-                <torusGeometry args={[0.72, 0.012, 8, 64]} />
-                <meshBasicMaterial color={color} />
-              </mesh>
+              <group key={i} position={[0, 0.4 + i * 0.3, 0.22]}>
+                <mesh position={[-0.48, 0, 0]}>
+                  <circleGeometry args={[0.05, 16]} />
+                  <meshBasicMaterial color="#abc4b6" />
+                </mesh>
+                <Line
+                  points={[
+                    [-0.32, 0, 0],
+                    [-0.15, 0, 0],
+                    [0, 0.1, 0],
+                    [0.12, -0.06, 0],
+                    [0.24, 0.04, 0],
+                    [0.5, 0.04, 0],
+                  ]}
+                  color={color}
+                  lineWidth={1.5}
+                />
+              </group>
             ))}
+            <Block size={[0.18, 0.3, 0.25]} position={[0, 0, 0]} />
           </>
         )}
       </group>
@@ -236,7 +249,7 @@ function Model(props: Props) {
           intensity={3}
           position={[-4, 2, 4]}
           scale={[4, 4, 1]}
-          color="#c5a7ff"
+          color="#e6c8a6"
         />
       </Environment>
       <group rotation={[0, -0.15, 0]}>
@@ -245,7 +258,7 @@ function Model(props: Props) {
             [-5, -0.42, 0],
             [5, -0.42, 0],
           ]}
-          color="#6079b7"
+          color="#647f8b"
           lineWidth={1}
         />
         {Array.from({ length: props.kind === "delivery" ? 4 : 3 }, (_, i) => (

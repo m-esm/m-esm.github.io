@@ -2,116 +2,89 @@ import { useState } from "react";
 import { portfolioTimeline } from "../content/projects";
 export function CareerJourney() {
   const [track, setTrack] = useState("career"),
-    [period, setPeriod] = useState("all");
-  const rows = portfolioTimeline.filter(
-    (c) =>
-      (track === "all" ||
-        (track === "career"
-          ? c.track === "professional" ||
-            c.title === "Independent software work"
-          : c.track === "independent")) &&
-      (period === "all" ||
-        (period === "2026"
-          ? c.year.includes("2026")
-          : period === "2021"
-            ? Number(c.year.match(/\d{4}/)?.[0]) >= 2021 &&
-              Number(c.year.match(/\d{4}/)?.[0]) < 2026
-            : Number(c.year.match(/\d{4}/)?.[0]) < 2021)),
+    [selected, setSelected] = useState("Staff Engineer at Songtradr");
+  const rows = portfolioTimeline.filter((c) =>
+    track === "career"
+      ? c.track === "professional" || c.title === "Independent software work"
+      : c.track === "independent",
   );
-
+  const chapter = rows.find((c) => c.title === selected) || rows[0];
+  const href = chapter.href?.startsWith("#")
+    ? "/reading.html" + chapter.href
+    : chapter.href === "/"
+      ? "#/sector/arrival"
+      : chapter.href;
   return (
     <section
       id="journey"
-      className="motion-chapter motion-journey"
+      className="motion-chapter career-section"
       data-chapter="The journey"
     >
-      <div className="motion-section-heading">
-        <p>
-          The timeline <span>2013–2026</span>
-        </p>
-        <h2>How I got here.</h2>
-        <p className="motion-deck">
-          Different domains, connected by platform engineering. Open a chapter
-          for the details.
-        </p>
-      </div>
-      <div className="journey-controls">
-        <div className="sketch-switch" aria-label="Timeline track">
+      <header className="section-header">
+        <div>
+          <h2>Work over time.</h2>
+          <p>From my first independent work to my current role.</p>
+        </div>
+        <div className="segmented" aria-label="Timeline track">
           {[
             ["career", "Career"],
             ["projects", "Independent work"],
-            ["all", "Both"],
           ].map(([id, label]) => (
             <button
               key={id}
               aria-pressed={track === id}
-              onClick={() => setTrack(id)}
+              onClick={() => {
+                setTrack(id);
+                setSelected("");
+              }}
             >
               {label}
             </button>
           ))}
         </div>
-        <label>
-          Started in{" "}
-          <select
-            value={period}
-            onChange={(e) => setPeriod(e.target.value)}
-            aria-label="Timeline period"
-          >
-            <option value="all">All years</option>
-            <option value="2026">2026</option>
-            <option value="2021">2021–2025</option>
-            <option value="earlier">2013–2020</option>
-          </select>
-        </label>
-      </div>
-      <ol className="compact-timeline">
-        {rows.map((c) => {
-          const href = c.href?.startsWith("#")
-            ? "/reading.html" + c.href
-            : c.href === "/"
-              ? "#/sector/arrival"
-              : c.href;
-          return (
-            <li key={c.title} className={c.track}>
-              <details>
-                <summary>
-                  <time>{c.year}</time>
-                  <span className="timeline-identity">
-                    {c.logo && <img src={c.logo} alt="" />}
-                    <strong>{c.title}</strong>
-                  </span>
-                  <span className="timeline-expand" aria-hidden="true">
-                    +
-                  </span>
-                </summary>
-                <div className="timeline-story">
-                  <p>{c.body}</p>
-                  {c.focus && (
-                    <div className="motion-tags">
-                      {c.focus.map((f) => (
-                        <span key={f}>{f}</span>
-                      ))}
-                    </div>
-                  )}
-                  {href && (
-                    <a className="motion-text-link" href={href}>
-                      More about this chapter ↗
-                    </a>
-                  )}
-                </div>
-              </details>
+      </header>
+      <div className="career-layout">
+        <ol className="career-rail" aria-label="Career chapters">
+          {rows.map((c) => (
+            <li key={c.title}>
+              <button
+                onClick={() => setSelected(c.title)}
+                aria-pressed={chapter.title === c.title}
+              >
+                <time>{c.year}</time>
+                <strong>{c.title}</strong>
+                <span aria-hidden="true">↗</span>
+              </button>
             </li>
-          );
-        })}
-      </ol>
-      {!rows.length && (
-        <p>No entries in this period. Choose another year or track.</p>
-      )}
-      <p className="motion-source-note">
-        Employment dates follow my CV; the DaaS transition is approximate.
-        Independent-project dates refer to public repositories. Second Brain
-        remains an architecture-only summary of a private prototype.
+          ))}
+        </ol>
+        <article className="career-detail" key={chapter.title}>
+          <div className="career-detail-top">
+            <time>{chapter.year}</time>
+            {chapter.logo && <img src={chapter.logo} alt="" />}
+          </div>
+          <h3>{chapter.title}</h3>
+          <p>{chapter.body}</p>
+          {chapter.focus && (
+            <ul>
+              {chapter.focus.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+          )}
+          {href && (
+            <a className="text-link" href={href}>
+              {href.includes("github.com")
+                ? "View the source"
+                : "Read this story"}{" "}
+              ↗
+            </a>
+          )}
+        </article>
+      </div>
+      <p className="source-note">
+        Employment dates follow my CV. The DaaS transition is approximate;
+        project dates refer to public repository creation.
       </p>
     </section>
   );
