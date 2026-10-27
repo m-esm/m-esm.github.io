@@ -567,7 +567,11 @@ body.motion-mode #root {
   border-radius: 3px;
   padding: 0;
 }
+.partner-strip img[src$="deliveroo.png"] {
+  object-fit: contain;
+}
 .partner-strip img[src$="foodora.svg"] {
+  object-fit: contain;
   background: none;
   filter: brightness(0) invert(1);
 }
