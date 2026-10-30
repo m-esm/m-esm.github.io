@@ -34,7 +34,4 @@ export const projectYears: Record<string, string> = {
   mechlib: "2026 · public repository opened August",
   "socket-cluster": "2020 · public repository opened April",
 };
-export const recommendations = [
-  {quote: "I'd gladly work with him again.", author: "Taavi Pungas", body: "Taavi highlights delivery on complex DaaS projects, developer tooling and early adoption of agentic engineering practices."},
-  {quote: "Mohsen is the most productive engineer I have seen", author: "Pekka Kosonen", body: "Pekka describes a productive engineer and an easygoing, supportive teammate."},
-];
+export { recommendations } from "./recommendations";
