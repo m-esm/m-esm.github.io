@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   recommendations,
   recommendationSource,
@@ -15,13 +15,28 @@ function Arrow() {
 
 export function Recommendations() {
   const [expanded, setExpanded] = useState<string[]>([]);
+  const cards = useRef<Record<string, HTMLElement | null>>({});
   const allOpen = expanded.length === recommendations.length;
-  const toggle = (id: string) =>
+  const returnTo = useRef<string | null>(null);
+  useEffect(() => {
+    const element = returnTo.current && cards.current[returnTo.current];
+    returnTo.current = null;
+    if (!element || element.getBoundingClientRect().top >= 0) return;
+    element.scrollIntoView({ block: "start" });
+  }, [expanded]);
+  const toggle = (id: string) => {
+    const closing = expanded.includes(id);
+    if (closing) returnTo.current = id;
     setExpanded((previous) =>
-      previous.includes(id)
+      closing
         ? previous.filter((value) => value !== id)
         : [...previous, id],
     );
+  };
+  const toggleAll = () => {
+    if (allOpen) returnTo.current = recommendations[0].id;
+    setExpanded(allOpen ? [] : recommendations.map((r) => r.id));
+  };
   return (
     <section
       id="recommendations"
@@ -42,21 +57,23 @@ export function Recommendations() {
         <p>{recommendations.length} recommendations · 2020–2026</p>
         <button
           className="text-link"
-          onClick={() =>
-            setExpanded(allOpen ? [] : recommendations.map((r) => r.id))
-          }
+          onClick={toggleAll}
         >
           {allOpen ? "Collapse all" : "Read all in full"}
           <span aria-hidden="true">{allOpen ? "−" : "+"}</span>
         </button>
       </div>
-      <div className={`recommendation-grid ${allOpen ? "reading-all" : ""}`}>
+      <div className="recommendation-grid">
         {recommendations.map((item) => {
           const open = expanded.includes(item.id);
           return (
             <article
               className={`recommendation-note ${open ? "is-expanded" : ""}`}
               key={item.id}
+              ref={(element) => {
+                cards.current[item.id] = element;
+              }}
+              aria-label={`Recommendation from ${item.author}`}
             >
               <header className="quote-person">
                 <span className="person-initials" aria-hidden="true">
