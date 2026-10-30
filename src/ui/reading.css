@@ -340,8 +340,8 @@ section[id] {
 }
 .recommendations {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px 40px;
   padding: 55px 0;
   border-block: 1px solid #ffffff20;
 }
@@ -357,6 +357,23 @@ section[id] {
 }
 .recommendation strong {
   color: #e3ebff;
+}
+.recommendation details {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #c4d1d5;
+}
+.recommendation summary {
+  cursor: pointer;
+  color: #d2a585;
+  font-size: 13px;
+}
+.recommendation details blockquote {
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: 0;
+  margin: 14px 0;
 }
 .earlier-work {
   padding: 90px 0;
