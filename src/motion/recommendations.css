@@ -49,6 +49,7 @@
 }
 .recommendation-note {
   min-width: 0;
+  scroll-margin-top: 88px;
   border-top: 1px solid var(--line-strong, #abc9d355);
   padding: 24px 0 30px;
 }
@@ -114,6 +115,7 @@
   justify-content: space-between;
   gap: 10px;
   width: 100%;
+  min-height: 44px;
   padding: 10px 0;
   background: transparent;
   border: 0;
@@ -148,6 +150,7 @@
 }
 .recommendation-note.is-expanded .quote-excerpt {
   color: var(--accent);
+  min-height: 0;
 }
 @media (max-width: 1000px) {
   .recommendation-grid {
@@ -180,41 +183,37 @@
   }
 }
 
-.recommendation-grid.reading-all {
-  grid-template-columns: 1fr;
-}
-.reading-all .recommendation-note {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  grid-template-rows: auto auto 1fr;
-  gap: 0 50px;
-}
-.reading-all .quote-person {
-  grid-column: 1;
-  min-height: 0;
-  align-self: start;
-}
-.reading-all .quote-meta {
-  grid-column: 1;
-  align-self: start;
-}
-.reading-all .quote-excerpt {
-  display: none;
-}
-.reading-all .quote-toggle {
-  grid-column: 1;
-  align-self: start;
-}
-.reading-all .quote-full {
-  grid-column: 2;
-  grid-row: 1 / span 3;
-  padding: 0;
+@media (min-width: 761px) {
+  .recommendation-note.is-expanded {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    grid-template-rows: auto auto 1fr auto;
+    gap: 0 50px;
+  }
+  .is-expanded .quote-person,
+  .is-expanded .quote-meta,
+  .is-expanded .quote-excerpt,
+  .is-expanded .quote-toggle {
+    grid-column: 1;
+    align-self: start;
+  }
+  .is-expanded .quote-person {
+    min-height: 0;
+  }
+  .is-expanded .quote-excerpt {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  .is-expanded .quote-full {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    padding: 0;
+    max-width: 62ch;
+  }
 }
 @media (max-width: 760px) {
-  .reading-all .recommendation-note {
-    display: block;
-  }
-  .reading-all .quote-full {
+  .is-expanded .quote-full {
     padding-top: 16px;
   }
 }
